@@ -1,47 +1,33 @@
 <h1>Bandas</h1>
 
+<script type="text/javascript">
+					$(document).ready(function(){
+					  
+				$("#content").corner(); 
+			
+					});
+</script>
 
 
-<table class="listagem">
-  <tr>
-    <th>Name</th>
-    <th>Genre</th>
-    <th>Year</th>
-    <th>City</th>
-    <th>Country</th>
-    <th>About</th>
-    <th>Editar</th>
-    <th>Apagar</th>        
-  </tr>
+<%= link_to 'Cadastrar uma nova banda', new_band_path, :style => "float: right;" %>
 
-<% @bands.each_with_index do |band, index| %>
-  <div class="banda">
-    <h2>
-      <%= link_to band.name, band %>
-    </h2>
-    
-    <strong>Estilo:</strong> <%= band.genre.title %> <br/>    
-    <strong>Localização:</strong> <%= band.city %>/<%= band.country.name %>
-    
-    <p>
-      <%= band.about %>      
-    </p>
-  </div>
-  
-  
- 
-    <td><%= link_to band.name, band %></td>
-    <td><%=h band.genre.title %></td>
-    <td><%=h band.year %></td>
-    <td><%=h band.city %></td>
-    <td><%=h band.country.name %></td>
-    <td><%=h band.about %></td>
-    <td><%= link_to 'Editar', edit_band_path(band) %></td>
-    <td><%= link_to 'Apagar', band, :confirm => 'Você tem certeza?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<br/>
+<br/>
 
-<br />
+<div class="content" id="content">
+  <% @bands.each_with_index do |band, index| %>
+    <div class="banda">
+      <h2>
+        <%= link_to band.name, band %>
+      </h2>
+      
+      <strong>Estilo:</strong> <%= band.genre.title %> <br/>    
+      <strong>Localização:</strong> <%= band.city %>/<%= band.country.name %>
+      
+      <p>
+        <%= band.about %>      
+      </p>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to 'New band', new_band_path %>
