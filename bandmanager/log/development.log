@@ -4623,3 +4623,564 @@ Rendering bands/new
 Rendered bands/_form (51.8ms)
 Rendered layouts/_cabecalho (0.3ms)
 Completed in 83ms (View: 56, DB: 1) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:02:56) [GET]
+  [4;36;1mBand Load (1.5ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (0.6ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (0.5ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (0.5ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.6ms)
+Completed in 433ms (View: 353, DB: 3) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-11-23 23:03:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBand Load (0.6ms)[0m   [0mSELECT * FROM "bands" WHERE ("bands"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mGenre Load (0.5ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (0.5ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+Rendered layouts/_cabecalho (0.3ms)
+Completed in 72ms (View: 56, DB: 2) | 200 OK [http://localhost/bands/1]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:06:35) [GET]
+  [4;36;1mBand Load (3.9ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.4ms)
+Completed in 278ms (View: 214, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#new (for 127.0.0.1 at 2009-11-23 23:07:36) [GET]
+  [4;35;1mCountry Load (1.6ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mGenre Load (1.7ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/application
+Rendering bands/new
+Rendered bands/_form (41.6ms)
+Rendered layouts/_cabecalho (0.3ms)
+Completed in 393ms (View: 95, DB: 3) | 200 OK [http://localhost/bands/new]
+
+
+Processing BandsController#new (for 127.0.0.1 at 2009-11-23 23:08:44) [GET]
+  [4;35;1mCountry Load (1.6ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mGenre Load (1.7ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/application
+Rendering bands/new
+Rendered bands/_form (48.7ms)
+Rendered layouts/_cabecalho (1.0ms)
+Completed in 147ms (View: 61, DB: 3) | 200 OK [http://localhost/bands/new]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:08:46) [GET]
+  [4;35;1mBand Load (4.0ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (4.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.0ms)
+Completed in 184ms (View: 139, DB: 11) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:11:33) [GET]
+  [4;36;1mBand Load (4.1ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.1ms)
+Completed in 399ms (View: 134, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:11:49) [GET]
+  [4;35;1mBand Load (4.0ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #24 of app/views/bands/index.html.erb:
+21:         <%= link_to band.name, band %>
+22:       </h2>
+23:       
+24:       <%=t(label(:genre)) %>
+25:       <strong>Estilo:</strong> <%= band.genre.title %> <br/>    
+26:       <strong>Localização:</strong> <%= band.city %>/<%= band.country.name %>
+27:       
+
+    app/views/bands/index.html.erb:24:in `label'
+    app/views/bands/index.html.erb:24
+    app/views/bands/index.html.erb:18:in `each'
+    app/views/bands/index.html.erb:18:in `each_with_index'
+    app/views/bands/index.html.erb:18
+    app/controllers/bands_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (219.9ms)
+Rendered rescues/_request_and_response (8.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:12:05) [GET]
+  [4;36;1mBand Load (4.1ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.4ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.1ms)
+Completed in 170ms (View: 130, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:12:38) [GET]
+  [4;35;1mBand Load (1.3ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;36;1mGenre Load (0.5ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (0.5ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (0.5ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (0.3ms)
+Completed in 51ms (View: 39, DB: 3) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:14:17) [GET]
+  [4;36;1mBand Load (3.8ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+
+ActionView::TemplateError (undefined method `[]=' for :genre:Symbol) on line #24 of app/views/bands/index.html.erb:
+21:         <%= link_to band.name, band %>
+22:       </h2>
+23:       
+24:       <%=t(:band, :genre) %>
+25:       <strong>Estilo:</strong> <%= band.genre.title %> <br/>    
+26:       <strong>Localização:</strong> <%= band.city %>/<%= band.country.name %>
+27:       
+
+    app/views/bands/index.html.erb:24
+    app/views/bands/index.html.erb:18:in `each'
+    app/views/bands/index.html.erb:18:in `each_with_index'
+    app/views/bands/index.html.erb:18
+    app/controllers/bands_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (199.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:14:27) [GET]
+  [4;35;1mBand Load (30.1ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+ERROR: compiling _run_erb_app47views47bands47index46html46erb RAISED compile error
+/home/pedro/workspace/band-manager-rb/bandmanager/app/views/bands/index.html.erb:24: syntax error, unexpected ':', expecting ')'
+...utput_buffer.concat((t(:band :genre) ).to_s); @output_buffer...
+                              ^
+/home/pedro/workspace/band-manager-rb/bandmanager/app/views/bands/index.html.erb:24: syntax error, unexpected ')', expecting kEND
+...oncat((t(:band :genre) ).to_s); @output_buffer.concat "\n   ...
+                              ^
+Function body:           def _run_erb_app47views47bands47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Bandas</h1>\n\n<script type=\"text/javascript\">\n\t\t\t\t\t$(document).ready(function(){\n\t\t\t\t\t  \n\t\t\t\t$(\"#content\").corner(); \n\t\t\t\n\t\t\t\t\t});\n</script>\n\n\n"
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat(( link_to 'Cadastrar uma nova banda', new_band_path, :style => "float: right;" ).to_s); @output_buffer.concat "\n\n<br/>\n<br/>\n\n<div class=\"content\" id=\"content\">\n  "
+
+
+
+
+
+;  @bands.each_with_index do |band, index| ; @output_buffer.concat "\n    <div class=\"banda\">\n      <h2>\n        "
+
+
+; @output_buffer.concat(( link_to band.name, band ).to_s); @output_buffer.concat "\n      </h2>\n      \n      "
+
+
+; @output_buffer.concat((t(:band :genre) ).to_s); @output_buffer.concat "\n      <strong>Estilo:</strong> "
+; @output_buffer.concat(( band.genre.title ).to_s); @output_buffer.concat " <br/>    \n      <strong>Localiza\303\247\303\243o:</strong> "
+; @output_buffer.concat(( band.city ).to_s); @output_buffer.concat "/"; @output_buffer.concat(( band.country.name ).to_s); @output_buffer.concat "\n      \n      <p>\n        "
+
+
+; @output_buffer.concat(( band.about ).to_s); @output_buffer.concat "      \n      </p>\n    </div>\n  "
+
+
+;  end ; @output_buffer.concat "\n</div>\n\n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/pedro/workspace/band-manager-rb/bandmanager/app/views/bands/index.html.erb:38:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `custom'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `respond'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `each'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `respond'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/pedro/workspace/band-manager-rb/bandmanager/app/controllers/bands_controller.rb:7:in `index'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/pedro/workspace/band-manager-rb/bandmanager/app/views/bands/index.html.erb:24: syntax error, unexpected ':', expecting ')'
+...utput_buffer.concat((t(:band :genre) ).to_s); @output_buffer...
+                              ^
+/home/pedro/workspace/band-manager-rb/bandmanager/app/views/bands/index.html.erb:24: syntax error, unexpected ')', expecting kEND
+...oncat((t(:band :genre) ).to_s); @output_buffer.concat "\n   ...
+                              ^) on line #24 of app/views/bands/index.html.erb:
+21:         <%= link_to band.name, band %>
+22:       </h2>
+23:       
+24:       <%=t(:band :genre) %>
+25:       <strong>Estilo:</strong> <%= band.genre.title %> <br/>    
+26:       <strong>Localização:</strong> <%= band.city %>/<%= band.country.name %>
+27:       
+
+    app/views/bands/index.html.erb:38:in `compile!'
+    app/controllers/bands_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (422.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:14:34) [GET]
+  [4;36;1mBand Load (3.9ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.1ms)
+Completed in 184ms (View: 139, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:16:56) [GET]
+  [4;35;1mBand Load (3.9ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;36;1mGenre Load (1.7ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.2ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.5ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.0ms)
+Completed in 211ms (View: 162, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:17:43) [GET]
+  [4;36;1mBand Load (4.0ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.1ms)
+Completed in 377ms (View: 111, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:18:22) [GET]
+  [4;35;1mBand Load (1.3ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;36;1mGenre Load (0.5ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (0.5ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (0.5ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (0.4ms)
+Completed in 51ms (View: 34, DB: 3) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:18:45) [GET]
+  [4;36;1mBand Load (1.5ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (0.5ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (0.5ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (0.3ms)
+Completed in 46ms (View: 28, DB: 3) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:19:45) [GET]
+  [4;35;1mBand Load (1.3ms)[0m   [0mSELECT * FROM "bands" [0m
+
+NoMethodError (undefined method `delete' for :genre:Symbol):
+  app/controllers/bands_controller.rb:7:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:19:56) [GET]
+  [4;36;1mBand Load (7.6ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.0ms)
+Completed in 160ms (View: 98, DB: 12) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:21:48) [GET]
+  [4;35;1mBand Load (3.9ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.0ms)
+Completed in 191ms (View: 117, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:23:23) [GET]
+  [4;36;1mBand Load (4.2ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (4.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.0ms)
+Completed in 164ms (View: 96, DB: 11) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:23:38) [GET]
+  [4;35;1mBand Load (3.9ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.1ms)
+Completed in 140ms (View: 86, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:23:49) [GET]
+  [4;36;1mBand Load (3.8ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.0ms)
+Completed in 139ms (View: 87, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:27:39) [GET]
+  [4;35;1mBand Load (3.9ms)[0m   [0mSELECT * FROM "bands" [0m
+
+NameError (undefined local variable or method `band' for #<BandsController:0x7f6958f00f28>):
+  app/controllers/bands_controller.rb:7:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (136.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:27:47) [GET]
+  [4;36;1mBand Load (3.9ms)[0m   [0;1mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCountry Load (1.3ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.1ms)
+Completed in 219ms (View: 99, DB: 8) | 200 OK [http://localhost/bands]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-11-23 23:28:12) [GET]
+  [4;35;1mBand Load (3.7ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.4ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1) [0m
+Rendered layouts/_cabecalho (1.1ms)
+Completed in 152ms (View: 95, DB: 8) | 200 OK [http://localhost/bands]

@@ -4,6 +4,8 @@ class BandsController < ApplicationController
   def index
     @bands = Band.all
 
+    flash[:notice] = t(:band)
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bands }
@@ -73,6 +75,9 @@ class BandsController < ApplicationController
         format.html { redirect_to(@band) }
         format.xml  { head :ok }
       else
+        @countries = Country.all
+        @genres = Genre.all
+        
         format.html { render :action => "edit" }
         format.xml  { render :xml => @band.errors, :status => :unprocessable_entity }
       end
