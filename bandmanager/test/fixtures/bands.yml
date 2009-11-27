@@ -1,17 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  genre: 
-  year: 1
-  city: MyString
-  country: 
-  about: MyText
-
-two:
-  name: MyString
-  genre: 
-  year: 1
-  city: MyString
-  country: 
-  about: MyText
+violator:
+  name: Violator
+  genre: genres(:thrash)
+  year: 2002
+  city: Brasília
+  country: countries(:brasil)
+  about: Sobre o Violator...
+  

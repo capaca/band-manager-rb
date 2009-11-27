@@ -1,13 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :bands
-
+  
+  # Bands
+  map.resources :bands do |bands|
+    bands.resources :releases do |releases|
+      releases.resources :songs  
+    end
+  end
+  
   map.resources :countries
 
   map.resources :genres
-
-  map.resources :releases
-
-  map.resources :songs
 
   # The priority is based upon order of creation: first created -> highest priority.
 

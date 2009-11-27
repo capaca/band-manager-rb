@@ -1,0 +1,382 @@
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+
+
+Processing BandsController#create (for 0.0.0.0 at 2009-11-27 18:32:32) [POST]
+  Parameters: {"band"=>{}}
+  [4;35;1mCountry Load (1.6ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/application
+Rendering bands/new
+Rendered bands/_form (354.5ms)
+Rendered layouts/_cabecalho (5.8ms)
+Completed in 432ms (View: 397, DB: 14) | 200 OK [http://test.host/bands?]
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Load (1.9ms)[0m   [0mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+
+
+Processing BandsController#destroy (for 0.0.0.0 at 2009-11-27 18:32:33) [DELETE]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mBand Load (1.6ms)[0m   [0;1mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+  [4;35;1mBand Destroy (1.1ms)[0m   [0mDELETE FROM "bands" WHERE "id" = 2053932785[0m
+Redirected to http://test.host/bands
+Completed in 10ms (DB: 6) | 302 Found [http://test.host/bands/2053932785]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Load (1.7ms)[0m   [0mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+
+
+Processing BandsController#edit (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mBand Load (1.6ms)[0m   [0;1mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+  [4;35;1mCountry Load (1.4ms)[0m   [0mSELECT * FROM "countries" [0m
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/application
+Rendering bands/edit
+Rendered bands/_form (22.3ms)
+Rendered layouts/_cabecalho (1.9ms)
+Completed in 50ms (View: 38, DB: 7) | 200 OK [http://test.host/bands/2053932785/edit]
+
+
+Processing BandsController#index (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  [4;35;1mBand Load (2.2ms)[0m   [0mSELECT * FROM "bands" [0m
+Rendering template within layouts/application
+Rendering bands/index
+
+
+Processing BandsController#new (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  [4;36;1mCountry Load (1.6ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/application
+Rendering bands/new
+Rendered bands/_form (16.7ms)
+Rendered layouts/_cabecalho (1.6ms)
+Completed in 36ms (View: 27, DB: 3) | 200 OK [http://test.host/bands/new]
+  [4;36;1mBand Load (1.6ms)[0m   [0;1mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+
+
+Processing BandsController#show (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;35;1mBand Load (1.6ms)[0m   [0mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mBand Load (1.7ms)[0m   [0;1mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+
+
+Processing BandsController#update (for 0.0.0.0 at 2009-11-27 18:32:33) [PUT]
+  Parameters: {"band"=>{}, "id"=>"2053932785"}
+  [4;35;1mBand Load (1.5ms)[0m   [0mSELECT * FROM "bands" WHERE ("bands"."id" = 2053932785) [0m
+  [4;36;1mCountry Load (1.4ms)[0m   [0;1mSELECT * FROM "countries" [0m
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/application
+Rendering bands/edit
+Rendered bands/_form (66.5ms)
+Rendered layouts/_cabecalho (1.6ms)
+Completed in 97ms (View: 79, DB: 6) | 200 OK [http://test.host/bands/2053932785?]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "countries" [0m
+
+
+Processing CountriesController#create (for 0.0.0.0 at 2009-11-27 18:32:33) [POST]
+  Parameters: {"country"=>{}}
+  [4;35;1mCountry Create (1.3ms)[0m   [0mINSERT INTO "countries" ("name", "created_at", "updated_at") VALUES(NULL, '2009-11-27 18:32:33', '2009-11-27 18:32:33')[0m
+Redirected to http://test.host/countries/2053932786
+Completed in 22ms (DB: 2) | 302 Found [http://test.host/countries?]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "countries" [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "countries" [0m
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+
+
+Processing CountriesController#destroy (for 0.0.0.0 at 2009-11-27 18:32:33) [DELETE]
+  Parameters: {"id"=>"2053932785"}
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+  [4;36;1mCountry Destroy (1.0ms)[0m   [0;1mDELETE FROM "countries" WHERE "id" = 2053932785[0m
+Redirected to http://test.host/countries
+Completed in 9ms (DB: 5) | 302 Found [http://test.host/countries/2053932785]
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "countries" [0m
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+
+
+Processing CountriesController#edit (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;35;1mCountry Load (1.3ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+Rendering template within layouts/application
+Rendering countries/edit
+Rendered layouts/_cabecalho (1.7ms)
+Completed in 32ms (View: 27, DB: 3) | 200 OK [http://test.host/countries/2053932785/edit]
+
+
+Processing CountriesController#index (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  [4;36;1mCountry Load (1.6ms)[0m   [0;1mSELECT * FROM "countries" [0m
+Rendering template within layouts/application
+Rendering countries/index
+Rendered layouts/_cabecalho (1.6ms)
+Completed in 48ms (View: 43, DB: 2) | 200 OK [http://test.host/countries]
+
+
+Processing CountriesController#new (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+Rendering template within layouts/application
+Rendering countries/new
+Rendered layouts/_cabecalho (1.6ms)
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://test.host/countries/new]
+  [4;35;1mCountry Load (1.4ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+
+
+Processing CountriesController#show (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+Rendering template within layouts/application
+Rendering countries/show
+Rendered layouts/_cabecalho (1.6ms)
+Completed in 20ms (View: 14, DB: 3) | 200 OK [http://test.host/countries/2053932785]
+  [4;35;1mCountry Load (1.4ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+
+
+Processing CountriesController#update (for 0.0.0.0 at 2009-11-27 18:32:33) [PUT]
+  Parameters: {"country"=>{}, "id"=>"2053932785"}
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 2053932785) [0m
+Redirected to http://test.host/countries/2053932785
+Completed in 13ms (DB: 3) | 302 Found [http://test.host/countries/2053932785?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "genres" [0m
+
+
+Processing GenresController#create (for 0.0.0.0 at 2009-11-27 18:32:33) [POST]
+  Parameters: {"genre"=>{}}
+  [4;36;1mGenre Create (1.3ms)[0m   [0;1mINSERT INTO "genres" ("created_at", "title", "updated_at") VALUES('2009-11-27 18:32:33', NULL, '2009-11-27 18:32:33')[0m
+Redirected to http://test.host/genres/1732760880
+Completed in 22ms (DB: 2) | 302 Found [http://test.host/genres?]
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "genres" [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "genres" [0m
+
+
+Processing GenresController#index (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  [4;35;1mGenre Load (1.6ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/application
+Rendering genres/index
+Rendered layouts/_cabecalho (1.7ms)
+Completed in 47ms (View: 42, DB: 3) | 200 OK [http://test.host/genres]
+
+
+Processing GenresController#new (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+Rendering template within layouts/application
+Rendering genres/new
+Rendered layouts/_cabecalho (1.5ms)
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://test.host/genres/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "releases" [0m
+
+
+Processing ReleasesController#create (for 0.0.0.0 at 2009-11-27 18:32:33) [POST]
+  Parameters: {"release"=>{}}
+  [4;35;1mRelease Create (1.3ms)[0m   [0mINSERT INTO "releases" ("created_at", "title", "details", "updated_at", "year") VALUES('2009-11-27 18:32:33', NULL, NULL, '2009-11-27 18:32:33', NULL)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "releases" [0m
+  [4;35;1mRelease Load (1.2ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+
+
+Processing ReleasesController#destroy (for 0.0.0.0 at 2009-11-27 18:32:33) [DELETE]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mRelease Load (1.6ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+  [4;35;1mRelease Destroy (1.0ms)[0m   [0mDELETE FROM "releases" WHERE "id" = 2053932785[0m
+  [4;36;1mRelease Load (1.4ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+
+
+Processing ReleasesController#edit (for 0.0.0.0 at 2009-11-27 18:32:33) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;35;1mRelease Load (1.3ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+Rendering template within layouts/application
+Rendering releases/edit
+
+
+Processing ReleasesController#index (for 0.0.0.0 at 2009-11-27 18:32:34) [GET]
+  [4;36;1mRelease Load (1.9ms)[0m   [0;1mSELECT * FROM "releases" [0m
+Rendering template within layouts/application
+Rendering releases/index
+
+
+Processing ReleasesController#new (for 0.0.0.0 at 2009-11-27 18:32:34) [GET]
+Rendering template within layouts/application
+Rendering releases/new
+  [4;35;1mRelease Load (1.5ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+
+
+Processing ReleasesController#show (for 0.0.0.0 at 2009-11-27 18:32:34) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mRelease Load (1.3ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+Rendering template within layouts/application
+Rendering releases/show
+  [4;35;1mRelease Load (1.5ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+
+
+Processing ReleasesController#update (for 0.0.0.0 at 2009-11-27 18:32:34) [PUT]
+  Parameters: {"id"=>"2053932785", "release"=>{}}
+  [4;36;1mRelease Load (1.3ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 2053932785) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "songs" [0m
+
+
+Processing SongsController#create (for 0.0.0.0 at 2009-11-27 18:32:34) [POST]
+  Parameters: {"song"=>{}}
+  [4;36;1mSong Create (1.3ms)[0m   [0;1mINSERT INTO "songs" ("lyrics", "created_at", "title", "updated_at") VALUES(NULL, '2009-11-27 18:32:34', NULL, '2009-11-27 18:32:34')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "songs" [0m
+  [4;36;1mSong Load (1.1ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+
+
+Processing SongsController#destroy (for 0.0.0.0 at 2009-11-27 18:32:34) [DELETE]
+  Parameters: {"id"=>"2053932785"}
+  [4;35;1mSong Load (1.2ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+  [4;36;1mSong Destroy (1.0ms)[0m   [0;1mDELETE FROM "songs" WHERE "id" = 2053932785[0m
+  [4;35;1mSong Load (1.3ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+
+
+Processing SongsController#edit (for 0.0.0.0 at 2009-11-27 18:32:34) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mSong Load (1.3ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+Rendering template within layouts/application
+Rendering songs/edit
+
+
+Processing SongsController#index (for 0.0.0.0 at 2009-11-27 18:32:34) [GET]
+  [4;35;1mSong Load (1.7ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering template within layouts/application
+Rendering songs/index
+
+
+Processing SongsController#new (for 0.0.0.0 at 2009-11-27 18:32:34) [GET]
+Rendering template within layouts/application
+Rendering songs/new
+  [4;36;1mSong Load (1.4ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+
+
+Processing SongsController#show (for 0.0.0.0 at 2009-11-27 18:32:34) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;35;1mSong Load (1.3ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+Rendering template within layouts/application
+Rendering songs/show
+  [4;36;1mSong Load (1.3ms)[0m   [0;1mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+
+
+Processing SongsController#update (for 0.0.0.0 at 2009-11-27 18:32:34) [PUT]
+  Parameters: {"id"=>"2053932785", "song"=>{}}
+  [4;35;1mSong Load (1.3ms)[0m   [0mSELECT * FROM "songs" WHERE ("songs"."id" = 2053932785) [0m
+  [4;36;1mGenre Load (0.4ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.3ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:35:16', 1198250151, '2009-11-27 18:35:16', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(-1) AS count_1 FROM "bands" [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(-1) AS count_1 FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (8.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.3ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:37:39', 1198250151, '2009-11-27 18:37:39', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mGenre Load (1.1ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.6ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:39:46', 1198250151, '2009-11-27 18:39:46', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.6ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.2ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.9ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:40:15', 1198250151, '2009-11-27 18:40:15', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mBand Create (1.3ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:43:04', 1198250151, '2009-11-27 18:43:04', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Destroy (0.5ms)[0m   [0;1mDELETE FROM "bands" WHERE "id" = 945774106[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.4ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.3ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:43:04', 1198250151, '2009-11-27 18:43:04', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mBand Create (1.3ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:46:31', 1198250151, '2009-11-27 18:46:31', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Destroy (0.5ms)[0m   [0;1mDELETE FROM "bands" WHERE "id" = 945774106[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.3ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:46:32', 1198250151, '2009-11-27 18:46:32', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mGenre Load (1.2ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;36;1mCountry Load (1.2ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Create (1.3ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('teste', 'Essen', '2009-11-27 18:46:32', 1198250151, '2009-11-27 18:46:32', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (0.4ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (0.4ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mBand Create (0.5ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:47:00', 1198250151, '2009-11-27 18:47:00', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Destroy (0.2ms)[0m   [0;1mDELETE FROM "bands" WHERE "id" = 945774106[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (0.4ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (0.4ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (0.4ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:47:00', 1198250151, '2009-11-27 18:47:00', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mGenre Load (0.4ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Create (0.5ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('teste', 'Essen', '2009-11-27 18:47:00', 1198250151, '2009-11-27 18:47:00', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mBand Create (1.3ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:47:36', 1198250151, '2009-11-27 18:47:36', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Destroy (0.5ms)[0m   [0;1mDELETE FROM "bands" WHERE "id" = 945774106[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.3ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:47:36', 1198250151, '2009-11-27 18:47:36', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mGenre Load (1.2ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mBand Create (1.3ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:54:04', 1198250151, '2009-11-27 18:54:04', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Destroy (0.5ms)[0m   [0;1mDELETE FROM "bands" WHERE "id" = 945774106[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.0ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.3ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:54:04', 1198250151, '2009-11-27 18:54:04', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mGenre Load (1.2ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mBand Create (1.3ms)[0m   [0;1mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:55:48', 1198250151, '2009-11-27 18:55:48', 1520992555, 'About Kreator...', 1983)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mBand Destroy (0.5ms)[0m   [0;1mDELETE FROM "bands" WHERE "id" = 945774106[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mGenre Load (1.2ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;35;1mCountry Load (1.1ms)[0m   [0mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mBand Create (1.3ms)[0m   [0mINSERT INTO "bands" ("name", "city", "created_at", "genre_id", "updated_at", "country_id", "about", "year") VALUES('Kreator', 'Essen', '2009-11-27 18:55:48', 1198250151, '2009-11-27 18:55:48', 1520992555, 'About Kreator...', 1983)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mGenre Load (1.3ms)[0m   [0mSELECT * FROM "genres" WHERE ("genres"."id" = 1198250151) [0m
+  [4;36;1mCountry Load (1.0ms)[0m   [0;1mSELECT * FROM "countries" WHERE ("countries"."id" = 1520992555) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "bands" [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bands" [0m
