@@ -1,6 +1,6 @@
 "pt-BR":
   # formatos de data e hora
-  
+
   date:
     formats:
       default: "%d/%m/%Y"
@@ -135,7 +135,8 @@
         genre: "Gênero"
         year: "Ano"
         city: "Cidade"
-        country: "País"                        
+        country: "País"
+        origin: "Origem"                        
         about: "Sobre"
       
     errors:
@@ -165,4 +166,10 @@
         less_than_or_equal_to: "deve ser menor ou igual a {{count}}"
         odd: "deve ser ímpar"
         even: "deve ser par"
+        
+  messages:
+    success:
+      band:
+        save: "Banda salva com sucesso!"
+        update: "Banda alterada com sucesso!"
       

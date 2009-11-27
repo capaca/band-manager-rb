@@ -41,6 +41,14 @@ input, textarea {
 	margin-top: 10px;
 }
 
+.form label {
+  font-weight: bold;
+}
+
+.form select {
+  width: 90%;
+}
+
 .form th{
 	text-align: left;
 	padding-left: 20px;
@@ -50,11 +58,12 @@ input, textarea {
 
 .form td{
 	text-align: justify;
+  padding-top: 5px;
 }
 
 .content {
   background-color: #202020;
-  padding: 20px;
+  padding: 12px;
 }
 
 .banda {
@@ -70,6 +79,23 @@ input, textarea {
 
 .banda p {
   margin: 0px;
+}
+
+.banda label {
+  font-weight: bold;
+}
+
+.detalhes label{
+  font-weight: bold;
+}
+
+.opcoes {
+  margin: 0px;
+  text-align: right;
+}
+
+.centro {
+  text-align: center;
 }
 
 .listagem {
@@ -153,7 +179,7 @@ th.headerSortDown {
 	font-size: 13px;
 }
 
-p, ul, ol {
+ul, ol {
 	margin-top: 0;
 	line-height: 240%;
 	text-align: justify;
@@ -345,15 +371,40 @@ hr { display: none; }
 	text-align: left;
 }
 
+/*
 .fieldWithErrors {
-  padding: 2px;
+  padding: 0px;
   background-color: red;
   display: table;
+}
+*/
+
+.fieldWithErrors {
+  padding: 0px;
+  display: inline;
+}
+
+.fieldWithErrors input{
+  background: #FFFFFF; /*#FFFFA8;*/
+	border:2px solid #c00;
+  display: inline;
+}
+
+.fieldWithErrors textarea{
+  background: #FFFFFF; /*#FFFFA8;*/
+	border:2px solid #c00;
+  display: inline;
+}
+
+.fieldWithErrors select{
+  background: #FFFFFF; /*#FFFFA8;*/
+	border:2px solid #c00;
+  display: inline;
 }
 
 #errorExplanation {
   width: 400px;
-  border: 2px solid red;
+  border: 1px solid red;
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
@@ -368,6 +419,7 @@ hr { display: none; }
   margin: -7px;
   background-color: #c00;
   color: #fff;
+  font-family: inherit;
 }
 
 #errorExplanation p {

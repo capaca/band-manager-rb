@@ -1,33 +1,36 @@
-<p>
-  <b>Name:</b>
-  <%=h @band.name %>
-</p>
+<%= corner "content"%>
 
-<p>
-  <b>Genre:</b>
-  <%=h @band.genre.title %>
-</p>
+<h1><%= @band.name %></h1>
 
-<p>
-  <b>Year:</b>
-  <%=h @band.year %>
-</p>
+<div class="content detalhes" id="content">
+  <p>
+    <%= field_label "band.genre" %>
+    <%=h @band.genre.title %>
+  </p>
+  
+  <p>
+    <%= field_label "band.origin" %>
+    <%=h @band.city %>/<%=h @band.country.name %>
+  </p>
 
-<p>
-  <b>City:</b>
-  <%=h @band.city %>
-</p>
+   <p>
+    <%= field_label "band.year" %>
+    <%=h @band.year %>
+  </p>
+  
+  <p>
+    <%= field_label "band.about" %>
+    <%=h @band.about %>
+  </p>
+  
+  <div class="opcoes">
+    <%= link_to 'Editar', edit_band_path(@band) %> |
+    <%= link_to 'Remover', @band, :confirm => 'Você tem certeza?', :method => :delete %>
+  </div>  
+</div>
 
-<p>
-  <b>Country:</b>
-  <%=h @band.country.name %>
-</p>
+<br/>
+<div class="opcoes centro">
+  <%= link_to 'Voltar', bands_path %>
+</div>
 
-<p>
-  <b>About:</b>
-  <%=h @band.about %>
-</p>
-
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>

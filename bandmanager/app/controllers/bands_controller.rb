@@ -69,7 +69,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.update_attributes(params[:band])
-        flash[:notice] = 'Band was successfully updated.'
+        flash[:notice] = get_message "band.update"
         format.html { redirect_to(@band) }
         format.xml  { head :ok }
       else

@@ -1,13 +1,5 @@
+<%= corner "content" %>
 <h1>Bandas</h1>
-
-<script type="text/javascript">
-					$(document).ready(function(){
-					  
-				$("#content").corner(); 
-			
-					});
-</script>
-
 
 <%= link_to 'Cadastrar uma nova banda', new_band_path, :style => "float: right;" %>
 
@@ -21,8 +13,8 @@
         <%= link_to band.name, band %>
       </h2>
       
-      <strong>Estilo:</strong> <%= band.genre.title %> <br/>    
-      <strong>Localização:</strong> <%= band.city %>/<%= band.country.name %>
+      <%= field_label "band.genre"%> <%= band.genre.title %> <br/>    
+       <%= field_label "band.origin"%> <%= band.city %>/<%= band.country.name %>
       
       <p>
         <%= band.about %>      

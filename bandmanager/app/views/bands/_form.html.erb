@@ -1,33 +1,46 @@
 <% form_for(@band) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :genre %><br />
-    <%= f.select :genre_id, @genres.map{|genre| [genre.title, genre.id] }, 
+  <table class="form">
+    <tr>
+      <td>
+        <%= field_label "band.name" %><br />
+        <%= f.text_field :name %>
+      </td>
+      <td>
+        <%= field_label "band.genre" %><br />
+        <%= f.select :genre_id, @genres.map{|genre| [genre.title, genre.id] }, 
 				             :include_blank => '-- escolha o estilo --' %>
-  </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= field_label "band.city" %><br />
+        <%= f.text_field :city %>
+      </td>
+      <td>
+        <%= field_label "band.country" %><br />
+        <% if @countries %>
+          <%= f.select :country_id, @countries.map{|country| [country.name, country.id] }, 
+			                 :include_blank => '-- escolha o país --' %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= field_label "band.year" %><br />
+        <%= f.text_field :year, :size => 10, :maxlength => 4 %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "band.about" %><br />
+        <%= f.text_area :about, :cols => 60 %>
+      </td>
+    </tr>
+  </table>
+
   <p>
-    <%= f.label :year %><br />
-    <%= f.text_field :year %>
-  </p>
-  <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :country %><br />
-    <% if @countries %>
-      <%= f.select :country_id, @countries.map{|country| [country.name, country.id] }, 
-				             :include_blank => '-- escolha o país --' %>
-    <% end %>
-  </p>
-  <p>
-    <%= f.label :about %><br />
-    <%= f.text_area :about %>
   </p>
   <p>
     <%= f.submit 'Salvar' %>

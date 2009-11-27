@@ -4,8 +4,6 @@ class BandsController < ApplicationController
   def index
     @bands = Band.all
 
-    flash[:notice] = t(:band)
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bands }
@@ -71,7 +69,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.update_attributes(params[:band])
-        flash[:notice] = 'Band was successfully updated.'
+        flash[:notice] = get_message "band.save"
         format.html { redirect_to(@band) }
         format.xml  { head :ok }
       else
