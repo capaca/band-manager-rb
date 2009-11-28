@@ -49,7 +49,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.save
-        flash[:notice] = 'Band was successfully created.'
+        flash[:notice] = get_message "band.save"
         format.html { redirect_to(@band) }
         format.xml  { render :xml => @band, :status => :created, :location => @band }
       else

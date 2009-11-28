@@ -1,7 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 germany:
+  id: 1
   name: Germany
 
 brasil:
+  id: 2
   name: brasil

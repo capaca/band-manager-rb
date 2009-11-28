@@ -14,30 +14,30 @@ class CountriesControllerTest < ActionController::TestCase
 
   test "should create country" do
     assert_difference('Country.count') do
-      post :create, :country => { }
+      post :create, :country => {:name => "China"}
     end
 
     assert_redirected_to country_path(assigns(:country))
   end
 
   test "should show country" do
-    get :show, :id => countries(:one).to_param
+    get :show, :id => countries(:brasil).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => countries(:one).to_param
+    get :edit, :id => countries(:brasil).to_param
     assert_response :success
   end
 
   test "should update country" do
-    put :update, :id => countries(:one).to_param, :country => { }
+    put :update, :id => countries(:brasil).to_param, :country => { }
     assert_redirected_to country_path(assigns(:country))
   end
 
   test "should destroy country" do
     assert_difference('Country.count', -1) do
-      delete :destroy, :id => countries(:one).to_param
+      delete :destroy, :id => countries(:brasil).to_param
     end
 
     assert_redirected_to countries_path

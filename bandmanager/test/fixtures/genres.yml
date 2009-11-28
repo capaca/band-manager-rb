@@ -1,7 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 thrash:
+  id: 1
   title: Thrash Metal
 
 death:
+  id: 2
   title: Death Metal

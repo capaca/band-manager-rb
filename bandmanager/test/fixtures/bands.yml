@@ -1,10 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 violator:
+  id: 1
   name: Violator
-  genre: genres(:thrash)
+  genre_id: 1
   year: 2002
   city: Brasília
-  country: countries(:brasil)
+  country_id: 2
   about: Sobre o Violator...
   
