@@ -10,17 +10,6 @@ class GenresController < ApplicationController
     end
   end
 
-  # GET /genres/1
-  # GET /genres/1.xml
-  def show
-    @genre = Genre.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @genre }
-    end
-  end
-
   # GET /genres/new
   # GET /genres/new.xml
   def new
@@ -32,11 +21,6 @@ class GenresController < ApplicationController
     end
   end
 
-  # GET /genres/1/edit
-  def edit
-    @genre = Genre.find(params[:id])
-  end
-
   # POST /genres
   # POST /genres.xml
   def create
@@ -44,28 +28,11 @@ class GenresController < ApplicationController
 
     respond_to do |format|
       if @genre.save
-        flash[:notice] = 'Genre was successfully created.'
-        format.html { redirect_to(@genre) }
+        flash[:notice] = get_message "genre.save"
+        format.html { redirect_to(genres_url) }
         format.xml  { render :xml => @genre, :status => :created, :location => @genre }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @genre.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /genres/1
-  # PUT /genres/1.xml
-  def update
-    @genre = Genre.find(params[:id])
-
-    respond_to do |format|
-      if @genre.update_attributes(params[:genre])
-        flash[:notice] = 'Genre was successfully updated.'
-        format.html { redirect_to(@genre) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
         format.xml  { render :xml => @genre.errors, :status => :unprocessable_entity }
       end
     end

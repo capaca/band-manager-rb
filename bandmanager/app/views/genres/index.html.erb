@@ -1,20 +1,27 @@
-<h1>Listing genres</h1>
+<%= corner "content" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-  </tr>
+<h1>Gêneros</h1>
 
-<% @genres.each do |genre| %>
-  <tr>
-    <td><%=h genre.title %></td>
-    <td><%= link_to 'Show', genre %></td>
-    <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
-    <td><%= link_to 'Destroy', genre, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="direita">
+  <%= link_to 'Cadastrar um novo gênero', new_genre_path %>
+</div>
 
-<br />
+<br/>
 
-<%= link_to 'New genre', new_genre_path %>
+<div id="content" class="content">
+  <% if @genres.size > 0 %>
+    <% @genres.each do |genre| %>
+      <p>
+        <%=h genre.title %> | 
+        <%= link_to 'Remover', genre, :confirm => 'Você tem certeza?', :method => :delete %>
+      </p>
+    <% end %>
+  <% else %>
+    <center>
+      <em>
+        Nenhum gênero encontrado.
+      </em>
+    </center>
+  <% end %>
+</div>
+

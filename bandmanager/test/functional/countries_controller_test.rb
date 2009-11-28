@@ -17,22 +17,7 @@ class CountriesControllerTest < ActionController::TestCase
       post :create, :country => {:name => "China"}
     end
 
-    assert_redirected_to country_path(assigns(:country))
-  end
-
-  test "should show country" do
-    get :show, :id => countries(:brasil).to_param
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, :id => countries(:brasil).to_param
-    assert_response :success
-  end
-
-  test "should update country" do
-    put :update, :id => countries(:brasil).to_param, :country => { }
-    assert_redirected_to country_path(assigns(:country))
+    assert_redirected_to countries_path
   end
 
   test "should destroy country" do

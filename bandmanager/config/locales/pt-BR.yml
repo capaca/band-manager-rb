@@ -138,6 +138,12 @@
         country: "País"
         origin: "Origem"                        
         about: "Sobre"
+        
+      genre:
+        title: "Título"
+        
+      country:
+        name: "Nome"
       
     errors:
       template:
@@ -172,4 +178,7 @@
       band:
         save: "Banda salva com sucesso!"
         update: "Banda alterada com sucesso!"
+        
+      genre:
+        save: "Gênero salvo com sucesso!"
       

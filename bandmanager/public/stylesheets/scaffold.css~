@@ -98,6 +98,14 @@ input, textarea {
   text-align: center;
 }
 
+.esquerda {
+  text-align: left;
+}
+
+.direita {
+  text-align: right;
+}
+
 .listagem {
 	width: 90%;
 }
@@ -371,6 +379,21 @@ hr { display: none; }
 	text-align: left;
 }
 
+
+#success {
+	margin: auto;
+	margin-top: 20px;
+	padding: 2px;
+	background: url(images/img04.jpg) no-repeat;
+	border: 2px solid #003300;
+	color: #002100;
+}
+
+.success {
+  background: url(images/icon_sucess_16.png);
+  padding-left: 20px;
+}
+
 /*
 .fieldWithErrors {
   padding: 0px;
@@ -419,7 +442,7 @@ hr { display: none; }
   margin: -7px;
   background-color: #c00;
   color: #fff;
-  font-family: inherit;
+  font-family: sans-serif;
 }
 
 #errorExplanation p {

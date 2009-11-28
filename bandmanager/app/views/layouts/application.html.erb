@@ -21,7 +21,15 @@
 		  <%= render :partial => "layouts/cabecalho" %>
 		</div>
 		<div id="page">
-      <p style="color: green"><%= flash[:notice] %></p>
+		
+		  <% if flash[:notice] %>
+		    <div id="success">
+		      <span class="success">
+            <%= flash[:notice] %>
+		      </span>
+		    </div>
+		  <% end %>
+		
       <%= yield %>
 		</div>
 	</div>

@@ -12,12 +12,12 @@
 ActiveRecord::Schema.define(:version => 20091120201408) do
 
   create_table "bands", :force => true do |t|
-    t.string   "name"
-    t.integer  "genre_id"
-    t.integer  "year"
-    t.string   "city"
-    t.integer  "country_id"
-    t.text     "about"
+    t.string   "name",       :null => false
+    t.integer  "genre_id",   :null => false
+    t.integer  "year",       :null => false
+    t.string   "city",       :null => false
+    t.integer  "country_id", :null => false
+    t.text     "about",      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

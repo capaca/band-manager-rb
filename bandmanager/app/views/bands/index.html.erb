@@ -1,25 +1,32 @@
 <%= corner "content" %>
 <h1>Bandas</h1>
 
-<%= link_to 'Cadastrar uma nova banda', new_band_path, :style => "float: right;" %>
+<div class="direita">
+  <%= link_to 'Cadastrar uma nova banda', new_band_path %>
+</div>
 
-<br/>
 <br/>
 
 <div class="content" id="content">
-  <% @bands.each_with_index do |band, index| %>
-    <div class="banda">
-      <h2>
-        <%= link_to band.name, band %>
-      </h2>
-      
-      <%= field_label "band.genre"%> <%= band.genre.title %> <br/>    
-       <%= field_label "band.origin"%> <%= band.city %>/<%= band.country.name %>
-      
-      <p>
-        <%= band.about %>      
-      </p>
-    </div>
+  <% if @bands.size > 0 %>
+    <% @bands.each_with_index do |band, index| %>
+      <div class="banda">
+        <h2>
+          <%= link_to band.name, band %>
+        </h2>
+        
+        <%= field_label "band.genre"%> <%= band.genre.title %> <br/>    
+         <%= field_label "band.origin"%> <%= band.city %>/<%= band.country.name %>
+        
+        <p>
+          <%= band.about %>      
+        </p>
+      </div>
+    <% end %>
+  <% else %>
+    <center>
+      <em>Nenhuma banda encontrada.</em>
+    </center>
   <% end %>
 </div>
 

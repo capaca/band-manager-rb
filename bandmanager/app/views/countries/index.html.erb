@@ -1,20 +1,24 @@
-<h1>Listing countries</h1>
+<%= corner "content" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
+<h1>Países</h1>
 
-<% @countries.each do |country| %>
-  <tr>
-    <td><%=h country.name %></td>
-    <td><%= link_to 'Show', country %></td>
-    <td><%= link_to 'Edit', edit_country_path(country) %></td>
-    <td><%= link_to 'Destroy', country, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class="direita">
+  <%= link_to 'Cadastrar um novo país', new_country_path %>
+</div>
+
+<br/>
+
+<div id="content" class="content">
+<% if @countries.size > 0 %>
+  <% @countries.each do |country| %>
+    <%=h country.name %> | 
+    <%= link_to 'Remover', country, :confirm => 'Você tem certeza?', :method => :delete %>
+  <% end %>
+<% else %>
+  <center>
+    <em>
+      Nenhum país encontrado.
+    </em>
+  </center>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New country', new_country_path %>
+</div>

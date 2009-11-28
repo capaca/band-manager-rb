@@ -98,6 +98,14 @@ input, textarea {
   text-align: center;
 }
 
+.esquerda {
+  text-align: left;
+}
+
+.direita {
+  text-align: right;
+}
+
 .listagem {
 	width: 90%;
 }
@@ -369,6 +377,21 @@ hr { display: none; }
 	padding: 0 40px;
 	width: 90%;
 	text-align: left;
+}
+
+
+#success {
+	margin: auto;
+	margin-top: 20px;
+	padding: 2px;
+	background: url(images/img04.jpg) repeat;
+	border: 2px solid #003300;
+	color: #002100;
+}
+
+.success {
+  background: url(images/icon_sucess_16.png) no-repeat;
+  padding-left: 20px;
 }
 
 /*

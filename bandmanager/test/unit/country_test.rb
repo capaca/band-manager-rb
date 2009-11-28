@@ -3,7 +3,7 @@ require 'test_helper'
 class CountryTest < ActiveSupport::TestCase
   
   test "Should save a country" do
-    country = Country.new :name => "Brasil"
+    country = Country.new :name => "Argentina"
     
     assert_difference "Country.count" do
       country.save
@@ -11,11 +11,8 @@ class CountryTest < ActiveSupport::TestCase
   end
   
   test "Should destroy a country" do
-    country = Country.new :name => "Brasil"
-    country.save
-    
     assert_difference "Country.count", -1 do
-      country.destroy
+      countries(:brasil).destroy
     end
   end
   
@@ -26,6 +23,16 @@ class CountryTest < ActiveSupport::TestCase
       country.save
     end
     
-    assert country.errors
+    assert country.errors[:name]
+  end
+  
+  test "should validate uniqueness of name attribute" do
+    country = Country.new :name => countries(:brasil).name
+    
+    assert_no_difference "Country.count" do
+      country.save
+    end
+    
+    assert country.errors[:name]
   end
 end
