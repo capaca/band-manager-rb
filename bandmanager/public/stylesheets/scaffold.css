@@ -75,14 +75,19 @@ input, textarea {
 
 .banda h2 {
   margin-top: 0px;
-}
-
-.banda p {
-  margin: 0px;
-}
+}W
 
 .banda label {
   font-weight: bold;
+}
+
+.banda .sobre {
+  margin-top: 10px;
+  margin-bottom: 10px;  
+}
+
+.banda .sobre img {
+  margin-right: 5px;
 }
 
 .detalhes label{

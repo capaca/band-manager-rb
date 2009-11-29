@@ -138,6 +138,7 @@
         country: "País"
         origin: "Origem"                        
         about: "Sobre"
+        picture: "Foto"
         
       genre:
         title: "Título"

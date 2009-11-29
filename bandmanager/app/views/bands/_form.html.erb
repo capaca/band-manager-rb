@@ -1,4 +1,4 @@
-<% form_for(@band) do |f| %>
+<% form_for(@band, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <table class="form">
@@ -36,6 +36,12 @@
       <td colspan="2">
         <%= field_label "band.about" %><br />
         <%= f.text_area :about, :cols => 60 %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "band.picture" %><br />
+        <%= file_field :picture, :uploaded_data %>
       </td>
     </tr>
   </table>

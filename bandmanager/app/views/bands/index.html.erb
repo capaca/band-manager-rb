@@ -15,12 +15,31 @@
           <%= link_to band.name, band %>
         </h2>
         
-        <%= field_label "band.genre"%> <%= band.genre.title %> <br/>    
-         <%= field_label "band.origin"%> <%= band.city %>/<%= band.country.name %>
-        
         <p>
-          <%= band.about %>      
+          <%= field_label "band.genre" %>
+          <%=h band.genre.title %>
         </p>
+          
+        <p>
+          <%= field_label "band.origin" %>
+          <%=h band.city %>/<%=h band.country.name %>
+        </p>
+
+        <p>
+          <%= field_label "band.year" %>
+          <%=h band.year %>
+        </p>
+        
+        <div class="sobre">
+          <% if band.picture %>
+            <%= link_to image_tag(band.picture.public_filename(:thumb), :align => :left), 
+                        band.picture.public_filename %>
+          <% end %>
+          <%= band.about %>      
+        </div>
+        <div style="clear: both"></div>
+        
+        <br />
       </div>
     <% end %>
   <% else %>

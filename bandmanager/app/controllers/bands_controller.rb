@@ -46,7 +46,8 @@ class BandsController < ApplicationController
   # POST /bands.xml
   def create
     @band = Band.new(params[:band])
-
+    @band.picture = Attachment.new(params[:picture])
+    
     respond_to do |format|
       if @band.save
         flash[:notice] = get_message "band.save"
@@ -68,7 +69,9 @@ class BandsController < ApplicationController
     @band = Band.find(params[:id])
 
     respond_to do |format|
-      if @band.update_attributes(params[:band])
+      if @band.update_attributes(params[:band]) && 
+         @band.picture.update_attributes(params[:picture])
+         
         flash[:notice] = get_message "band.update"
         format.html { redirect_to(@band) }
         format.xml  { head :ok }
