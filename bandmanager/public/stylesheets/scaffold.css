@@ -46,7 +46,7 @@ input, textarea {
 }
 
 .form select {
-  width: 90%;
+  width: 60%;
 }
 
 .form th{
@@ -75,19 +75,23 @@ input, textarea {
 
 .banda h2 {
   margin-top: 0px;
-}W
+}
 
 .banda label {
   font-weight: bold;
 }
 
-.banda .sobre {
+.sobre {
   margin-top: 10px;
   margin-bottom: 10px;  
 }
 
-.banda .sobre img {
+.sobre img {
   margin-right: 5px;
+}
+
+.sobre img {
+  border: 2px solid #404040;
 }
 
 .detalhes label{

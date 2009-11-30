@@ -46,7 +46,14 @@ class BandsController < ApplicationController
   # POST /bands.xml
   def create
     @band = Band.new(params[:band])
-    @band.picture = Attachment.new(params[:picture])
+    
+     if(params[:logo])
+      @band.logo = BandLogo.new(params[:logo])
+    end
+
+    if(params[:picture])
+      @band.picture = BandPicture.new(params[:picture])
+    end
     
     respond_to do |format|
       if @band.save
@@ -67,15 +74,30 @@ class BandsController < ApplicationController
   # PUT /bands/1.xml
   def update
     @band = Band.find(params[:id])
-
+    
     respond_to do |format|
-      if @band.update_attributes(params[:band]) && 
-         @band.picture.update_attributes(params[:picture])
-         
+      begin
+        @band.update_attributes!(params[:band])
+
+        if(@band.logo.nil?)
+          @band.logo = BandLogo.new(params[:logo])
+          @band.save!
+        else
+          @band.logo.update_attributes!(params[:logo])
+        end   
+
+        if(@band.picture.nil?)
+          @band.picture = BandPicture.new(params[:picture])
+          @band.save!
+        else
+          @band.picture.update_attributes!(params[:picture])
+        end    
+        
         flash[:notice] = get_message "band.update"
         format.html { redirect_to(@band) }
         format.xml  { head :ok }
-      else
+        
+      rescue ActiveRecord::RecordInvalid
         @countries = Country.all
         @genres = Genre.all
         
@@ -96,4 +118,31 @@ class BandsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def destroy_picture
+    @band = Band.find(params[:id])
+    
+    if(@band.picture)
+      @band.picture.destroy
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to edit_band_path(@band) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def destroy_logo
+    @band = Band.find(params[:id])
+    
+    if(@band.logo)
+      @band.logo.destroy
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to edit_band_path(@band) }
+      format.xml  { head :ok }
+    end
+  end
+  
 end

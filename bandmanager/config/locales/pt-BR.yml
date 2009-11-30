@@ -138,6 +138,7 @@
         country: "País"
         origin: "Origem"                        
         about: "Sobre"
+        logo: "Logo"
         picture: "Foto"
         
       genre:
@@ -179,6 +180,7 @@
       band:
         save: "Banda salva com sucesso!"
         update: "Banda alterada com sucesso!"
+        picture_destroy: "Foto removida com sucesso!"
         
       genre:
         save: "Gênero salvo com sucesso!"

@@ -5,6 +5,9 @@ class Country < ActiveRecord::Base
   validates_uniqueness_of :name, :case_sensitive => false;
   
   def name
-    read_attribute(:name).capitalize
+    name = read_attribute(:name)
+    if(name)
+      read_attribute(:name).capitalize
+    end
   end
 end

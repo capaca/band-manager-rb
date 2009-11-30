@@ -37,15 +37,11 @@ ActiveRecord::Schema.define(:version => 20091128231544) do
   end
 
   create_table "countries", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
   end
 
   create_table "genres", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "title"
   end
 
   create_table "releases", :force => true do |t|

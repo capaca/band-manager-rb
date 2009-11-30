@@ -22,7 +22,8 @@
         <%= field_label "band.country" %><br />
         <% if @countries %>
           <%= f.select :country_id, @countries.map{|country| [country.name, country.id] }, 
-			                 :include_blank => '-- escolha o país --' %>
+			                 :include_blank => '-- escolha o país --',
+			                 :escape => :false %>
         <% end %>
       </td>
     </tr>
@@ -40,10 +41,39 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= field_label "band.picture" %><br />
-        <%= file_field :picture, :uploaded_data %>
+        <%= field_label "band.logo" %><br />
+        
+        <% if @band.logo %>
+          <%= link_to("Logo atual", @band.logo.public_filename) %> | 
+          <%= link_to("Remover logo", 
+                { :controller => "bands", 
+                  :action => "destroy_logo", 
+                  :id => @band, 
+                 }, :method => :post) 
+          %>
+          <br />
+        <% end %>
+         
+        <%= file_field :logo, :uploaded_data %>
       </td>
     </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "band.picture" %><br />
+        
+        <% if @band.picture %>
+          <%= link_to("Foto atual", @band.picture.public_filename) %> | 
+          <%= link_to("Remover foto", 
+                { :controller => "bands", 
+                  :action => "destroy_picture", 
+                  :id => @band, 
+                 }, :method => :post) 
+          %>
+          <br />
+        <% end %>
+         
+        <%= file_field :picture, :uploaded_data %>
+      </td>
   </table>
 
   <p>

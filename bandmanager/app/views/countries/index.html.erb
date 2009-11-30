@@ -11,8 +11,8 @@
 <div id="content" class="content">
 <% if @countries.size > 0 %>
   <% @countries.each do |country| %>
-    <%=h country.name %> | 
-    <%= link_to 'Remover', country, :confirm => 'Você tem certeza?', :method => :delete %>
+    <%= country.name %> | 
+    <%= link_to 'Remover', country, :confirm => 'Você tem certeza?', :method => :delete %><br />
   <% end %>
 <% else %>
   <center>

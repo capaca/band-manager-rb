@@ -3,25 +3,30 @@
 <h1><%= @band.name %></h1>
 
 <div class="content detalhes" id="content">
-  <p>
-    <%= field_label "band.genre" %>
-    <%=h @band.genre.title %>
-  </p>
-  
-  <p>
-    <%= field_label "band.origin" %>
-    <%=h @band.city %>/<%=h @band.country.name %>
-  </p>
 
-   <p>
-    <%= field_label "band.year" %>
-    <%=h @band.year %>
-  </p>
+  <% if @band.logo %>
+    <div style="text-align: center;">
+      <%= image_tag @band.logo.public_filename %>  
+    </div>
+  <% end %>
   
-  <p>
-    <%= field_label "band.about" %>
-    <%=h @band.about %>
-  </p>
+  <div class="sobre">
+    <% if @band.picture %>
+      <%= image_tag(@band.picture.public_filename, :align => :left) %>
+    <% end %>
+    
+    <%= field_label "band.genre" %>
+    <%=h @band.genre.title %><br/>
+  
+    <%= field_label "band.origin" %>
+    <%=h @band.city %>/<%=h @band.country.name %><br/>
+
+    <%= field_label "band.year" %>
+    <%=h @band.year %><br/>
+    
+    <p style="text-align: justify;"><%=simple_format @band.about %></p>
+  </div>
+  <div style="clear: both"></div>
   
   <div class="opcoes">
     <%= link_to 'Editar', edit_band_path(@band) %> |

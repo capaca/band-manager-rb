@@ -14,28 +14,26 @@
         <h2>
           <%= link_to band.name, band %>
         </h2>
-        
-        <p>
-          <%= field_label "band.genre" %>
-          <%=h band.genre.title %>
-        </p>
-          
-        <p>
-          <%= field_label "band.origin" %>
-          <%=h band.city %>/<%=h band.country.name %>
-        </p>
-
-        <p>
-          <%= field_label "band.year" %>
-          <%=h band.year %>
-        </p>
-        
+      
         <div class="sobre">
           <% if band.picture %>
             <%= link_to image_tag(band.picture.public_filename(:thumb), :align => :left), 
-                        band.picture.public_filename %>
+                        band_path(band) %>
           <% end %>
-          <%= band.about %>      
+          
+          <%= field_label "band.genre" %>
+          <%=h band.genre.title %><br />
+          
+          <%= field_label "band.origin" %>
+          <%=h band.city %>/<%=h band.country.name %><br />
+
+          <%= field_label "band.year" %>
+          <%=h band.year %><br />
+          
+          <span style="text-align: justify;">
+            <%=truncate(simple_format(h band.about), :length => 500) %> 
+            <%= link_to "(ler mais)", band_path(band)%>
+          </span>
         </div>
         <div style="clear: both"></div>
         
