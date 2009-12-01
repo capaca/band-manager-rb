@@ -28,10 +28,27 @@
   </div>
   <div style="clear: both"></div>
   
+  <br />
+  
   <div class="opcoes">
     <%= link_to 'Editar', edit_band_path(@band) %> |
     <%= link_to 'Remover', @band, :confirm => 'Você tem certeza?', :method => :delete %>
-  </div>  
+  </div>
+  
+  <br />
+  
+  <h2>Lançamentos</h2>
+  
+  <div class="direita">
+    <%= link_to 'Cadastrar um novo lançamento', new_band_release_path(@band) %>
+  </div>
+  
+  <%= render :partial => 'releases/list', :locals => {:releases => @band.releases}%>
+
+
+  <br />
+  
+    
 </div>
 
 <br/>

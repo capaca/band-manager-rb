@@ -1,0 +1,25 @@
+<% form_for([@band, @release]) do |f| %> 
+  <%= f.error_messages %>
+
+  <table class="form">
+    <tr>
+      <td>
+        <%= field_label "release.title" %><br />
+        <%= f.text_field :title %>
+      </td>
+      <td>
+        <%= field_label "release.year" %><br />
+        <%= f.text_field :year, :size => 10, :maxlength => 4 %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "release.details" %><br />
+        <%= f.text_area :details, :cols => 50 %>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <%= f.submit 'Salvar' %>
+  </p>
+<% end %>

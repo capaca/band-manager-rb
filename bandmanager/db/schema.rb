@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20091128231544) do
   end
 
   create_table "releases", :force => true do |t|
+    t.integer  "band_id"
     t.string   "title"
     t.integer  "year"
     t.text     "details"

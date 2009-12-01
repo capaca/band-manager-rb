@@ -24,6 +24,7 @@ class ReleasesController < ApplicationController
   # GET /releases/new
   # GET /releases/new.xml
   def new
+    @band = Band.find(params[:band_id])
     @release = Release.new
 
     respond_to do |format|
@@ -35,17 +36,20 @@ class ReleasesController < ApplicationController
   # GET /releases/1/edit
   def edit
     @release = Release.find(params[:id])
+    @band = @release.band
   end
 
   # POST /releases
   # POST /releases.xml
   def create
+    @band = Band.find(params[:band_id])
     @release = Release.new(params[:release])
+    @release.band = @band
 
     respond_to do |format|
       if @release.save
         flash[:notice] = 'Release was successfully created.'
-        format.html { redirect_to(@release) }
+        format.html { redirect_to(@band) }
         format.xml  { render :xml => @release, :status => :created, :location => @release }
       else
         format.html { render :action => "new" }
@@ -62,7 +66,7 @@ class ReleasesController < ApplicationController
     respond_to do |format|
       if @release.update_attributes(params[:release])
         flash[:notice] = 'Release was successfully updated.'
-        format.html { redirect_to(@release) }
+        format.html { redirect_to(@release.band) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

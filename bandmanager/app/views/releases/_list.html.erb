@@ -1,0 +1,27 @@
+<% if releases and releases.size > 0 %>
+  <% releases.each do |release| %>
+    <div class="lancamento">
+      <%=h release.title %>
+      <em>(<%=h release.year %>)</em>
+    
+      <br /><br />
+
+      <%= field_label "release.details" %><br />
+      <%=h release.details %><br />
+      
+      <br />
+      
+      <%= link_to 'Editar', edit_band_release_path(@band, release) %> |
+      
+      <%= link_to 'Remover', band_release_path(@band, release), 
+                  :confirm => 'Você tem certeza?', 
+                  :method => :delete 
+      %>
+    </div>
+  <% end %>
+<% else %>
+  <center>
+    <em>Nenhum lançamento encontrado.</em>
+  </center>
+<% end %>
+

@@ -141,6 +141,11 @@
         logo: "Logo"
         picture: "Foto"
         
+      release:
+        title: "Título"
+        year: "Ano"
+        details: "Detalhes"  
+        
       genre:
         title: "Título"
         

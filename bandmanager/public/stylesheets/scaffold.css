@@ -98,6 +98,10 @@ input, textarea {
   font-weight: bold;
 }
 
+.lancamento {
+  margin-bottom: 10px;
+}
+
 .opcoes {
   margin: 0px;
   text-align: right;
