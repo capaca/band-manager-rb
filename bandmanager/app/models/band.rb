@@ -12,7 +12,7 @@ class Band < ActiveRecord::Base
   belongs_to :picture, :class_name => "BandPicture", :dependent => :destroy
   belongs_to :logo,    :class_name => "BandLogo", :dependent => :destroy
   
-  has_many   :releases
+  has_many   :releases, :order => "year asc"
   
   validates_presence_of :name, :genre, :year, :city, :country, :about
   validates_associated :genre, :country

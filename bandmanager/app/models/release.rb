@@ -5,11 +5,14 @@ class Release < ActiveRecord::Base
   # details   string
   
   belongs_to :band 
+  belongs_to :cover,    :class_name => "ReleaseCover", :dependent => :destroy
+  
+  has_many :songs, :order => "track_number asc"
   
   validates_presence_of :title, :year, :band
   validates_associated  :band
   
-  validates_length_of   :details, :minimum => 10;
+  validates_length_of   :details, :minimum => 10
   
   validates_numericality_of :year, :only_integer => true
   
@@ -20,9 +23,8 @@ class Release < ActiveRecord::Base
         return
       end
     
-      if year > band.year
-        end_date = Converters::date_to_string(destination.end_date)
-        errors.add(:date, "deve ser menor ou igual ao anoda banda (#{band.year}).")
+      if year > Time.new.year
+        errors.add(:date, "deve ser menor ou igual ao ano atual (#{Time.new.year}).")
         return
       end
     end

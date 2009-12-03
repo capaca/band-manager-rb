@@ -24,7 +24,7 @@
     <%= field_label "band.year" %>
     <%=h @band.year %><br/>
     
-    <p style="text-align: justify;"><%=simple_format @band.about %></p>
+    <div style="text-align: justify;"><%=simple_format @band.about %></div>
   </div>
   <div style="clear: both"></div>
   
@@ -44,7 +44,6 @@
   </div>
   
   <%= render :partial => 'releases/list', :locals => {:releases => @band.releases}%>
-
 
   <br />
   

@@ -144,7 +144,15 @@
       release:
         title: "Título"
         year: "Ano"
-        details: "Detalhes"  
+        details: "Detalhes" 
+        cover: "Capa"
+        
+      song:
+        title: "Título"
+        track_number: "Número da faixa"
+        time: "Tempo"
+        lyrics: "Letra"
+        file: "Arquivo"
         
       genre:
         title: "Título"

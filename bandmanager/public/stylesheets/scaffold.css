@@ -66,6 +66,10 @@ input, textarea {
   padding: 12px;
 }
 
+.content h2{
+  border-bottom: 2px solid #D53707;
+}
+
 .banda {
   width: 100%;
   border: 0px solid white;
@@ -75,6 +79,7 @@ input, textarea {
 
 .banda h2 {
   margin-top: 0px;
+  border: 0px;
 }
 
 .banda label {
@@ -102,6 +107,11 @@ input, textarea {
   margin-bottom: 10px;
 }
 
+.musicas li {
+  list-style-type:  none;
+  font-size: 12px;
+  
+}
 .opcoes {
   margin: 0px;
   text-align: right;

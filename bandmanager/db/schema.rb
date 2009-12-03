@@ -49,13 +49,18 @@ ActiveRecord::Schema.define(:version => 20091128231544) do
     t.string   "title"
     t.integer  "year"
     t.text     "details"
+    t.integer  "cover_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "songs", :force => true do |t|
+    t.integer  "release_id"
     t.string   "title"
+    t.integer  "track_number"
+    t.time     "time"
     t.text     "lyrics"
+    t.integer  "file_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

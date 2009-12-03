@@ -47,7 +47,7 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(params[:band])
     
-     if(params[:logo])
+    if(params[:logo])
       @band.logo = BandLogo.new(params[:logo])
     end
 

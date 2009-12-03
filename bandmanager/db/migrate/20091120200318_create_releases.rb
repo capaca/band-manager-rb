@@ -5,6 +5,7 @@ class CreateReleases < ActiveRecord::Migration
       t.string  :title
       t.integer :year
       t.text    :details
+      t.integer :cover_id
       
       t.timestamps
     end

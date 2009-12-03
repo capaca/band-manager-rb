@@ -1,22 +1,50 @@
 <% if releases and releases.size > 0 %>
   <% releases.each do |release| %>
     <div class="lancamento">
-      <%=h release.title %>
-      <em>(<%=h release.year %>)</em>
-    
-      <br /><br />
-
-      <%= field_label "release.details" %><br />
-      <%=h release.details %><br />
       
+      <table>
+        <tr>
+          <% if(release.cover) %>
+          <td valign="top" rowspan="2">
+            <%= image_tag release.cover.public_filename %>
+          </td>
+          <% end %>
+          <td valign="top">
+            <strong>
+              <%=h release.title %>
+              <em>(<%=h release.year %>)</em>
+            </strong>
+            
+            <br />
+            <div style="text-align: justify;">
+              <%= field_label "release.details" %><br />
+              <%=simple_format h release.details %><br />
+            </div>
+            
+            <h3>Músicas</h3>
+            
+            <div class="direita">
+              <%= link_to 'Cadastrar uma nova música', new_band_release_song_path(@band, release) %>
+            </div>
+            
+            <div class="musicas">
+              <%= render :partial => "songs/list", :locals => {:songs => release.songs} %>
+            </div>
+            
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to 'Editar', edit_band_release_path(@band, release) %> |
+            
+            <%= link_to 'Remover', band_release_path(@band, release), 
+                        :confirm => 'Você tem certeza?', 
+                        :method => :delete 
+            %>
+          </td>
+        </tr>
+      </table>
       <br />
-      
-      <%= link_to 'Editar', edit_band_release_path(@band, release) %> |
-      
-      <%= link_to 'Remover', band_release_path(@band, release), 
-                  :confirm => 'Você tem certeza?', 
-                  :method => :delete 
-      %>
     </div>
   <% end %>
 <% else %>

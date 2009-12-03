@@ -1,15 +1,4 @@
 class SongsController < ApplicationController
-  # GET /songs
-  # GET /songs.xml
-  def index
-    @songs = Song.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @songs }
-    end
-  end
-
   # GET /songs/1
   # GET /songs/1.xml
   def show
@@ -24,6 +13,8 @@ class SongsController < ApplicationController
   # GET /songs/new
   # GET /songs/new.xml
   def new
+    @release = Release.find(params[:release_id])
+    @band = @release.band
     @song = Song.new
 
     respond_to do |format|
@@ -34,18 +25,24 @@ class SongsController < ApplicationController
 
   # GET /songs/1/edit
   def edit
+    @release = Release.find(params[:release_id])
+    @band = @release.band
     @song = Song.find(params[:id])
   end
 
   # POST /songs
   # POST /songs.xml
   def create
+    @release = Release.find(params[:release_id])
+    @band = @release.band
     @song = Song.new(params[:song])
+
+    @song.release = @release
 
     respond_to do |format|
       if @song.save
         flash[:notice] = 'Song was successfully created.'
-        format.html { redirect_to(@song) }
+        format.html { redirect_to(@band) }
         format.xml  { render :xml => @song, :status => :created, :location => @song }
       else
         format.html { render :action => "new" }
