@@ -1,0 +1,42 @@
+<% form_for([@band, @release, @song], :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <table class="form">
+    <tr>
+      <td colspan="2">
+        <%= field_label "song.title" %><br />
+        <%= f.text_field :title, :size => 30, :style => "width: 82%;" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= field_label "song.track_number" %><br />
+        <%= f.text_field :track_number, :size =>10, :maxlength => 2 %>
+      </td>
+      <td>
+        <%= field_label "song.time" %><br />
+        <%= f.text_field :time, :size =>10, :maxlength => 5 %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "song.lyrics" %><br />
+        <%= f.text_area :lyrics, :cols => 45 %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "song.file" %><br />
+        <%= file_field :file, :uploaded_data %>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>

@@ -1,0 +1,30 @@
+<% if songs and songs.size > 0 %>
+  <ul>
+  <% songs.each do |song| %>
+      <li>
+        <%= song.track_number %> - 
+        <%= song.title %>
+        
+         <% if song.time %>
+          | (<%= song.time %>)
+        <% end %>
+        
+        <% if song.lyrics %>
+          | <%= link_to "Ler letra", "#"%>
+        <% end %>
+        
+        <% if song.file %>
+          | <%= link_to "Download", "#"%>
+        <% end %>
+        
+        | <%=link_to "Editar", edit_band_release_song_path(@band, song.release, song)%>
+      </li>
+  <% end %>
+  </ul>
+<% else %>
+  <center>
+    <em>
+      Nenhuma música encontrada.
+    </em>
+  </center>
+<% end %>
