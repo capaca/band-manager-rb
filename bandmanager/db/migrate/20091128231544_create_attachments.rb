@@ -8,7 +8,10 @@ class CreateAttachments < ActiveRecord::Migration
       t.column :size, :integer
       t.column :width, :integer
       t.column :height, :integer
-
+      
+      # Association colums
+      t.column :song_id, :integer
+      
       t.timestamps
     end
   end

@@ -1,3 +1,6 @@
+<%= mask(:time => "99:99") %>
+<%= filter(:track_number => :digit) %>
+
 <% form_for([@band, @release, @song], :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
@@ -11,11 +14,11 @@
     <tr>
       <td>
         <%= field_label "song.track_number" %><br />
-        <%= f.text_field :track_number, :size =>10, :maxlength => 2 %>
+        <%= f.text_field :track_number, :size =>10, :maxlength => 2, :class => "mask-num" %>
       </td>
       <td>
         <%= field_label "song.time" %><br />
-        <%= f.text_field :time, :size =>10, :maxlength => 5 %>
+        <%= f.text_field :time, :size =>10, :maxlength => 5, :id => "time" %>
       </td>
     </tr>
     <tr>
@@ -24,19 +27,8 @@
         <%= f.text_area :lyrics, :cols => 45 %>
       </td>
     </tr>
-    <tr>
-      <td colspan="2">
-        <%= field_label "song.file" %><br />
-        <%= file_field :file, :uploaded_data %>
-      </td>
-    </tr>
   </table>
 
-  <p>
-  </p>
-  <p>
-  </p>
-  <p>
-    <%= f.submit 'Salvar' %>
-  </p>
+  <br />
+  <%= f.submit 'Salvar' %>
 <% end %>

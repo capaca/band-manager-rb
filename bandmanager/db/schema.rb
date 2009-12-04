@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20091128231544) do
     t.integer  "size"
     t.integer  "width"
     t.integer  "height"
+    t.integer  "song_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20091128231544) do
     t.integer  "release_id"
     t.string   "title"
     t.integer  "track_number"
-    t.time     "time"
+    t.string   "time"
     t.text     "lyrics"
     t.integer  "file_id"
     t.datetime "created_at"

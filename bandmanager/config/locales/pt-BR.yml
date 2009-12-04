@@ -123,7 +123,9 @@
       country: "País"
       genre: "Gênero"
       band: "Banda"
-      
+      release: "Lançamento"
+      song: "Música"
+      song file: "Arquivo de música"
       
     attributes:
       _all:
@@ -154,6 +156,10 @@
         lyrics: "Letra"
         file: "Arquivo"
         
+      attachment:
+        content_type: "conteudo"
+        size: "tamanho"
+        
       genre:
         title: "Título"
         
@@ -168,7 +174,7 @@
         body: "Por favor, verifique o(s) seguinte(s) campo(s):"
         
       messages:
-        inclusion: "não está incluído na lista"
+        inclusion: "não é permitido"
         exclusion: "não está disponível"
         invalid: "não é válido"
         confirmation: "não está de acordo com a confirmação"
@@ -197,4 +203,8 @@
         
       genre:
         save: "Gênero salvo com sucesso!"
-      
+        
+      song_file:
+        create: "Arquivo de música adicionado com sucesso!"
+        update: "Arquivo de música atualizado com sucesso!"
+        destroy: "Arquivo de música removido com sucesso!"

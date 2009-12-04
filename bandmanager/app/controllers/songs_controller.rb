@@ -28,6 +28,12 @@ class SongsController < ApplicationController
     @release = Release.find(params[:release_id])
     @band = @release.band
     @song = Song.find(params[:id])
+    
+    if(@song.file.nil?)
+      @song_file = SongFile.new
+    else
+      @song_file = @song.file
+    end
   end
 
   # POST /songs
@@ -42,7 +48,7 @@ class SongsController < ApplicationController
     respond_to do |format|
       if @song.save
         flash[:notice] = 'Song was successfully created.'
-        format.html { redirect_to(@band) }
+        format.html { redirect_to edit_band_release_song_path(@band,@release,@song) }
         format.xml  { render :xml => @song, :status => :created, :location => @song }
       else
         format.html { render :action => "new" }
@@ -59,7 +65,7 @@ class SongsController < ApplicationController
     respond_to do |format|
       if @song.update_attributes(params[:song])
         flash[:notice] = 'Song was successfully updated.'
-        format.html { redirect_to(@song) }
+        format.html { redirect_to(@song.release.band) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

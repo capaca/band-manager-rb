@@ -3,14 +3,17 @@ ActionController::Routing::Routes.draw do |map|
   # Bands
   map.resources :bands do |bands|
     bands.resources :releases do |releases|
-      releases.resources :songs  
+      releases.resources :songs do |songs|
+        songs.resources :song_files
+      end  
     end
   end
   
   map.resources :countries
 
   map.resources :genres
-  
+
+  map.root :controller => "bands", :action => "index" 
 
   # The priority is based upon order of creation: first created -> highest priority.
 

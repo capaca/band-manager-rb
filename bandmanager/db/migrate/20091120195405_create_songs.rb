@@ -4,7 +4,7 @@ class CreateSongs < ActiveRecord::Migration
       t.integer :release_id
       t.string  :title
       t.integer :track_number
-      t.time    :time
+      t.string  :time
       t.text    :lyrics
       t.integer :file_id    
       

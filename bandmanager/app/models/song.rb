@@ -6,7 +6,7 @@ class Song < ActiveRecord::Base
   # file_id:      integer
   
   belongs_to :release
-  belongs_to :file, :class_name => "SongFile", :dependent => :destroy
+  has_one :file, :class_name => "SongFile", :dependent => :destroy
   
   validates_presence_of :title
 end
