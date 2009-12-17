@@ -148,6 +148,7 @@
         year: "Ano"
         details: "Detalhes" 
         cover: "Capa"
+        type: "Tipo"
         
       song:
         title: "Título"

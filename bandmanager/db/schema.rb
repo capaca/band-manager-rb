@@ -9,9 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091128231544) do
+ActiveRecord::Schema.define(:version => 20091205123347) do
 
   create_table "attachments", :force => true do |t|
+    t.string   "type"
     t.integer  "parent_id"
     t.string   "content_type"
     t.string   "filename"
@@ -45,8 +46,13 @@ ActiveRecord::Schema.define(:version => 20091128231544) do
     t.string "title"
   end
 
+  create_table "release_types", :force => true do |t|
+    t.string "title"
+  end
+
   create_table "releases", :force => true do |t|
     t.integer  "band_id"
+    t.integer  "release_type_id"
     t.string   "title"
     t.integer  "year"
     t.text     "details"

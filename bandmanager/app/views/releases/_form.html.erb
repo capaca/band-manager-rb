@@ -13,6 +13,13 @@
       </td>
     </tr>
     <tr>
+      <td>
+        <%= field_label "release.type" %><br />
+        <%= f.select :type_id, @types.map{|type| [type.title, type.id] }, 
+				             :include_blank => '-- escolha o tipo --' %>
+      </td>
+    </tr>
+    <tr>
       <td colspan="2">
         <%= field_label "release.details" %><br />
         <%= f.text_area :details, :cols => 52 %>

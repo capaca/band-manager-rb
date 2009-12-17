@@ -4,6 +4,7 @@ class ReleasesController < ApplicationController
   def new
     @band = Band.find(params[:band_id])
     @release = Release.new
+    @types = ReleaseType.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -15,6 +16,7 @@ class ReleasesController < ApplicationController
   def edit
     @release = Release.find(params[:id])
     @band = @release.band
+    @types = ReleaseType.all
   end
 
   # POST /releases
@@ -34,6 +36,7 @@ class ReleasesController < ApplicationController
         format.html { redirect_to(@band) }
         format.xml  { render :xml => @release, :status => :created, :location => @release }
       else
+        @types = ReleaseType.all
         @release.cover = nil
         format.html { render :action => "new" }
         format.xml  { render :xml => @release.errors, :status => :unprocessable_entity }
@@ -63,6 +66,7 @@ class ReleasesController < ApplicationController
 
       rescue
         @band = @release.band
+        @release_types = ReleaseType.all
         
         format.html { render :action => "edit" }
         format.xml  { render :xml => @release.errors, :status => :unprocessable_entity }

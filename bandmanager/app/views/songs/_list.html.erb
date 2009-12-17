@@ -9,7 +9,7 @@
          &nbsp;(<%= song.time %>)
         <% end %>
         
-        <% if song.lyrics %>
+        <% if song.lyrics and song.lyrics.length > 0 %>
           | <%= link_to "Ler letra", "#"%>
         <% end %>
         

@@ -5,7 +5,8 @@ class Release < ActiveRecord::Base
   # details   string
   
   belongs_to :band 
-  belongs_to :cover,    :class_name => "ReleaseCover", :dependent => :destroy
+  belongs_to :type, :class_name => "ReleaseType"
+  belongs_to :cover, :class_name => "ReleaseCover", :dependent => :destroy
   
   has_many :songs, :order => "track_number asc"
   
