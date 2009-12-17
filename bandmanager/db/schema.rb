@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20091205123347) do
     t.integer  "width"
     t.integer  "height"
     t.integer  "song_id"
+    t.integer  "band_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20091205123347) do
 
   create_table "releases", :force => true do |t|
     t.integer  "band_id"
-    t.integer  "release_type_id"
+    t.integer  "type_id"
     t.string   "title"
     t.integer  "year"
     t.text     "details"

@@ -204,7 +204,10 @@
         
       genre:
         save: "Gênero salvo com sucesso!"
-        
+      
+      band_logo:
+        create: "Logo da banda adicionado com sucesso!"
+      
       song_file:
         create: "Arquivo de música adicionado com sucesso!"
         update: "Arquivo de música atualizado com sucesso!"

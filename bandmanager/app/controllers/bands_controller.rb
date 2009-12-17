@@ -40,6 +40,12 @@ class BandsController < ApplicationController
 
     @countries = Country.all
     @genres = Genre.all
+    
+    if(@band.logo.nil?)
+      @band_logo = BandLogo.new
+    else
+      @band_logo = @band.logo
+    end
   end
 
   # POST /bands
@@ -47,10 +53,6 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(params[:band])
     
-    if(params[:logo])
-      @band.logo = BandLogo.new(params[:logo])
-    end
-
     if(params[:picture])
       @band.picture = BandPicture.new(params[:picture])
     end
@@ -58,7 +60,7 @@ class BandsController < ApplicationController
     respond_to do |format|
       if @band.save
         flash[:notice] = get_message "band.save"
-        format.html { redirect_to(@band) }
+        format.html { redirect_to edit_band_path(@band) }
         format.xml  { render :xml => @band, :status => :created, :location => @band }
       else
         @countries = Country.all
@@ -79,13 +81,6 @@ class BandsController < ApplicationController
       begin
         @band.update_attributes!(params[:band])
 
-        if(@band.logo.nil?)
-          @band.logo = BandLogo.new(params[:logo])
-          @band.save!
-        else
-          @band.logo.update_attributes!(params[:logo])
-        end   
-
         if(@band.picture.nil?)
           @band.picture = BandPicture.new(params[:picture])
           @band.save!
@@ -94,7 +89,7 @@ class BandsController < ApplicationController
         end    
         
         flash[:notice] = get_message "band.update"
-        format.html { redirect_to(@band) }
+        format.html { redirect_to band_edit_path(@band) }
         format.xml  { head :ok }
         
       rescue ActiveRecord::RecordInvalid

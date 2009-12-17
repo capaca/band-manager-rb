@@ -9,7 +9,6 @@ class CreateBands < ActiveRecord::Migration
       t.text        :about, :null => false  
       t.integer     :logo_id
       t.integer     :picture_id
-      t.integer     :logo_id
 
       t.timestamps
     end

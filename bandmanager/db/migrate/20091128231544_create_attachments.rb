@@ -12,6 +12,7 @@ class CreateAttachments < ActiveRecord::Migration
       
       # Association colums
       t.column :song_id, :integer
+      t.column :band_id, :integer
       
       t.timestamps
     end

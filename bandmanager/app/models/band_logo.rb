@@ -4,5 +4,7 @@ class BandLogo < Attachment
                  :max_size => 2.megabytes,
                  :resize_to => '600'
 
+  belongs_to :band
+
   validates_as_attachment
 end

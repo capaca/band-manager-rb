@@ -1,0 +1,2 @@
+module BandLogosHelper
+end

@@ -41,24 +41,6 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= field_label "band.logo" %><br />
-        
-        <% if @band.logo %>
-          <%= link_to("Logo atual", @band.logo.public_filename) %> | 
-          <%= link_to("Remover logo", 
-                { :controller => "bands", 
-                  :action => "destroy_logo", 
-                  :id => @band, 
-                 }, :method => :post) 
-          %>
-          <br />
-        <% end %>
-         
-        <%= file_field :logo, :uploaded_data %>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
         <%= field_label "band.picture" %><br />
         
         <% if @band.picture %>
@@ -76,8 +58,6 @@
       </td>
   </table>
 
-  <p>
-  </p>
   <p>
     <%= f.submit 'Salvar' %>
   </p>

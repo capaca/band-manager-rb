@@ -3,7 +3,11 @@
 <h1>Editar Banda</h1>
 
 <div id="content" class="content">
-  <%= render :partial => 'form' %>
+  <%= render :partial => 'bands/form' %>
+
+  <br/>
+  
+  <%= render :partial => 'band_logos/form' %>
   
   <div class="opcoes">
     <%= link_to 'Detalhar', @band %>
