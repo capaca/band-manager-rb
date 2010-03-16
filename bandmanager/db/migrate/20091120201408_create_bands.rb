@@ -7,8 +7,6 @@ class CreateBands < ActiveRecord::Migration
       t.string      :city, :null => false
       t.belongs_to  :country, :null => false
       t.text        :about, :null => false  
-      t.integer     :logo_id
-      t.integer     :picture_id
 
       t.timestamps
     end

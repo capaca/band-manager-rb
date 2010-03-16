@@ -39,23 +39,6 @@
         <%= f.text_area :about, :cols => 60 %>
       </td>
     </tr>
-    <tr>
-      <td colspan="2">
-        <%= field_label "band.picture" %><br />
-        
-        <% if @band.picture %>
-          <%= link_to("Foto atual", @band.picture.public_filename) %> | 
-          <%= link_to("Remover foto", 
-                { :controller => "bands", 
-                  :action => "destroy_picture", 
-                  :id => @band, 
-                 }, :method => :post) 
-          %>
-          <br />
-        <% end %>
-         
-        <%= file_field :picture, :uploaded_data %>
-      </td>
   </table>
 
   <p>

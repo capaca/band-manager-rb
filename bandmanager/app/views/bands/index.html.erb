@@ -16,11 +16,6 @@
         </h2>
       
         <div class="sobre">
-          <% if band.picture %>
-            <%= link_to image_tag(band.picture.public_filename(:thumb), :align => :left), 
-                        band_path(band) %>
-          <% end %>
-          
           <%= field_label "band.genre" %>
           <%=h band.genre.title %><br />
           

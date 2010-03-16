@@ -8,9 +8,6 @@ class Band < ActiveRecord::Base
   
   belongs_to :genre
   belongs_to :country
-
-  belongs_to :picture, :class_name => "BandPicture", :dependent => :destroy
-  has_one    :logo,    :class_name => "BandLogo", :dependent => :destroy
   
   has_many   :releases, :order => "year asc"
   

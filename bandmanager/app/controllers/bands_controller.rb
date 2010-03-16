@@ -40,22 +40,12 @@ class BandsController < ApplicationController
 
     @countries = Country.all
     @genres = Genre.all
-    
-    if(@band.logo.nil?)
-      @band_logo = BandLogo.new
-    else
-      @band_logo = @band.logo
-    end
   end
 
   # POST /bands
   # POST /bands.xml
   def create
     @band = Band.new(params[:band])
-    
-    if(params[:picture])
-      @band.picture = BandPicture.new(params[:picture])
-    end
     
     respond_to do |format|
       if @band.save
@@ -77,28 +67,17 @@ class BandsController < ApplicationController
   def update
     @band = Band.find(params[:id])
     
-    respond_to do |format|
-      begin
-        @band.update_attributes!(params[:band])
+    begin
+      @band.update_attributes!(params[:band])
 
-        if(@band.picture.nil?)
-          @band.picture = BandPicture.new(params[:picture])
-          @band.save!
-        else
-          @band.picture.update_attributes!(params[:picture])
-        end    
-        
-        flash[:notice] = get_message "band.update"
-        format.html { redirect_to band_edit_path(@band) }
-        format.xml  { head :ok }
-        
-      rescue ActiveRecord::RecordInvalid
-        @countries = Country.all
-        @genres = Genre.all
-        
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @band.errors, :status => :unprocessable_entity }
-      end
+      flash[:notice] = get_message "band.update"
+      redirect_to edit_band_path(@band)
+      
+    rescue ActiveRecord::RecordInvalid
+      @countries = Country.all
+      @genres = Genre.all
+      
+      render :action => "edit"
     end
   end
 

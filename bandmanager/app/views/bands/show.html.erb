@@ -4,17 +4,7 @@
 
 <div class="content detalhes" id="content">
 
-  <% if @band.logo %>
-    <div style="text-align: center;">
-      <%= image_tag @band.logo.public_filename %>  
-    </div>
-  <% end %>
-  
   <div class="sobre">
-    <% if @band.picture %>
-      <%= image_tag(@band.picture.public_filename, :align => :left) %>
-    <% end %>
-    
     <%= field_label "band.genre" %>
     <%=h @band.genre.title %><br/>
   

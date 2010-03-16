@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(:version => 20091205123347) do
     t.string   "city",       :null => false
     t.integer  "country_id", :null => false
     t.text     "about",      :null => false
-    t.integer  "logo_id"
-    t.integer  "picture_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
