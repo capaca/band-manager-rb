@@ -11,7 +11,7 @@ class Band < ActiveRecord::Base
   
   has_many   :releases, :order => "year asc"
   
-  validates_presence_of :name, :genre, :year, :city, :country, :about
+  validates_presence_of :name, :genre, :year, :city, :country_id, :about
   validates_associated :genre, :country
   validates_length_of :about, :minimum => 10;
   

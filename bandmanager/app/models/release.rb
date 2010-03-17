@@ -10,7 +10,7 @@ class Release < ActiveRecord::Base
   
   has_many :songs, :order => "track_number asc"
   
-  validates_presence_of :title, :year, :band
+  validates_presence_of :title, :year, :band, :type_id
   validates_associated  :band
   validates_length_of   :details, :minimum => 10
   validates_numericality_of :year, :only_integer => true

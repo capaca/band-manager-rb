@@ -19,8 +19,9 @@ class BandTest < ActiveSupport::TestCase
   end
   
   test "Should validate presence of attributes" do
-    validate_presence_of_band :name, :genre, 
-    	:year, :city, :country, :about
+    band = Band.new
+    assert_error_on_save band, :name, :genre, 
+    	:year, :city, :country_id, :about
   end
   
   test "Should validate length of about attribute" do
@@ -66,25 +67,5 @@ class BandTest < ActiveSupport::TestCase
       }
       
       band = Band.new(band_hash.merge options)
-    end
-    
-    def assert_error_on_save(band, attr)
-      assert_no_difference "Band.count" do
-  		  band.save
-  		end
-  	
-  	  assert band.errors[attr]
-    end
-    
-    def validate_presence_of_band(*attrs)
-      attrs.each do |attr|
-        band = create_band(attr => nil)
-    
-        assert_no_difference "Band.count" do
-          band.save
-        end
-    
-        assert band.errors[attr]
-      end
     end
 end

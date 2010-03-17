@@ -1,12 +1,11 @@
 class CreateReleases < ActiveRecord::Migration
   def self.up
     create_table :releases do |t|
-      t.integer :band_id
-      t.integer :type_id
-      t.string  :title
-      t.integer :year
-      t.text    :details
-      t.integer :cover_id
+      t.belongs_to  :band
+      t.belongs_to  :type
+      t.string      :title,   :null => false
+      t.integer     :year,    :null => false
+      t.text        :details, :null => false
       
       t.timestamps
     end

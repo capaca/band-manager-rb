@@ -35,4 +35,15 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  protected
+  
+  def assert_error_on_save(object, *attrs)
+    assert_no_difference "#{object.class}.count" do
+		  object.save
+		end
+	  
+	  attrs.each do |attr|
+	    assert object.errors[attr]
+	  end
+  end
 end
