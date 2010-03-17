@@ -12,23 +12,24 @@ class Release < ActiveRecord::Base
   
   validates_presence_of :title, :year, :band
   validates_associated  :band
-  
   validates_length_of   :details, :minimum => 10
-  
   validates_numericality_of :year, :only_integer => true
+  validate :validate_year  
   
-  def validate
+  # Validations
+  # 
+  def validate_year
     if year and band and band.year
       if year < band.year
-        errors.add(:year, "deve ser maior ou igual ao ano da banda (#{band.year}).")
+        errors.add(:year, "deve ser maior ou igual ao ano de formação da banda (#{band.year}).")
         return
       end
-    
+      
       if year > Time.new.year
         errors.add(:date, "deve ser menor ou igual ao ano atual (#{Time.new.year}).")
         return
       end
     end
-  end  
-                             
+  end
+  
 end
