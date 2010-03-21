@@ -1,0 +1,16 @@
+cd:
+  id: 1
+  title: CD
+  
+dvd:
+  id: 2
+  title: DVD
+  
+lp:
+  id: 3
+  title: LP
+
+ep:
+  id: 4
+  title: EP
+

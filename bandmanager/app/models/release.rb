@@ -1,3 +1,19 @@
+#-- auto documented by documentor :: Generated on 2010-03-21 ++
+#
+# = Description
+# Write here the description for Release
+#
+# === Attributes
+#
+# +band_id+:: +Integer+
+# +created_at+:: +Datetime+
+# +details+:: +Text+
+# +title+:: +String+
+# +type_id+:: +Integer+
+# +updated_at+:: +Datetime+
+# +year+:: +Integer+
+#
+#-- /auto documented by documentor ++
 class Release < ActiveRecord::Base
   # band_id:  integer
   # title:    string
@@ -19,17 +35,18 @@ class Release < ActiveRecord::Base
   # Validations
   # 
   def validate_year
-    if year and band and band.year
-      if year < band.year
-        errors.add(:year, "deve ser maior ou igual ao ano de formação da banda (#{band.year}).")
-        return
+    if year
+      if band and band.year
+        if year < band.year
+          errors.add(:year, "deve ser maior ou igual ao ano de formação da banda (#{band.year}).")
+        end
       end
-      
+
       if year > Time.new.year
-        errors.add(:date, "deve ser menor ou igual ao ano atual (#{Time.new.year}).")
-        return
+        errors.add(:year, "deve ser menor ou igual ao ano atual (#{Time.new.year}).")
       end
     end
+    
   end
   
 end

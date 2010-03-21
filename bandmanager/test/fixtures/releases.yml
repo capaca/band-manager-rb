@@ -1,9 +1,7 @@
-one:
-  title: MyString
-  year: 1
-  details: MyText
+chemical_assault:
+  band_id: 1  
+  type_id: 1
+  title: Chemical Assault
+  year: 2006
+  details: Gravado no Orbis Estúdio em Taguatinga/DF
 
-two:
-  title: MyString
-  year: 1
-  details: MyText

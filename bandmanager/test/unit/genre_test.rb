@@ -3,7 +3,6 @@ require 'test_helper'
 class GenreTest < ActiveSupport::TestCase
   test "Should save a genre" do
     genre = Genre.new :title => "Grind"
-    
     assert_difference "Genre.count" do
       genre.save
     end
@@ -17,21 +16,11 @@ class GenreTest < ActiveSupport::TestCase
   
   test "Should validate presence of title attribute" do
     genre = Genre.new :title => nil
-    
-    assert_no_difference "Genre.count" do
-      genre.save
-    end
-    
-    assert genre.errors[:title]
+    assert_error_on_save genre, :title    
   end
   
   test "Should validate uniqueness of title attribute" do
     genre = Genre.new :title => genres(:thrash).title
-    
-    assert_no_difference "Genre.count" do
-      genre.save
-    end
-    
-    assert genre.errors[:title]
+    assert_error_on_save genre, :title    
   end
 end

@@ -6,7 +6,6 @@ class CreateSongs < ActiveRecord::Migration
       t.integer :track_number
       t.string  :time
       t.text    :lyrics
-      t.integer :file_id    
       
       t.timestamps
     end
