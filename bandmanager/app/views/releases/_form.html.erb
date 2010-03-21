@@ -25,29 +25,6 @@
         <%= f.text_area :details, :cols => 52 %>
       </td>
     </tr>
-    <tr>
-      <td colspan="2">
-        <%= field_label "release.cover" %><br />
-        
-        <% if @release.cover %>
-          <%= link_to("Capa atual", @release.cover.public_filename) %> | 
-           <%= 
-           link_to (
-            "Remover capa",
-              {
-                :controller=>"releases",
-                :action=>"destroy_cover",
-                :id => @release,
-                :band_id =>@release.band,
-                :confirm => 'Você tem certeza?', 
-              })
-          %>
-          <br />
-        <% end %>
-         
-        <%= file_field :cover, :uploaded_data %>
-      </td>
-    <tr>
   </table>
   <br />
   <%= f.submit 'Salvar' %>

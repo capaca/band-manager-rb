@@ -6,7 +6,6 @@
 # === Attributes
 #
 # +created_at+:: +Datetime+
-# +file_id+:: +Integer+
 # +lyrics+:: +Text+
 # +release_id+:: +Integer+
 # +time+:: +String+

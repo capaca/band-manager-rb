@@ -4,15 +4,24 @@ class BandsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
+    assert_template :index
+    
     assert_not_nil assigns(:bands)
+    assert_equal assigns(:bands).size, Band.count
   end
 
   test "should get new" do
     get :new
-    assert_not_nil assigns(:band)
-    assert_not_nil assigns(:countries)
-    assert_not_nil assigns(:genres)
     assert_response :success
+    assert_template :new
+
+    assert_not_nil assigns(:band)
+
+    assert_not_nil assigns(:countries)
+    assert_equal assigns(:countries).size, Country.count
+    
+    assert_not_nil assigns(:genres)
+    assert_equal assigns(:genres).size, Genre.count
   end
 
   test "should create band" do
@@ -28,7 +37,8 @@ class BandsControllerTest < ActionController::TestCase
       create_band :name => nil
     end
 
-    assert_response(:ok)
+    assert_response :ok
+    assert_template :new
     assert_not_nil assigns(:countries)
     assert_not_nil assigns(:genres)
   end
@@ -36,11 +46,13 @@ class BandsControllerTest < ActionController::TestCase
   test "should show band" do
     get :show, :id => bands(:violator).to_param
     assert_response :success
+    assert_template :show
   end
 
   test "should get edit" do
     get :edit, :id => bands(:violator).to_param
     assert_response :success
+    assert_template :edit
   end
 
   test "should update band" do
@@ -54,6 +66,7 @@ class BandsControllerTest < ActionController::TestCase
   test "should not update invalid band" do
     put :update, :id => bands(:violator).to_param, :band => {:name => nil}
     assert_response :ok
+    assert_template :edit
     assert_not_nil assigns(:countries)
     assert_not_nil assigns(:genres)
   end

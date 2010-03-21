@@ -1,9 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+atomic_nightmare:
+  title: Atomic Nightmare
+  lyrics: Letra de Atomic Nightmare
+  release_id: 1
 
-one:
-  title: MyString
-  lyrics: MyText
-
-two:
-  title: MyString
-  lyrics: MyText
+destined_to_die:
+  title: Destined to Die
+  lyrics: Letra de Destined to Die
+  release_id: 1

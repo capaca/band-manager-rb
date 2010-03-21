@@ -5,16 +5,12 @@
         <%= song.track_number %> - 
         <%= song.title %>
         
-        <% if song.time %>
+        <% if song.time and not song.time.empty? %>
          &nbsp;(<%= song.time %>)
         <% end %>
         
         <% if song.lyrics and song.lyrics.length > 0 %>
-          | <%= link_to "Ler letra", "#"%>
-        <% end %>
-        
-        <% if song.file %>
-          | <%= link_to "Download", "#"%>
+          | <%= link_to "Ler letra", band_release_song_path(song.release.band, song.release, song) %>
         <% end %>
         
         | <%=link_to "Editar", edit_band_release_song_path(@band, song.release, song)%>

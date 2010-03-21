@@ -3,11 +3,6 @@ class SongsController < ApplicationController
   # GET /songs/1.xml
   def show
     @song = Song.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @song }
-    end
   end
 
   # GET /songs/new
@@ -16,11 +11,6 @@ class SongsController < ApplicationController
     @release = Release.find(params[:release_id])
     @band = @release.band
     @song = Song.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @song }
-    end
   end
 
   # GET /songs/1/edit
@@ -28,12 +18,6 @@ class SongsController < ApplicationController
     @release = Release.find(params[:release_id])
     @band = @release.band
     @song = Song.find(params[:id])
-    
-    if(@song.file.nil?)
-      @song_file = SongFile.new
-    else
-      @song_file = @song.file
-    end
   end
 
   # POST /songs
@@ -45,15 +29,11 @@ class SongsController < ApplicationController
 
     @song.release = @release
 
-    respond_to do |format|
-      if @song.save
-        flash[:notice] = 'Song was successfully created.'
-        format.html { redirect_to edit_band_release_song_path(@band,@release,@song) }
-        format.xml  { render :xml => @song, :status => :created, :location => @song }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @song.errors, :status => :unprocessable_entity }
-      end
+    if @song.save
+      flash[:notice] = 'Song was successfully created.'
+      redirect_to edit_band_release_song_path(@band,@release,@song)
+    else
+      render :action => "new"
     end
   end
 
@@ -62,15 +42,11 @@ class SongsController < ApplicationController
   def update
     @song = Song.find(params[:id])
 
-    respond_to do |format|
-      if @song.update_attributes(params[:song])
-        flash[:notice] = 'Song was successfully updated.'
-        format.html { redirect_to(@song.release.band) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @song.errors, :status => :unprocessable_entity }
-      end
+    if @song.update_attributes(params[:song])
+      flash[:notice] = 'Song was successfully updated.'
+      redirect_to(@song.release.band)
+    else
+      render :action => "edit"
     end
   end
 
@@ -78,11 +54,9 @@ class SongsController < ApplicationController
   # DELETE /songs/1.xml
   def destroy
     @song = Song.find(params[:id])
+    release = @song.release
     @song.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(songs_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(band_release_path(release.band, release))
   end
 end

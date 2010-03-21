@@ -3,22 +3,12 @@ class BandsController < ApplicationController
   # GET /bands.xml
   def index
     @bands = Band.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @bands }
-    end
   end
 
   # GET /bands/1
   # GET /bands/1.xml
   def show
     @band = Band.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @band }
-    end
   end
 
   # GET /bands/new
@@ -27,11 +17,6 @@ class BandsController < ApplicationController
     @band = Band.new
     @countries = Country.all
     @genres = Genre.all
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @band }
-    end
   end
 
   # GET /bands/1/edit
@@ -47,18 +32,14 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(params[:band])
     
-    respond_to do |format|
-      if @band.save
-        flash[:notice] = get_message "band.save"
-        format.html { redirect_to edit_band_path(@band) }
-        format.xml  { render :xml => @band, :status => :created, :location => @band }
-      else
-        @countries = Country.all
-        @genres = Genre.all
-      
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @band.errors, :status => :unprocessable_entity }
-      end
+    if @band.save
+      flash[:notice] = get_message "band.save"
+      redirect_to edit_band_path(@band)
+    else
+      @countries = Country.all
+      @genres = Genre.all
+    
+      render :action => "new"
     end
   end
 

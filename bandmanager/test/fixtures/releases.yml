@@ -1,4 +1,5 @@
 chemical_assault:
+  id: 1
   band_id: 1  
   type_id: 1
   title: Chemical Assault
