@@ -6,6 +6,10 @@
 # === Attributes
 #
 # +band_id+:: +Integer+
+# +cover_content_type+:: +String+
+# +cover_file_name+:: +String+
+# +cover_file_size+:: +Integer+
+# +cover_updated_at+:: +Datetime+
 # +created_at+:: +Datetime+
 # +details+:: +Text+
 # +title+:: +String+

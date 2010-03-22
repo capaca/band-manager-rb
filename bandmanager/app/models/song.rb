@@ -5,6 +5,10 @@
 #
 # === Attributes
 #
+# +audio_content_type+:: +String+
+# +audio_file_name+:: +String+
+# +audio_file_size+:: +Integer+
+# +audio_updated_at+:: +Datetime+
 # +created_at+:: +Datetime+
 # +lyrics+:: +Text+
 # +release_id+:: +Integer+

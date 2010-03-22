@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @concert.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @concert.date %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @concert.city %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%=h @concert.region %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @concert.country_id %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%=h @concert.details %>
+</p>
+
+
+<%= link_to 'Edit', edit_concert_path(@concert) %> |
+<%= link_to 'Back', concerts_path %>

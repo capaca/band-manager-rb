@@ -10,21 +10,24 @@
 # +country_id+:: +Integer+
 # +created_at+:: +Datetime+
 # +genre_id+:: +Integer+
+# +logo_content_type+:: +String+
+# +logo_file_name+:: +String+
+# +logo_file_size+:: +Integer+
+# +logo_updated_at+:: +Datetime+
 # +name+:: +String+
+# +photo_content_type+:: +String+
+# +photo_file_name+:: +String+
+# +photo_file_size+:: +Integer+
+# +photo_updated_at+:: +Datetime+
 # +updated_at+:: +Datetime+
 # +year+:: +Integer+
 #
 #-- /auto documented by documentor ++
 class Band < ActiveRecord::Base
-  # name: string
-  # genre: Genre
-  # year: integer
-  # city: string
-  # country: Country
-  # about: text
-  
   belongs_to :genre
   belongs_to :country
+
+  has_and_belongs_to_many :concerts
   
   has_many   :releases, :order => "year asc", :dependent => :destroy
   
