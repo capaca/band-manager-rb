@@ -39,6 +39,30 @@
         <%= f.text_area :about, :cols => 60 %>
       </td>
     </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "band.logo" %><br />
+        <%= f.file_field :logo %>
+         | 
+        <% if @band.logo.exists? %>
+          <%= link_to 'Vizualizar logo', @band.logo.url(:normal) %>
+        <% else %>
+          <em>Nenhum logo adicionado</em>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "band.photo" %><br />
+        <%= f.file_field :photo %>
+         | 
+        <% if @band.photo.exists? %>
+          <%= link_to 'Vizualizar foto', @band.photo.url(:normal) %>
+        <% else %>
+          <em>Nenhuma foto adicionada</em>
+        <% end %>
+      </td>
+    </tr>
   </table>
 
   <p>

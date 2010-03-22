@@ -15,6 +15,10 @@
           <%= link_to band.name, band %>
         </h2>
       
+        <% if band.photo.exists? %>
+          <%= link_to image_tag(band.photo.url(:mini), :align => 'left', :class => 'photo'), band_path(band) %>
+        <% end %>
+      
         <div class="sobre">
           <%= field_label "band.genre" %>
           <%=h band.genre.title %><br />

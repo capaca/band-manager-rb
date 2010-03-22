@@ -25,6 +25,18 @@
         <%= f.text_area :details, :cols => 52 %>
       </td>
     </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "release.cover" %><br />
+        <%= f.file_field :cover %>
+         | 
+        <% if @release.cover.exists? %>
+          <%= link_to 'Vizualizar capa', @release.cover.url(:normal) %>
+        <% else %>
+          <em>Nenhuma capa adicionada</em>
+        <% end %>
+      </td>
+    </tr>
   </table>
   <br />
   <%= f.submit 'Salvar' %>

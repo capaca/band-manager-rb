@@ -141,7 +141,7 @@
         origin: "Origem"                        
         about: "Sobre"
         logo: "Logo"
-        picture: "Foto"
+        photo: "Foto"
         
       release:
         title: "Título"
@@ -155,7 +155,7 @@
         track_number: "Número da faixa"
         time: "Tempo"
         lyrics: "Letra"
-        file: "Arquivo"
+        audio: "Arquivo de áudio"
         
       attachment:
         content_type: "conteudo"

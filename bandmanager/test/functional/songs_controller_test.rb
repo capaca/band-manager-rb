@@ -53,7 +53,7 @@ class SongsControllerTest < ActionController::TestCase
     assert_redirected_to edit_band_release_song_path(band,release,song)
   end
 
-  test "should not create song" do
+  test "should not create an invalid song" do
     assert_no_difference('Song.count') do
       post :create, 
         :release_id => releases(:chemical_assault),
@@ -74,6 +74,17 @@ class SongsControllerTest < ActionController::TestCase
   test "should update song" do
     put :update, :id => songs(:atomic_nightmare).id, :song => create_song_hash
     assert_redirected_to band_path(assigns(:song).release.band)
+  end
+
+  test "should not update an invalid song" do
+    put :update, 
+      :id => songs(:atomic_nightmare).id, 
+      :song => create_song_hash(:title => nil)
+      
+    assert_redirected_to band_path(assigns(:song).release.band)
+    assert_not_nil assigns(:band)
+    assert_not_nil assigns(:release)
+    assert_not_nil assigns(:song)
   end
 
   test "should destroy song" do

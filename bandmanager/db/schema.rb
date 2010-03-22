@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091205123347) do
+ActiveRecord::Schema.define(:version => 20100321233406) do
 
   create_table "attachments", :force => true do |t|
     t.string   "type"
@@ -27,14 +27,22 @@ ActiveRecord::Schema.define(:version => 20091205123347) do
   end
 
   create_table "bands", :force => true do |t|
-    t.string   "name",       :null => false
-    t.integer  "genre_id",   :null => false
-    t.integer  "year",       :null => false
-    t.string   "city",       :null => false
-    t.integer  "country_id", :null => false
-    t.text     "about",      :null => false
+    t.string   "name",               :null => false
+    t.integer  "genre_id",           :null => false
+    t.integer  "year",               :null => false
+    t.string   "city",               :null => false
+    t.integer  "country_id",         :null => false
+    t.text     "about",              :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "countries", :force => true do |t|
@@ -52,11 +60,15 @@ ActiveRecord::Schema.define(:version => 20091205123347) do
   create_table "releases", :force => true do |t|
     t.integer  "band_id"
     t.integer  "type_id"
-    t.string   "title",      :null => false
-    t.integer  "year",       :null => false
-    t.text     "details",    :null => false
+    t.string   "title",              :null => false
+    t.integer  "year",               :null => false
+    t.text     "details",            :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   create_table "songs", :force => true do |t|
@@ -65,9 +77,12 @@ ActiveRecord::Schema.define(:version => 20091205123347) do
     t.integer  "track_number"
     t.string   "time"
     t.text     "lyrics"
-    t.integer  "file_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "audio_file_name"
+    t.string   "audio_content_type"
+    t.integer  "audio_file_size"
+    t.datetime "audio_updated_at"
   end
 
 end

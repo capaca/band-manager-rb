@@ -46,6 +46,8 @@ class SongsController < ApplicationController
       flash[:notice] = 'Song was successfully updated.'
       redirect_to(@song.release.band)
     else
+      @band = @song.release.band
+      @release = @song.release
       render :action => "edit"
     end
   end
@@ -54,9 +56,9 @@ class SongsController < ApplicationController
   # DELETE /songs/1.xml
   def destroy
     @song = Song.find(params[:id])
-    release = @song.release
+    band = @song.release.band
     @song.destroy
 
-    redirect_to(band_release_path(release.band, release))
+    redirect_to(band_path(band))
   end
 end

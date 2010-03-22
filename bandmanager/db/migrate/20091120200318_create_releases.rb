@@ -8,6 +8,12 @@ class CreateReleases < ActiveRecord::Migration
       t.text        :details, :null => false
       
       t.timestamps
+      
+      # Cover Columns
+      t.string      :cover_file_name
+      t.string      :cover_content_type
+      t.integer     :cover_file_size
+      t.datetime    :cover_updated_at
     end
   end
 

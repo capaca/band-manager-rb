@@ -3,7 +3,20 @@
 <h1><%= @band.name %></h1>
 
 <div class="content detalhes" id="content">
+  
+  <% if @band.logo.exists? %>
+    <div class="logo center">
+      <%= image_tag @band.logo.url(:normal) %>
+    </div>
+  <% end %>
 
+  <br/>
+
+  <% if @band.photo.exists? %>
+    <%= image_tag @band.photo.url(:normal), :align => 'left', :class => 'photo' %>
+  <% end %>
+
+  
   <div class="sobre">
     <%= field_label "band.genre" %>
     <%=h @band.genre.title %><br/>

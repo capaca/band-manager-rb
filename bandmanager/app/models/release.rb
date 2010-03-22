@@ -24,7 +24,9 @@ class Release < ActiveRecord::Base
   belongs_to :type, :class_name => "ReleaseType"
   belongs_to :cover, :class_name => "ReleaseCover", :dependent => :destroy
   
-  has_many :songs, :order => "track_number asc"
+  has_attached_file :cover, :styles => { :normal => "150" }
+
+  has_many :songs, :order => "track_number asc", :dependent => :destroy
   
   validates_presence_of :title, :year, :band, :type_id
   validates_associated  :band

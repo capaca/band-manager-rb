@@ -3,17 +3,27 @@
   <% songs.each do |song| %>
       <li>
         <%= song.track_number %> - 
-        <%= song.title %>
+        
+        <% if song.lyrics and song.lyrics.length > 0 %>
+          <%= link_to song.title, band_release_song_path(song.release.band, song.release, song) %>
+        <% else %>
+          <%= song.title %>
+        <% end %>
         
         <% if song.time and not song.time.empty? %>
          &nbsp;(<%= song.time %>)
         <% end %>
         
-        <% if song.lyrics and song.lyrics.length > 0 %>
-          | <%= link_to "Ler letra", band_release_song_path(song.release.band, song.release, song) %>
+        <% if song.audio.exists? %>
+          | <%= link_to 'Download', song.audio.url %>
         <% end %>
         
         | <%=link_to "Editar", edit_band_release_song_path(@band, song.release, song)%>
+        
+        | <%= link_to 'Remover', band_release_song_path(song.release.band, song.release, song), 
+                        :confirm => 'Você tem certeza?', 
+                        :method => :delete 
+            %>
       </li>
   <% end %>
   </ul>

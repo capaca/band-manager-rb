@@ -26,7 +26,10 @@ class Band < ActiveRecord::Base
   belongs_to :genre
   belongs_to :country
   
-  has_many   :releases, :order => "year asc"
+  has_many   :releases, :order => "year asc", :dependent => :destroy
+  
+  has_attached_file :logo, :styles => { :normal => "600" }
+  has_attached_file :photo, :styles => { :normal => "400", :mini => "150x150#" }
   
   validates_presence_of :name, :genre, :year, :city, :country_id, :about
   validates_associated :genre, :country

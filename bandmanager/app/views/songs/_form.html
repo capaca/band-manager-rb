@@ -27,6 +27,18 @@
         <%= f.text_area :lyrics, :cols => 45 %>
       </td>
     </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "song.audio" %><br />
+        <%= f.file_field :audio %>
+         | 
+        <% if @song.audio.exists? %>
+          <%= link_to 'Baixar música', @song.audio.url %>
+        <% else %>
+          <em>Nenhum arquivo de áudio adicionado</em>
+        <% end %>
+      </td>
+    </tr>
   </table>
 
   <br />

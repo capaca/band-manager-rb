@@ -9,6 +9,18 @@ class CreateBands < ActiveRecord::Migration
       t.text        :about, :null => false  
 
       t.timestamps
+
+      # Logo Columns
+      t.string      :logo_file_name
+      t.string      :logo_content_type
+      t.integer     :logo_file_size
+      t.datetime    :logo_updated_at
+      
+      # Photo Columns
+      t.string      :photo_file_name
+      t.string      :photo_content_type
+      t.integer     :photo_file_size
+      t.datetime    :photo_updated_at
     end
   end
 
