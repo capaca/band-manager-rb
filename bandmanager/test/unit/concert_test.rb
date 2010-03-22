@@ -36,7 +36,7 @@ class ConcertTest < ActiveSupport::TestCase
       :date => Time.new,
       :city => 'Brasília',
       :region => 'DF',
-      :country_id => countries(:brasil),
+      :country => countries(:brasil),
       :details => 'Detalhes do show'
     }
     
