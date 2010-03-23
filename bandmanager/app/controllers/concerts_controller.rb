@@ -1,14 +1,4 @@
 class ConcertsController < ApplicationController
-  # GET /concerts
-  # GET /concerts.xml
-  def index
-    @concerts = Concert.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @concerts }
-    end
-  end
 
   # GET /concerts/1
   # GET /concerts/1.xml
@@ -25,11 +15,6 @@ class ConcertsController < ApplicationController
   # GET /concerts/new.xml
   def new
     @concert = Concert.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @concert }
-    end
   end
 
   # GET /concerts/1/edit
@@ -42,15 +27,11 @@ class ConcertsController < ApplicationController
   def create
     @concert = Concert.new(params[:concert])
 
-    respond_to do |format|
-      if @concert.save
-        flash[:notice] = 'Concert was successfully created.'
-        format.html { redirect_to(@concert) }
-        format.xml  { render :xml => @concert, :status => :created, :location => @concert }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @concert.errors, :status => :unprocessable_entity }
-      end
+    if @concert.save
+      flash[:notice] = 'Concert was successfully created.'
+      redirect_to(@concert)
+    else
+      render :action => "new"
     end
   end
 
@@ -59,15 +40,11 @@ class ConcertsController < ApplicationController
   def update
     @concert = Concert.find(params[:id])
 
-    respond_to do |format|
-      if @concert.update_attributes(params[:concert])
-        flash[:notice] = 'Concert was successfully updated.'
-        format.html { redirect_to(@concert) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @concert.errors, :status => :unprocessable_entity }
-      end
+    if @concert.update_attributes(params[:concert])
+      flash[:notice] = 'Concert was successfully updated.'
+      redirect_to(@concert)
+    else
+      render :action => "edit"
     end
   end
 
@@ -77,9 +54,6 @@ class ConcertsController < ApplicationController
     @concert = Concert.find(params[:id])
     @concert.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(concerts_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(concerts_url)
   end
 end

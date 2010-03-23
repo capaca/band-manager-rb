@@ -81,7 +81,7 @@ class SongsControllerTest < ActionController::TestCase
       :id => songs(:atomic_nightmare).id, 
       :song => create_song_hash(:title => nil)
       
-    assert_redirected_to band_path(assigns(:song).release.band)
+    assert_template(:edit)
     assert_not_nil assigns(:band)
     assert_not_nil assigns(:release)
     assert_not_nil assigns(:song)
@@ -95,7 +95,7 @@ class SongsControllerTest < ActionController::TestCase
     band = songs(:atomic_nightmare).release.band
     release = songs(:atomic_nightmare).release
 
-    assert_redirected_to band_release_path(band, release)
+    assert_redirected_to band_path(band)
   end
   
   # Private Methods

@@ -4,11 +4,11 @@ ActionController::Routing::Routes.draw do |map|
   
   # Bands
   map.resources :bands do |bands|
-    bands.resources :band_logos
+    
+    bands.resources :concerts
     
     bands.resources :releases do |releases|
       releases.resources :songs do |songs|
-        songs.resources :song_files
       end  
     end
   end
