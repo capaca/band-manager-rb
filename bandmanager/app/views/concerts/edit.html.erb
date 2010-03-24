@@ -1,36 +1,6 @@
 <h1>Editing concert</h1>
 
-<% form_for(@concert) do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => 'form' %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
-  </p>
-  <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :region %><br />
-    <%= f.text_field :region %>
-  </p>
-  <p>
-    <%= f.label :country_id %><br />
-    <%= f.text_field :country_id %>
-  </p>
-  <p>
-    <%= f.label :details %><br />
-    <%= f.text_area :details %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @concert %> |
-<%= link_to 'Back', concerts_path %>
+<%= link_to 'Ver', band_concert_path(@band, @concert) %> |
+<%= link_to 'Voltar', @band %>

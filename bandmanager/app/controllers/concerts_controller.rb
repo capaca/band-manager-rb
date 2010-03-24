@@ -4,33 +4,36 @@ class ConcertsController < ApplicationController
   # GET /concerts/1.xml
   def show
     @concert = Concert.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @concert }
-    end
+    @band = Band.find(params[:band_id])
   end
 
   # GET /concerts/new
   # GET /concerts/new.xml
   def new
     @concert = Concert.new
+    @band = Band.find(params[:band_id])
+    @countries = Country.all
   end
 
   # GET /concerts/1/edit
   def edit
     @concert = Concert.find(params[:id])
+    @band = Band.find(params[:band_id])
+    @countries = Country.all
   end
 
   # POST /concerts
   # POST /concerts.xml
   def create
     @concert = Concert.new(params[:concert])
+    @band = Band.find(params[:band_id])
+    @concert.bands << @band
 
     if @concert.save
       flash[:notice] = 'Concert was successfully created.'
-      redirect_to(@concert)
+      redirect_to band_concert_path(@band, @concert)
     else
+      @countries = Country.all
       render :action => "new"
     end
   end
@@ -39,10 +42,10 @@ class ConcertsController < ApplicationController
   # PUT /concerts/1.xml
   def update
     @concert = Concert.find(params[:id])
-
+    @band = Band.find(params[:band_id])
     if @concert.update_attributes(params[:concert])
       flash[:notice] = 'Concert was successfully updated.'
-      redirect_to(@concert)
+      redirect_to band_concert_path(@band, @concert)
     else
       render :action => "edit"
     end
@@ -51,9 +54,10 @@ class ConcertsController < ApplicationController
   # DELETE /concerts/1
   # DELETE /concerts/1.xml
   def destroy
+    @band = Band.find(params[:band_id])
     @concert = Concert.find(params[:id])
     @concert.destroy
 
-    redirect_to(concerts_url)
+    redirect_to @band
   end
 end

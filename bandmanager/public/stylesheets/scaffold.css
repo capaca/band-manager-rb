@@ -96,14 +96,30 @@ input, textarea {
 }
 
 .concert {
-  background-color: #333333;
-  padding: 4px;
-  width: 250px;
-  height: 100px;
-  float: left;
+  margin-top: 20px;
 }
 
+.concert .header {
+  height: 60px;
+}
+
+.concert_list .concert {
+  background-color: #333333;
+  padding: 8px;
+  width: 29%;
+  height: 125px;
+  float: left;
+  margin-right: 10px;
+}
+
+
 .concert .title{
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+.concert_list .concert .title{
   font-weight: bold;
   font-size: 14px;
   color: white;
@@ -111,7 +127,7 @@ input, textarea {
 
 .calendar {
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid #333333;
   width: 30px;
   color: black;
   font-size: 15px;
@@ -124,11 +140,26 @@ input, textarea {
 .calendar div.top {
   padding: 2px;
   background-color: red;
-  border-bottom: 1px solid black;
+  border-bottom: inherit;
   color: white;
   font-size: 8px;
   text-align: center;
   margin-bottom: 2px;
+}
+
+.concert .details{
+  text-align: justify;
+}
+
+.concert_list .concert .details{
+  font-size: 10px;
+  text-align: justify;
+  height: 54px;
+}
+
+.concert .more {
+  font-size: 10px;
+  text-align: right;
 }
 
 .center {

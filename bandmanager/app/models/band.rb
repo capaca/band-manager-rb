@@ -27,7 +27,7 @@ class Band < ActiveRecord::Base
   belongs_to :genre
   belongs_to :country
 
-  has_and_belongs_to_many :concerts
+  has_and_belongs_to_many :concerts, :order => 'date DESC'
   
   has_many   :releases, :order => "year asc", :dependent => :destroy
   

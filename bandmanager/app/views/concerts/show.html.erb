@@ -1,33 +1,14 @@
-<p>
-  <b>Name:</b>
-  <%=h @concert.name %>
-</p>
+<%= render :partial => 'concerts/concert', 
+    :locals => {
+      :band => @band, 
+      :concert => @concert, 
+      :truncate => false
+    } 
+%>
 
-<p>
-  <b>Date:</b>
-  <%=h @concert.date %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%=h @concert.city %>
-</p>
-
-<p>
-  <b>Region:</b>
-  <%=h @concert.region %>
-</p>
-
-<p>
-  <b>Country:</b>
-  <%=h @concert.country_id %>
-</p>
-
-<p>
-  <b>Details:</b>
-  <%=h @concert.details %>
-</p>
-
-
-<%= link_to 'Edit', edit_concert_path(@concert) %> |
-<%= link_to 'Back', concerts_path %>
+<%= link_to 'Editar', edit_band_concert_path(@band, @concert) %> |
+<%= link_to 'Excluir', band_concert_path(@band, @concert), 
+  :confirm => 'Você tem certeza?', 
+  :method => :delete 
+%> | 
+<%= link_to 'Voltar', band_path(@band) %>

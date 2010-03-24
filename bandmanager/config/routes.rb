@@ -1,7 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :concerts
-
-  
   # Bands
   map.resources :bands do |bands|
     

@@ -35,7 +35,7 @@
   
   <div class="opcoes">
     <%= link_to 'Editar', edit_band_path(@band) %> |
-    <%= link_to 'Remover', @band, :confirm => 'Você tem certeza?', :method => :delete %>
+    <%= link_to 'Excluir', @band, :confirm => 'Você tem certeza?', :method => :delete %>
   </div>
   
   <br />
@@ -46,7 +46,9 @@
     <%= link_to 'Cadastrar um novo show', new_band_concert_path(@band) %>
   </div>
   
-  <%= render :partial => 'concerts/list', :locals => {:concerts => @band.concerts}%>
+  <div class="concert_list">
+    <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.concerts}%>
+  </div>
   
   <br />
   

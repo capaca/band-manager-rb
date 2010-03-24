@@ -1,20 +1,17 @@
 <% if concerts and concerts.size > 0 %>
   <% concerts.each do |concert| %>
-    <div class="concert">
-      <div class="calendar" title="<%= concert.date.strftime('%d/%m/%Y') %>">
-        <div class="top"><%= concert.date.month %></div>
-        <%= concert.date.day %>
-      </div>
-      <span class="title"><%= concert.name %></span>
-      <br/>
-      <%= "#{concert.city}/#{concert.region} - #{concert.country}"%>
-      <br/>
-      <%= truncate(simple_format(h concert.details), :length => 100) %> 
-    </div>
+    <%= render :partial => 'concerts/concert', 
+          :locals => {
+            :band => band, 
+            :concert => concert, 
+            :truncate => true
+          } 
+    %>
   <% end %>
+  <div style="clear: both;"></div>
 <% else %>
-  <em>Nenhum show cadastrado</em>
+  <center>
+    <em>Nenhum show cadastrado</em>
+  </center>
 <% end %>
-
-<div style="clear: both;"></div>
 

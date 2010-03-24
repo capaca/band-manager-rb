@@ -1,0 +1,48 @@
+<%= mask :date => "99/99/9999"%>
+
+<% form_for([@band, @concert]) do |f| %>
+  
+  <%= f.error_messages %>
+
+  <table class="form">
+    <tr>
+      <td>
+        <%= field_label 'concert.name' %><br />
+        <%= f.text_field :name %>
+      </td>
+      <td>
+        <%= field_label 'concert.date' %><br />
+        <%= f.text_field :date, :id => 'date' %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= field_label 'concert.city' %><br />
+        <%= f.text_field :city %>
+      </td>
+      <td>
+        <%= field_label 'concert.region' %><br />
+        <%= f.text_field :region %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= field_label "concert.country" %><br />
+        <% if @countries %>
+          <%= f.select :country_id, @countries.map{|country| [country.name, country.id] }, 
+			                 :include_blank => '-- escolha o país --',
+			                 :escape => :false %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label 'concert.details' %><br />
+        <%= f.text_area :details, :cols => 60, :rows => 12 %>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>

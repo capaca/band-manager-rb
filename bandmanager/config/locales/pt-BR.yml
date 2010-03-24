@@ -157,6 +157,14 @@
         lyrics: "Letra"
         audio: "Arquivo de áudio"
         
+      concert:
+        name: "Nome"
+        date: "Data"
+        city: "Cidade"
+        region: "Região"
+        country: "País"
+        details: "Detalhes"
+        
       attachment:
         content_type: "conteudo"
         size: "tamanho"
