@@ -31,7 +31,7 @@ class SongsController < ApplicationController
 
     if @song.save
       flash[:notice] = 'Song was successfully created.'
-      redirect_to @band
+      redirect_to band_path(@band, :anchor => 'releases')
     else
       render :action => "new"
     end
@@ -44,7 +44,7 @@ class SongsController < ApplicationController
 
     if @song.update_attributes(params[:song])
       flash[:notice] = 'Song was successfully updated.'
-      redirect_to @song.release.band
+      redirect_to band_path(@song.release.band, :anchor => 'releases')
     else
       @band = @song.release.band
       @release = @song.release

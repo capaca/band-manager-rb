@@ -26,7 +26,7 @@ class ConcertsControllerTest < ActionController::TestCase
       post :create, :band_id => bands(:violator).id, :concert => create_concert_hash
     end
 
-    assert_redirected_to assigns(:band)
+    assert_redirected_to band_path(assigns(:band), :anchor => 'concerts')
 
     concert = assigns(:concert)
     concert.reload
@@ -84,7 +84,7 @@ class ConcertsControllerTest < ActionController::TestCase
       delete :destroy, :band_id => bands(:violator).id, :id => concerts(:concert1).to_param
     end
 
-    assert_redirected_to band_path(bands(:violator))
+    assert_redirected_to band_path(bands(:violator), :anchor =>  'concerts')
   end
   
   # Private methods

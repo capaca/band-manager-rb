@@ -28,6 +28,18 @@ class SongTest < ActiveSupport::TestCase
     assert_error_on_save song, :release
   end
   
+  test "Should not save a song with the same track number in the release scope" do
+    assert create_song(:track_number => 1).save
+    
+    song = create_song(:track_number => 1)
+    assert song.save == false
+    assert song.errors.empty? == false
+    assert song.errors[:track_number].empty? == false
+    
+    song = create_song(:release => releases(:violent_mosh), :track_number => 1)
+    assert song.save
+  end
+  
   # Private methods
   private
   

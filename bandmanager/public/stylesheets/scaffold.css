@@ -163,8 +163,6 @@ input, textarea {
   text-align: right;
 }
 
-
-
 .center {
   margin: auto;
 }
@@ -442,6 +440,19 @@ hr { display: none; }
 #menu .current_page_item a {
 	background: #910000;
 	color: #FFFFFF;
+}
+
+#sub_menu {
+  background-color: #202020;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#sub_menu a{
+  text-decoration: none;
 }
 
 /* Page */

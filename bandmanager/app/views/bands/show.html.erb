@@ -1,9 +1,18 @@
-<%= corner "content"%>
+<%= corner "content", "sub_menu"%>
 
 <h1><%= @band.name %></h1>
 
+<!--
+<div id="sub_menu">
+  <a href="#info">Info</a> | 
+  <a href="#concerts">Shows</a> | 
+  <a href="#releases">Lançamentos</a> | 
+</div>
+-->
+
 <div class="content detalhes" id="content">
   
+  <a name="band_info"></a>
   <% if @band.logo.exists? %>
     <div class="logo center">
       <%= image_tag @band.logo.url(:normal) %>
@@ -16,7 +25,6 @@
     <%= image_tag @band.photo.url(:normal), :align => 'left', :class => 'photo' %>
   <% end %>
 
-  
   <div class="sobre">
     <%= field_label "band.genre" %>
     <%=h @band.genre.title %><br/>
@@ -39,8 +47,10 @@
   </div>
   
   <br />
-  
-  <h2>Próximos shows</h2>
+
+  <a name="concerts">
+    <h2>Próximos shows</h2>
+  </a>  
   
   <div class="direita">
     <%= link_to 'Cadastrar um novo show', new_band_concert_path(@band) %>
@@ -50,6 +60,7 @@
   <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
   
   <% if @band.has_past_concerts? %>
+    <br/>
     <div class="direita">
       <%= link_to 'Ver todos os shows', band_concerts_path(@band) %>
     </div>
@@ -57,7 +68,9 @@
   
   <br />
   
-  <h2>Lançamentos</h2>
+  <a name="releases">
+    <h2>Lançamentos</h2>
+  </a>
   
   <div class="direita">
     <%= link_to 'Cadastrar um novo lançamento', new_band_release_path(@band) %>

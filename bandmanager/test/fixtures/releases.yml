@@ -6,3 +6,11 @@ chemical_assault:
   year: 2006
   details: Gravado no Orbis Estúdio em Taguatinga/DF
 
+violent_mosh:
+  id: 2
+  band_id: 1  
+  type_id: 1
+  title: Violent Mosh
+  year: 2004
+  details: Gravado no Orbis Estúdio em Taguatinga/DF
+

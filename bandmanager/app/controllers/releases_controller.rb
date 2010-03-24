@@ -23,7 +23,7 @@ class ReleasesController < ApplicationController
     
     if @release.save
       flash[:notice] = 'Release was successfully created.'
-      redirect_to(@band)
+      redirect_to band_path(@band, :anchor => 'releases')
     else
       @types = ReleaseType.all
       @release.cover = nil

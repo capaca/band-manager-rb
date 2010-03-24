@@ -27,7 +27,7 @@ class ReleasesControllerTest < ActionController::TestCase
       post :create, :band_id => bands(:violator).id, :release => create_release_hash
     end
 
-    assert_redirected_to band_path(assigns(:band))
+    assert_redirected_to band_path(assigns(:band), :anchor => 'releases')
   end
   
   test "should not create an invalid release" do

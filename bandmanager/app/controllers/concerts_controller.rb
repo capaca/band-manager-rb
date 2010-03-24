@@ -36,7 +36,7 @@ class ConcertsController < ApplicationController
 
     if @concert.save
       flash[:notice] = 'Concert was successfully created.'
-      redirect_to @band
+      redirect_to band_path(@band, :anchor => 'concerts')
     else
       @countries = Country.all
       render :action => "new"
@@ -63,6 +63,6 @@ class ConcertsController < ApplicationController
     @concert = Concert.find(params[:id])
     @concert.destroy
 
-    redirect_to @band
+    redirect_to band_path(@band, :anchor => 'concerts')
   end
 end

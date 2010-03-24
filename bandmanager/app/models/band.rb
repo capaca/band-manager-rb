@@ -47,7 +47,7 @@ class Band < ActiveRecord::Base
       :all,
       :joins => "inner join bands_concerts bc on concerts.id = bc.concert_id",
       :conditions => ["bc.band_id = ? and concerts.date >= ?", self.id, Date.today],
-      :order => "concerts.date desc"
+      :order => "concerts.date asc"
     )
   end                                                  
   

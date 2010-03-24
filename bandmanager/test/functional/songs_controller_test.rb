@@ -50,7 +50,7 @@ class SongsControllerTest < ActionController::TestCase
     assert_not_nil release
     assert_not_nil band
     
-    assert_redirected_to band_path(band)
+    assert_redirected_to band_path(band, :anchor => 'releases')
   end
 
   test "should not create an invalid song" do
@@ -73,7 +73,7 @@ class SongsControllerTest < ActionController::TestCase
 
   test "should update song" do
     put :update, :id => songs(:atomic_nightmare).id, :song => create_song_hash
-    assert_redirected_to band_path(assigns(:song).release.band)
+    assert_redirected_to band_path(assigns(:song).release.band, :anchor => 'releases')
   end
 
   test "should not update an invalid song" do

@@ -31,4 +31,5 @@ class Song < ActiveRecord::Base
   
   validates_presence_of :title, :track_number, :release_id
   validates_associated :release
+  validates_uniqueness_of :track_number, :scope => :release_id
 end
