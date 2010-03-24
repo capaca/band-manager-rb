@@ -1,6 +1,6 @@
 <%= mask :date => "99/99/9999"%>
 
-<% form_for([@band, @concert]) do |f| %>
+<% form_for([@band, @concert], :html => {:multipart => true}) do |f| %>
   
   <%= f.error_messages %>
 
@@ -39,6 +39,18 @@
       <td colspan="2">
         <%= field_label 'concert.details' %><br />
         <%= f.text_area :details, :cols => 60, :rows => 12 %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= field_label "concert.flyer" %><br />
+        <%= f.file_field :flyer %>
+         | 
+        <% if @concert.flyer.exists? %>
+          <%= link_to 'Vizualizar flyer', @concert.flyer.url(:normal) %>
+        <% else %>
+          <em>Nenhum flyer adicionado</em>
+        <% end %>
       </td>
     </tr>
   </table>

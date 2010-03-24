@@ -9,6 +9,13 @@ class CreateConcerts < ActiveRecord::Migration
       t.belongs_to :country
 
       t.timestamps
+      
+      # Logo Columns
+      t.string      :flyer_file_name
+      t.string      :flyer_content_type
+      t.integer     :flyer_file_size
+      t.datetime    :flyer_updated_at
+
     end
   end
 

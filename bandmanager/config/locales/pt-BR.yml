@@ -161,9 +161,10 @@
         name: "Nome"
         date: "Data"
         city: "Cidade"
-        region: "Região"
+        region: "Estado"
         country: "País"
         details: "Detalhes"
+        flyer: "Cartaz"
         
       attachment:
         content_type: "conteudo"

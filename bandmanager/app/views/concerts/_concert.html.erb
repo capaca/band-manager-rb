@@ -14,6 +14,10 @@
     <% if truncate %>
       <%=h truncate(concert.details, :length => 170) %>
     <% else %>
+      <% if concert.flyer.exists? %>
+        <%= link_to(image_tag(concert.flyer.url(:small), :align => 'left', :class => 'photo'), concert.flyer.url(:normal))
+        %>
+      <% end %>
       <%= simple_format h concert.details %>
     <% end %>
   </div>

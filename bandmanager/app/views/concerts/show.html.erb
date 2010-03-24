@@ -1,14 +1,18 @@
-<%= render :partial => 'concerts/concert', 
-    :locals => {
-      :band => @band, 
-      :concert => @concert, 
-      :truncate => false
-    } 
-%>
+<div>
+  <%= render :partial => 'concerts/concert', 
+      :locals => {
+        :band => @band, 
+        :concert => @concert, 
+        :truncate => false
+      } 
+  %>
+</div>
 
-<%= link_to 'Editar', edit_band_concert_path(@band, @concert) %> |
-<%= link_to 'Excluir', band_concert_path(@band, @concert), 
-  :confirm => 'Você tem certeza?', 
-  :method => :delete 
-%> | 
-<%= link_to 'Voltar', band_path(@band) %>
+<div style="clear: both;">
+  <%= link_to 'Editar', edit_band_concert_path(@band, @concert) %> |
+  <%= link_to 'Excluir', band_concert_path(@band, @concert), 
+    :confirm => 'Você tem certeza?', 
+    :method => :delete 
+  %> | 
+  <%= link_to 'Voltar', band_path(@band) %>
+</div>

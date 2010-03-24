@@ -59,6 +59,10 @@ ActiveRecord::Schema.define(:version => 20100322012121) do
     t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "flyer_file_name"
+    t.string   "flyer_content_type"
+    t.integer  "flyer_file_size"
+    t.datetime "flyer_updated_at"
   end
 
   create_table "countries", :force => true do |t|
