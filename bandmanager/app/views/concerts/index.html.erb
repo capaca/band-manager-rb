@@ -1,1 +1,13 @@
-<%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @concerts} %>
+<%= corner "content" %>
+
+<h1>Shows de <%= @band.name %></h1>
+
+<div class="content" id="content">
+  <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @concerts} %>
+</div>
+
+<br/>
+
+<div class="centro">
+  <%= link_to 'Voltar', @band %>
+</div>

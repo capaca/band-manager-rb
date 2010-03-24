@@ -1,0 +1,11 @@
+band_concert1:
+  band_id: 1      # Violator
+  concert_id: 1   # Total Thrashin Show
+  
+band_concert2:
+  band_id: 1      # Violator
+  concert_id: 2   # Head Bangers Attack
+  
+band_concert3:
+  band_id: 2      # Pesticide
+  concert_id: 2   # Head Bangers Attack

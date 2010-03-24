@@ -46,9 +46,8 @@
     <%= link_to 'Cadastrar um novo show', new_band_concert_path(@band) %>
   </div>
   
-  <div class="concert_list">
-    <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
-  </div>
+  
+  <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
   
   <% if @band.has_past_concerts? %>
     <div class="direita">

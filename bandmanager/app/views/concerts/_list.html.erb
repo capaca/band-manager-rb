@@ -1,4 +1,6 @@
+<div class="concert_list">
 <% if concerts and concerts.size > 0 %>
+  <% years = [] %>
   <% concerts.each do |concert| %>
     <%= render :partial => 'concerts/concert', 
           :locals => {
@@ -14,4 +16,4 @@
     <em>Nenhum show cadastrado</em>
   </center>
 <% end %>
-
+</div>

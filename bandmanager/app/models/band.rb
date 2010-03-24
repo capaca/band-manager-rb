@@ -46,7 +46,8 @@ class Band < ActiveRecord::Base
     Concert.find(
       :all,
       :joins => "inner join bands_concerts bc on concerts.id = bc.concert_id",
-      :conditions => ["bc.band_id = ? and concerts.date >= ?", self.id, Date.today]
+      :conditions => ["bc.band_id = ? and concerts.date >= ?", self.id, Date.today],
+      :order => "concerts.date desc"
     )
   end                                                  
   

@@ -16,11 +16,15 @@
 #
 #-- /auto documented by documentor ++
 class Concert < ActiveRecord::Base
+  include Converters
 
   has_and_belongs_to_many :bands
   belongs_to :country
 
+  
   has_attached_file :flyer, :styles => { :normal => "500", :small => "150" }  
-
+  
   validates_presence_of :name, :date, :city, :country_id
+
+  act_as_virtual_date :date
 end
