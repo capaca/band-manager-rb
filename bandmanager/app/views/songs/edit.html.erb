@@ -1,7 +1,13 @@
-<h1>Editar Música</h1>
+<%= corner "content" %>
 
-<%= render :partial => "songs/form" %>
+<h1>Editar <%= @song.title %></h1>
 
-<br />
+<div id="content" class="content">
+  <%= render :partial => 'songs/form' %>
+</div>
 
-<%= link_to 'Voltar', band_path(@band) %>
+<br/>
+
+<div class="opcoes centro">
+  <%= link_to 'Voltar', band_path(@band) %>
+</div>

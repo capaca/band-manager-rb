@@ -1,5 +1,10 @@
 class ConcertsController < ApplicationController
 
+  def index
+    @band = Band.find(params[:band_id])
+    @concerts = @band.concerts
+  end
+  
   # GET /concerts/1
   # GET /concerts/1.xml
   def show
@@ -31,7 +36,7 @@ class ConcertsController < ApplicationController
 
     if @concert.save
       flash[:notice] = 'Concert was successfully created.'
-      redirect_to band_concert_path(@band, @concert)
+      redirect_to @band
     else
       @countries = Country.all
       render :action => "new"
@@ -45,7 +50,7 @@ class ConcertsController < ApplicationController
     @band = Band.find(params[:band_id])
     if @concert.update_attributes(params[:concert])
       flash[:notice] = 'Concert was successfully updated.'
-      redirect_to band_concert_path(@band, @concert)
+      redirect_to edit_band_concert_path(@band, @concert)
     else
       render :action => "edit"
     end

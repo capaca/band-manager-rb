@@ -1,5 +1,13 @@
-<h1>Novo show</h1>
+<%= corner "content" %>
 
-<%= render :partial => 'form' %>
+<h1>Novo Show</h1>
 
-<%= link_to 'Voltar', @band %>
+<div id="content" class="content">
+  <%= render :partial => 'concerts/form' %>
+</div>
+
+<br/>
+
+<div class="opcoes centro">
+  <%= link_to 'Voltar', @band %>
+</div>

@@ -40,15 +40,21 @@
   
   <br />
   
-  <h2>Shows</h2>
+  <h2>Próximos shows</h2>
   
   <div class="direita">
     <%= link_to 'Cadastrar um novo show', new_band_concert_path(@band) %>
   </div>
   
   <div class="concert_list">
-    <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.concerts}%>
+    <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
   </div>
+  
+  <% if @band.has_past_concerts? %>
+    <div class="direita">
+      <%= link_to 'Ver todos os shows', band_concerts_path(@band) %>
+    </div>
+  <% end %>
   
   <br />
   

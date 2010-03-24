@@ -1,6 +1,13 @@
-<h1>Editing concert</h1>
+<%= corner "content" %>
 
-<%= render :partial => 'form' %>
+<h1>Editar <%= @concert.name %></h1>
 
-<%= link_to 'Ver', band_concert_path(@band, @concert) %> |
-<%= link_to 'Voltar', @band %>
+<div id="content" class="content">
+  <%= render :partial => 'concerts/form' %>
+</div>
+
+<br/>
+
+<div class="opcoes centro">
+  <%= link_to 'Voltar', @band %>
+</div>

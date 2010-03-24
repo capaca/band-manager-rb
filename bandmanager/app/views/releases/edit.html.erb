@@ -1,7 +1,13 @@
-<h1>Editar Lançamento</h1>
+<%= corner "content" %>
 
-<%= render :partial => 'form' %>
+<h1>Editar <%= @release.title %></h1>
 
-<br />
+<div id="content" class="content">
+  <%= render :partial => 'releases/form' %>
+</div>
 
-<%= link_to 'Voltar', band_path(@band) %>
+<br/>
+
+<div class="opcoes centro">
+  <%= link_to 'Voltar', band_path(@band) %>
+</div>

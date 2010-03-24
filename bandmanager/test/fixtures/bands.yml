@@ -9,3 +9,12 @@ violator:
   country_id: 2
   about: Sobre o Violator...
   
+pesticide:
+  id: 2
+  name: Pesticide
+  genre_id: 2
+  year: 2007
+  city: Brasília
+  country_id: 2
+  about: Sobre o Pesticide...
+  

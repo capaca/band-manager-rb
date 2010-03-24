@@ -1,8 +1,17 @@
 concert1:
-  name: Total Thrashin' Show
-  date: 2010-03-21
+  id: 1
+  name: Total Thrashin Show
+  date: <%= Date.today + 1.day %> # Concert in the future
   city: Brasília
   region: DF
   country_id: 1 
   details: Detalhes do show
   
+concert2:
+  id: 2
+  name: Head Bangers Attack
+  date: <%= Date.today - 1.day %> # Concert in the past
+  city: Brasília
+  region: DF
+  country_id: 1 
+  details: Detalhes do show

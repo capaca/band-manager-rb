@@ -34,7 +34,7 @@ class BandsController < ApplicationController
     
     if @band.save
       flash[:notice] = get_message "band.save"
-      redirect_to edit_band_path(@band)
+      redirect_to bands_path
     else
       @countries = Country.all
       @genres = Genre.all

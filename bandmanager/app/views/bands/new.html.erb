@@ -1,5 +1,13 @@
+<%= corner "content" %>
+
 <h1>Nova Banda</h1>
 
-<%= render :partial => 'form'%>
+<div id="content" class="content">
+  <%= render :partial => 'bands/form' %>
+</div>
 
-<%= link_to 'Voltar', bands_path %>
+<br/>
+
+<div class="opcoes centro">
+  <%= link_to 'Voltar', bands_path %>
+</div>

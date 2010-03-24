@@ -27,7 +27,7 @@ class Band < ActiveRecord::Base
   belongs_to :genre
   belongs_to :country
 
-  has_and_belongs_to_many :concerts, :order => 'date DESC'
+  has_and_belongs_to_many :concerts, :order => 'date desc'
   
   has_many   :releases, :order => "year asc", :dependent => :destroy
   
@@ -40,6 +40,21 @@ class Band < ActiveRecord::Base
   
   validates_numericality_of :year, :only_integer => true , 
                             :greater_than => 1900, 
-                            :less_than_or_equal_to => Time.new.year                                                   
+                            :less_than_or_equal_to => Time.new.year
+                            
+  def upcoming_concerts
+    Concert.find(
+      :all,
+      :joins => "inner join bands_concerts bc on concerts.id = bc.concert_id",
+      :conditions => ["bc.band_id = ? and concerts.date >= ?", self.id, Date.today]
+    )
+  end                                                  
+  
+  def has_past_concerts?
+    Concert.count(
+      :joins => "inner join bands_concerts bc on concerts.id = bc.concert_id",
+      :conditions => ["bc.band_id = ? and concerts.date < ?", self.id, Date.today]
+    ) > 0
+  end
   
 end

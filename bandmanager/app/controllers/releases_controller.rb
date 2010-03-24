@@ -41,7 +41,7 @@ class ReleasesController < ApplicationController
       @release.update_attributes!(params[:release])
       
       flash[:notice] = 'Release was successfully updated.'
-      redirect_to(@release.band)
+      redirect_to edit_band_release_path(@release.band, @release)
     rescue
       @band = @release.band
       @types = ReleaseType.all

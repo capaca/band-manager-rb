@@ -29,7 +29,7 @@ class BandsControllerTest < ActionController::TestCase
       create_band
     end
 
-    assert_redirected_to edit_band_path(assigns(:band))
+    assert_redirected_to bands_path
   end
   
   test "should not create invalid band" do

@@ -45,7 +45,7 @@ class ReleasesControllerTest < ActionController::TestCase
       :id => releases(:chemical_assault).id, 
       :release => create_release_hash
     
-    assert_redirected_to band_path(assigns(:release).band)
+    assert_redirected_to edit_band_release_path(assigns(:release).band, assigns(:release))
   end
   
   test "should not update an invalid release" do

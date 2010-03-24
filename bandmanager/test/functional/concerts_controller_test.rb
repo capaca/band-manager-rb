@@ -2,6 +2,15 @@ require 'test_helper'
 
 class ConcertsControllerTest < ActionController::TestCase
 
+  test "should get index" do
+    get :index, :band_id => bands(:violator).id
+    assert_response :success
+    assert_template :index
+    
+    assert_not_nil assigns(:concerts)
+    assert_not_nil assigns(:band)
+  end
+
   test "should get new" do
     get :new, :band_id => bands(:violator).id
     assert_response :success
@@ -17,7 +26,7 @@ class ConcertsControllerTest < ActionController::TestCase
       post :create, :band_id => bands(:violator).id, :concert => create_concert_hash
     end
 
-    assert_redirected_to band_concert_path(assigns(:band), assigns(:concert))
+    assert_redirected_to assigns(:band)
 
     concert = assigns(:concert)
     concert.reload
@@ -67,7 +76,7 @@ class ConcertsControllerTest < ActionController::TestCase
       :id => concerts(:concert1).to_param, 
       :concert => create_concert_hash
     
-    assert_redirected_to band_concert_path(assigns(:band), assigns(:concert))
+    assert_redirected_to edit_band_concert_path(assigns(:band), assigns(:concert))
   end
 
   test "should destroy concert" do

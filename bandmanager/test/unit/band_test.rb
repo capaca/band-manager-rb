@@ -54,6 +54,25 @@ class BandTest < ActiveSupport::TestCase
     assert_error_on_save band, :genre
   end
   
+  test "Should retrieve all upcoming concerts of the band" do
+    concerts = bands(:violator).upcoming_concerts
+    assert_not_nil concerts
+
+    concerts.each do |concert|
+      assert concert.bands.member? bands(:violator)
+      assert concert.date >= Date.today
+    end
+  end
+  
+  test "Should tell if the band has past concerts" do
+    assert bands(:violator).has_past_concerts?
+    
+    # Delete the concert in the past
+    assert concerts(:concert2).destroy
+    
+    assert bands(:violator).has_past_concerts? == false
+  end
+  
   # Private methods
   private
     def create_band(options = {})

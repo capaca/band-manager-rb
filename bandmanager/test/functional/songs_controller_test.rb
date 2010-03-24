@@ -50,7 +50,7 @@ class SongsControllerTest < ActionController::TestCase
     assert_not_nil release
     assert_not_nil band
     
-    assert_redirected_to edit_band_release_song_path(band,release,song)
+    assert_redirected_to band_path(band)
   end
 
   test "should not create an invalid song" do
