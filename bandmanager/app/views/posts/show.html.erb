@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @post.content %>
+</p>
+
+
+<%= link_to 'Editar', edit_band_post_path(@band,@post) %> |
+<%= link_to 'Voltar', band_path(@band, :anchor => 'posts') %>

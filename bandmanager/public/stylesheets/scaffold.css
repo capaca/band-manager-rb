@@ -153,13 +153,49 @@ input, textarea {
 }
 
 .concert_list .concert .details{
-  font-size: 10px;
+  font-size: 11px;
   text-align: justify;
   height: 54px;
 }
 
 .concert .more {
-  font-size: 10px;
+  font-size: 11px;
+  text-align: right;
+}
+
+.post {
+  background-color: #333333;
+  padding: 8px;
+  width: 29%;
+  height: 125px;
+  float: left;
+  margin-right: 10px;
+}
+
+
+.post .title {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  height: 50px;
+}
+
+.post .date {
+  font-style: italic;
+  color: white;
+  font-weight: normal;
+}
+
+.post .content {
+  background:transparent;
+  font-size: 11px;
+  height: 65px;
+  padding: 0px;
+  text-align: justify;
+}
+
+.post .more {
+  font-size: 11px;
   text-align: right;
 }
 

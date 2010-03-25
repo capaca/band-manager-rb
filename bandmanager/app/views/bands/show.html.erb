@@ -48,6 +48,16 @@
   
   <br />
 
+  <a name="posts">
+    <h2>Blog</h2>
+  </a>  
+  
+  <div class="direita">
+    <%= link_to 'Fazer um novo post', new_band_post_path(@band) %>
+  </div>
+  
+  <%= render :partial => 'posts/list', :locals => {:posts => @band.posts}%>
+
   <a name="concerts">
     <h2>Próximos shows</h2>
   </a>  
@@ -55,7 +65,6 @@
   <div class="direita">
     <%= link_to 'Cadastrar um novo show', new_band_concert_path(@band) %>
   </div>
-  
   
   <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
   

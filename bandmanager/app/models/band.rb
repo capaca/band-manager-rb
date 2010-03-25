@@ -29,7 +29,8 @@ class Band < ActiveRecord::Base
 
   has_and_belongs_to_many :concerts, :order => 'date desc'
   
-  has_many   :releases, :order => "year asc", :dependent => :destroy
+  has_many  :releases, :order => "year asc", :dependent => :destroy
+  has_many  :posts, :order => "created_at desc", :dependent => :destroy
   
   has_attached_file :logo, :styles => { :normal => "600" }
   has_attached_file :photo, :styles => { :normal => "400", :mini => "150x150#" }
