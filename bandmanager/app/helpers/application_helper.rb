@@ -16,6 +16,15 @@ module ApplicationHelper
     puts_javascript output
   end
   
+  def datepicker(*ids)
+    output = ""
+    ids.each do |id|
+      output << "$('##{id}').datepicker( { dateFormat: 'dd/mm/yy' } );\n"
+    end
+    
+    puts_javascript output
+  end
+  
   def mask(hash)
     output = ""
     hash.keys.each do |key|

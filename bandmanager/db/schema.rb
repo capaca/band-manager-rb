@@ -73,14 +73,6 @@ ActiveRecord::Schema.define(:version => 20100325002914) do
     t.string "title"
   end
 
-  create_table "news", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "band_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"

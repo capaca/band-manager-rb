@@ -166,6 +166,10 @@
         details: "Detalhes"
         flyer: "Cartaz"
         
+      post:
+        title: "Título"
+        content: "Conteúdo"
+        
       attachment:
         content_type: "conteudo"
         size: "tamanho"

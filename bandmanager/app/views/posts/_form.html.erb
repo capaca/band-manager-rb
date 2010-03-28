@@ -1,16 +1,16 @@
 <% form_for([@band, @post]) do |f| %>
   <%= f.error_messages %>
 
-  <table class="form">
+  <table class="form" width="60%">
     <tr>
       <td>
-        <%= f.label :title %><br />
+        <%= field_label "post.title" %><br />
         <%= f.text_field :title %>
       </td>
     </tr>
     <tr>
       <td>
-        <%= f.label :content %><br />
+        <%= field_label "post.content" %><br />
         <%= f.text_area :content %>
       </td>
     </tr>

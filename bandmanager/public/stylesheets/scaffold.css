@@ -61,6 +61,10 @@ input, textarea {
   padding-top: 5px;
 }
 
+.form textarea {
+  width: 100%;
+}
+
 .content {
   background-color: #202020;
   padding: 12px;
