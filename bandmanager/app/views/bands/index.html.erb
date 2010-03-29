@@ -30,7 +30,7 @@
           <%=h band.year %><br />
           
           <span style="text-align: justify;">
-            <%=truncate(simple_format(h band.about), :length => 500) %> 
+            <%= truncate(band.about, :length => 500) %> 
             <%= link_to "(ler mais)", band_path(band)%>
           </span>
         </div>

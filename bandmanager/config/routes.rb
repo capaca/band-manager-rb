@@ -1,7 +1,5 @@
 
 ActionController::Routing::Routes.draw do |map|
-
-
   # Bands
   map.resources :bands do |bands|
     bands.resources :posts
