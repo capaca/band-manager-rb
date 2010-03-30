@@ -7,8 +7,10 @@
   <title>Band Manager: <%= controller.action_name %></title>
   
   <%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'jquery.corner',
-      'jquery.maskedinput-1.2.2', 'jquery.keyfilter-1.7', 'ckeditor/ckeditor' %>
-       
+      'jquery.maskedinput-1.2.2', 'jquery.keyfilter-1.7', 'ckeditor/ckeditor',
+      'swfobject.js' 
+  %>
+  
   <%= stylesheet_link_tag 'scaffold' %>
   <%= stylesheet_link_tag 'ui-lightness/jquery-ui.css' %>
 </head>
@@ -20,7 +22,6 @@
 		  <%= render :partial => "layouts/cabecalho" %>
 		</div>
 		<div id="page">
-		
 		  <% if flash[:notice] %>
 		    <div id="success">
 		      <span class="success">
@@ -28,7 +29,7 @@
 		      </span>
 		    </div>
 		  <% end %>
-		
+		  
       <%= yield %>
 		</div>
 	</div>

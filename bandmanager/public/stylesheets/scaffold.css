@@ -581,3 +581,7 @@ hr { display: none; }
   list-style: square;
 }
 
+.flash_style {
+  background-color: #000000;
+}
+

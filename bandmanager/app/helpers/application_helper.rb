@@ -1,6 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-
+  
   def check_tab(menu_item)
     if controller_name == menu_item
       "current_page_item"
