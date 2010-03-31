@@ -10,6 +10,13 @@ ActionController::Routing::Routes.draw do |map|
       end  
     end
   end
+
+  # Load Playlists
+  map.load_playlists(
+    '/playlists/load/:id', 
+    :controller => :playlists,
+    :action => :load
+  )
   
   map.resources :countries
 

@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
   var flashvars = {
-    playlist_url: "/playlists/load/<%= @band.id %>",
+    playlist_url: "<%= load_playlists_path(:id => @band.id)%>",
     autoplay: true
   };
   
