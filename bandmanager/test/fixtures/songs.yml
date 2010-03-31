@@ -1,9 +1,11 @@
 atomic_nightmare:
   title: Atomic Nightmare
+  track_number: 1
   lyrics: Letra de Atomic Nightmare
   release_id: 1
 
 destined_to_die:
   title: Destined to Die
+  track_number: 3
   lyrics: Letra de Destined to Die
   release_id: 1

@@ -10,35 +10,20 @@
 </div>
 -->
 
-<%
-  song_list = ''
-  
-  @band.releases.each do |release|
-    release.songs.each do |song|
-      if song.audio.exists?
-        song_list << song.audio.url
-      end
-    end
-  end
-%>
-
 <script type="text/javascript">
   var flashvars = {
-    mp3: "<%= song_list %>",
+    playlist_url: "/playlists/load/<%= @band.id %>",
+    autoplay: true
   };
-  var params = {
-    menu: "false",
-  };
+  
   var attributes = {
-    id: "audio_player",
-    name: "myDynamicContent",
-    bgcolor: "#000000",
+  };
+  
+  var params = {
   };
 
-  swfobject.embedSWF("/swf/audio_player.swf", "flash_content", "200", "100", "10.0.0","expressInstall.swf", flashvars, params, attributes);
+  swfobject.embedSWF("/swf/xspf_player.swf", "flash_content", "435", "153", "10.0.0","expressInstall.swf", flashvars, params, attributes);
 </script>
-
-<div id="flash_content">O flash vai aqui!</div>
 
 <div class="content detalhes" id="content">
   
@@ -56,14 +41,26 @@
   <% end %>
 
   <div class="sobre">
-    <%= field_label "band.genre" %>
-    <%=h @band.genre.title %><br/>
-  
-    <%= field_label "band.origin" %>
-    <%=h @band.city %>/<%=h @band.country.name %><br/>
+    <table>
+      <tr>
+        <td width="50%" valign="top">
+          <div>
+            <%= field_label "band.genre" %>
+            <%=h @band.genre.title %><br/>
+          
+            <%= field_label "band.origin" %>
+            <%=h @band.city %>/<%=h @band.country.name %><br/>
 
-    <%= field_label "band.year" %>
-    <%=h @band.year %><br/>
+            <%= field_label "band.year" %>
+            <%=h @band.year %><br/>
+          </div>
+        </td>
+        <td>
+          <div id="flash_content" style="float: right;">O flash vai aqui!</div>
+        </td>
+      </tr>
+    </table>
+    
     
     <div style="text-align: justify;"><%= @band.about %></div>
   </div>

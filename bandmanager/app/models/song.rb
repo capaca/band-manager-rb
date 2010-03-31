@@ -27,7 +27,7 @@ class Song < ActiveRecord::Base
   belongs_to :release
  
   has_attached_file :audio
-  validates_attachment_content_type :audio, :content_type => 'audio/x-mpeg'
+  validates_attachment_content_type :audio, :content_type => ['audio/x-mpeg', 'application/x-mp3']
   
   validates_presence_of :title, :track_number, :release_id
   validates_associated :release

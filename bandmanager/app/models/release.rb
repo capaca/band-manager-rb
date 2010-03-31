@@ -19,11 +19,6 @@
 #
 #-- /auto documented by documentor ++
 class Release < ActiveRecord::Base
-  # band_id:  integer
-  # title:    string
-  # year:     integer
-  # details   string
-  
   belongs_to :band 
   belongs_to :type, :class_name => "ReleaseType"
   belongs_to :cover, :class_name => "ReleaseCover", :dependent => :destroy
