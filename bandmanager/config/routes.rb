@@ -1,5 +1,7 @@
 
 ActionController::Routing::Routes.draw do |map|
+  map.devise_for :users
+
   # Bands
   map.resources :bands do |bands|
     bands.resources :posts

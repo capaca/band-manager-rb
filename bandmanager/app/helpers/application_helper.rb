@@ -83,5 +83,9 @@ module ApplicationHelper
   def field_label(model_attribute)
     "<label>#{t_attr model_attribute}:</label>"
   end
+  
+  def strip_html(str)
+    str.gsub(/<\/?[^>]*>/,  "")
+  end
 
 end

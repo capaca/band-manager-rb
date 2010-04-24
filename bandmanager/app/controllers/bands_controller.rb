@@ -1,4 +1,7 @@
 class BandsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /bands
   # GET /bands.xml
   def index

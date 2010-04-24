@@ -30,6 +30,22 @@
 		    </div>
 		  <% end %>
 		  
+		  <% if flash[:error] %>
+		    <div id="error">
+		      <span class="error">
+            <%= flash[:error] %>
+		      </span>
+		    </div>
+		  <% end %>
+		  
+		  <% if flash[:alert] %>
+		    <div id="error">
+		      <span class="error">
+            <%= flash[:alert] %>
+		      </span>
+		    </div>
+		  <% end %>
+		  
       <%= yield %>
 		</div>
 	</div>
