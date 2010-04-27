@@ -25,8 +25,8 @@
 		<!-- end #menu -->
 		
 		<div id="user">
-			<a href="#">Editar perfil</a> | 
-			<a href="#">Sair</a>
+			<%= link_to 'Editar Perfil', :controller => :users, :action => :edit %> | 
+			<%= link_to 'Sair', :controller => :users, :action => :sign_out %>
 		</div>
 	</div>
 	<!-- end #header -->

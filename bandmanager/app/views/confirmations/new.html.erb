@@ -1,12 +1,16 @@
-<h2>Resend confirmation instructions</h2>
+<h2>Reenviar as intruções de confirmação outra vez</h2>
 
 <% form_for resource_name, resource, :url => confirmation_path(resource_name) do |f| %>
   <%= f.error_messages %>
-
-  <p><%= f.label :email %></p>
-  <p><%= f.text_field :email %></p>
-
-  <p><%= f.submit "Resend confirmation instructions" %></p>
+  <table class="form">
+    <tr>
+      <td>
+        <%= f.label 'E-mail' %><br/>
+        <%= f.text_field :email %>
+      </td>
+    </tr>
+  </table>
+  <p><%= f.submit "Reenviar as intruções de confirmação outra vez" %></p>
 <% end %>
 
 <%= render :partial => "shared/devise_links" %>

@@ -1,7 +1,7 @@
 <div class="concert">
   <div class="header">
     <div class="calendar" title="<%= concert.date.strftime('%d/%m/%Y') %>">
-      <div class="top"><%=I18n.localize(concert.date, :format => :really_short) %></div>
+      <div class="top"><%= I18n.localize(concert.date, :format => :really_short) %></div>
       <%= concert.date.day %>
     </div>
     <span class="title"><%= concert.name %></span>

@@ -38,9 +38,9 @@
 		    </div>
 		  <% end %>
 		  
-		  <% if flash[:alert] %>
-		    <div id="error">
-		      <span class="error">
+		  <% if flash[:warning] %>
+		    <div id="alert">
+		      <span class="alert">
             <%= flash[:alert] %>
 		      </span>
 		    </div>

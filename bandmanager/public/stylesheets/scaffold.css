@@ -1,4 +1,3 @@
-
 body {
 	margin: auto;
 	padding: 0;
@@ -512,6 +511,24 @@ hr { display: none; }
 	background: url(images/img04.jpg) repeat;
 	border: 2px solid #003300;
 	color: #002100;
+}
+
+#error {
+	margin: auto;
+	margin-top: 20px;
+	padding: 2px;
+	background: url(images/img04.jpg) repeat;
+	border: 2px solid #003300;
+	color: #210000;
+}
+
+#alert {
+	margin: auto;
+	margin-top: 20px;
+	padding: 2px;
+	background: url(images/img04.jpg) repeat;
+	border: 2px solid #003300;
+	color: #002121;
 }
 
 .success {

@@ -1,0 +1,35 @@
+pt-BR:
+  devise:
+    sessions:
+      link: 'Logar'
+      signed_in: 'Login efetuado com sucesso.'
+      signed_out: 'Logout efetuado com sucesso.'
+      unauthenticated: 'Você precisa estar logado para acessar está página.'
+      unconfirmed: 'Você precisa confirmar o seu cadastro para continuar.'
+      locked: 'Sua conta está travada.'
+      invalid: 'E-mail ou senha invalidos.'
+      invalid_token: 'Token de autenticação invalido.'
+      timeout: 'Sua sessão expirou, por favor realize o login novamente.'
+      inactive: 'Sua conta não foi ativada ainda.'
+    passwords:
+      link: 'Esqueceu sua senha?'
+      send_instructions: 'Você vai receber um e-mail com instruções sobre como resetar sua senha em alguns minutos.'
+      updated: 'Sua senha foi modificada com sucesso. Agora você está logado.'
+    confirmations:
+      link: 'Não recebeu as instruções de cadastro?'
+      send_instructions: 'Você vai receber um e-mail com instruções sobre como confirmar o seu cadastro em alguns minutos'
+      confirmed: 'Seu cadastro foi confirmado com sucesso. Agora você está logado.'
+    registrations:
+      link: 'Cadastrar-se'
+      signed_up: 'Você se cadastrou com sucesso.'
+      updated: 'Você atualizou o seu cadastro com sucesso.'
+      destroyed: 'Tchau! Seu cadastro foi excluido com sucesso.'
+    unlocks:
+      link: 'Não recebu instruções de como desbloquear a sua conta?'
+      send_instructions: 'Você vai receber um e-mail com instruções sobre como desbloquear sua conta em alguns minutos.'
+      unlocked: 'Sua conta foi desbloqueada com sucesso. Você agora está logado.'
+    mailer:
+      confirmation_instructions: 'Instruções de confirmação'
+      reset_password_instructions: 'Instruções para resetar a senha'
+      unlock_instructions: 'Instruções de desbloqueio'
+
