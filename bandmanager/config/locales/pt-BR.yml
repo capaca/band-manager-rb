@@ -134,6 +134,7 @@
 
       band:
         name: "Nome"
+        screen_name: "Nome de tela"
         genre: "Gênero"
         year: "Ano"
         city: "Cidade"

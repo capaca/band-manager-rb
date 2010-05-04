@@ -7,7 +7,7 @@ pt-BR:
       unauthenticated: 'Você precisa estar logado para acessar está página.'
       unconfirmed: 'Você precisa confirmar o seu cadastro para continuar.'
       locked: 'Sua conta está travada.'
-      invalid: 'E-mail ou senha invalidos.'
+      invalid: 'E-mail ou senha inválidos.'
       invalid_token: 'Token de autenticação invalido.'
       timeout: 'Sua sessão expirou, por favor realize o login novamente.'
       inactive: 'Sua conta não foi ativada ainda.'

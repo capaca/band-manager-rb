@@ -3,6 +3,7 @@
 violator:
   id: 1
   name: Violator
+  screen_name: violator
   genre_id: 1
   year: 2002
   city: Brasília
@@ -12,6 +13,7 @@ violator:
 pesticide:
   id: 2
   name: Pesticide
+  screen_name: pesticide
   genre_id: 2
   year: 2007
   city: Brasília

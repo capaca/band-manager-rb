@@ -1,4 +1,4 @@
-<h2>Editar conta <%= resource_name.to_s.humanize %></h2>
+<h1>Editar conta <%= resource_name.to_s.humanize %></h1>
 
 <% form_for resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put } do |f| -%>
   <%= f.error_messages %>
@@ -12,20 +12,19 @@
     </tr>
     <tr>
       <td>
-        <%= f.label 'Senha' %><br/>
+        <%= f.label 'Nova senha' %><br/>
         <%= f.password_field :password %>
       </td>
     </tr>
     <tr>
       <td>
-        <%= f.label 'Confirmação da senha' %><br/>
+        <%= f.label 'Confirmação da nova senha' %><br/>
         <%= f.password_field :password_confirmation %>
       </td>
     </tr>
     <tr>
       <td>
-        <%= f.label 'Senha atual' %>
-        <i>(nós precisamos saber sua senha atual para confirmar suas mudanças.)</i><br/>
+        <%= f.label '', 'Senha atual', :title => 'Nós precisamos saber sua senha atual para confirmar suas mudanças' %><br/>
         <%= f.password_field :current_password %>
       </td>
     </tr>

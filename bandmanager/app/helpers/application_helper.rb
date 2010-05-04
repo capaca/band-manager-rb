@@ -80,12 +80,31 @@ module ApplicationHelper
     t "activerecord.attributes.#{model_attribute}"
   end
 
-  def field_label(model_attribute)
-    "<label>#{t_attr model_attribute}:</label>"
+  def field_label(model_attribute, options = {})
+    label_tag '', "#{t_attr model_attribute}:", options
+
   end
   
   def strip_html(str)
     str.gsub(/<\/?[^>]*>/,  "")
+  end
+  
+  def play_audio(playlist_url, autoplay, flash_player_path, width, height)
+    output = "
+      <script type='text/javascript'>
+        var flashvars = {
+          playlist_url: \"#{playlist_url}\",
+          autoplay: \"#{autoplay}\"
+        };
+    
+        var attributes = {};
+        var params = {};
+
+        swfobject.embedSWF(
+          \"#{flash_player_path}\", 'flash_content', \"#{width}\", \"#{height}\", 
+          '10.0.0', 'expressInstall.swf', flashvars, params, attributes
+        );
+      </script>"
   end
 
 end

@@ -1,4 +1,7 @@
 class SongsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /songs/1
   # GET /songs/1.xml
   def show
@@ -59,6 +62,6 @@ class SongsController < ApplicationController
     band = @song.release.band
     @song.destroy
 
-    redirect_to(band_path(band))
+    redirect_to band_path(band, :anchor => 'releases')
   end
 end

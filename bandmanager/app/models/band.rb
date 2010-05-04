@@ -35,14 +35,17 @@ class Band < ActiveRecord::Base
   has_attached_file :logo, :styles => { :normal => "600" }
   has_attached_file :photo, :styles => { :normal => "400", :mini => "150x150#" }
   
-  validates_presence_of :name, :genre, :year, :city, :country_id, :about
+  validates_presence_of :name, :screen_name, :genre, :year, :city, :country_id, :about
   validates_associated :genre, :country
   validates_length_of :about, :minimum => 10;
+  validates_uniqueness_of :screen_name
   
   validates_numericality_of :year, :only_integer => true , 
                             :greater_than => 1900, 
                             :less_than_or_equal_to => Time.new.year
                             
+  before_validation :downcase_screen_name
+  
   def upcoming_concerts
     Concert.find(
       :all,
@@ -59,4 +62,22 @@ class Band < ActiveRecord::Base
     ) > 0
   end
   
+  def has_attached_songs?
+    releases.each do |release|
+      release.songs.each do |song|
+        if song.audio.exists?
+          return true
+        end
+      end
+    end
+    false
+  end
+  
+  private 
+  
+  def downcase_screen_name
+    if self.screen_name
+      self.screen_name.downcase!
+    end
+  end
 end

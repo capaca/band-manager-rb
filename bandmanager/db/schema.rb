@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20100424203409) do
 
   create_table "bands", :force => true do |t|
     t.string   "name",               :null => false
+    t.string   "screen_name",        :null => false
     t.integer  "genre_id",           :null => false
     t.integer  "year",               :null => false
     t.string   "city",               :null => false

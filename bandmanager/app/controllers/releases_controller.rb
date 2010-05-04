@@ -1,4 +1,7 @@
 class ReleasesController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /releases/new
   # GET /releases/new.xml
   def new

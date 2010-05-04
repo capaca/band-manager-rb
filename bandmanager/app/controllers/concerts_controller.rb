@@ -1,5 +1,7 @@
 class ConcertsController < ApplicationController
 
+  before_filter :authenticate_user!
+  
   def index
     @band = Band.find(params[:band_id])
     @concerts = @band.concerts

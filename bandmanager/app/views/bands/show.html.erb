@@ -2,28 +2,15 @@
 
 <h1><%= @band.name %></h1>
 
-<!--
-<div id="sub_menu">
-  <a href="#info">Info</a> | 
-  <a href="#concerts">Shows</a> | 
-  <a href="#releases">Lançamentos</a> | 
-</div>
--->
 
-<script type="text/javascript">
-  var flashvars = {
-    playlist_url: "<%= load_playlists_path(:id => @band.id)%>",
-    autoplay: true
-  };
-  
-  var attributes = {
-  };
-  
-  var params = {
-  };
 
-  swfobject.embedSWF("/swf/xspf_player.swf", "flash_content", "435", "153", "10.0.0","expressInstall.swf", flashvars, params, attributes);
-</script>
+<%= 
+  if @band.has_attached_songs?
+    play_audio(
+      load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 435, 153
+    )
+  end
+%>
 
 <div class="content detalhes" id="content">
   
@@ -56,7 +43,7 @@
           </div>
         </td>
         <td>
-          <div id="flash_content" style="float: right;">O flash vai aqui!</div>
+          <div id="flash_content" style="float: right;"></div>
         </td>
       </tr>
     </table>

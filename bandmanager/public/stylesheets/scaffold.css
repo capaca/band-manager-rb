@@ -510,29 +510,39 @@ hr { display: none; }
 	padding: 2px;
 	background: url(images/img04.jpg) repeat;
 	border: 2px solid #003300;
-	color: #002100;
+	color: #000000;
 }
 
 #error {
 	margin: auto;
 	margin-top: 20px;
 	padding: 2px;
-	background: url(images/img04.jpg) repeat;
-	border: 2px solid #003300;
-	color: #210000;
+	background: url(images/img05.jpg) repeat;
+	border: 2px solid #330000;
+	color: #000000;
 }
 
 #alert {
 	margin: auto;
 	margin-top: 20px;
 	padding: 2px;
-	background: url(images/img04.jpg) repeat;
-	border: 2px solid #003300;
-	color: #002121;
+	background: url(images/img06.jpg) repeat;
+	border: 2px solid #333300;
+	color: #000000;
 }
 
 .success {
   background: url(images/icon_sucess_16.png) no-repeat;
+  padding-left: 20px;
+}
+
+.error {
+  background: url(images/icon_error_16.png) no-repeat;
+  padding-left: 20px;
+}
+
+.alert {
+  background: url(images/icon_alert_16.png) no-repeat;
   padding-left: 20px;
 }
 

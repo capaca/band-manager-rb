@@ -21,7 +21,7 @@ class BandTest < ActiveSupport::TestCase
   test "Should validate presence of attributes" do
     band = Band.new
     assert_error_on_save band, :name, :genre, 
-    	:year, :city, :country_id, :about
+    	:year, :city, :country_id, :about, :screen_name
   end
   
   test "Should validate length of about attribute" do
@@ -73,11 +73,29 @@ class BandTest < ActiveSupport::TestCase
     assert bands(:violator).has_past_concerts? == false
   end
   
+  test "Should downcase the screen name on save or update" do
+    band = create_band(:screen_name => 'KrEaToR')
+    assert band.save
+    
+    assert band.screen_name == 'kreator'
+  end
+  
+  test "Should validate de uniqueness of screen name" do
+    band1 = create_band(:screen_name => 'screen_name')
+    assert band1.save
+    
+    band2 = create_band(:screen_name => 'screen_name')
+    assert band2.save == false
+    
+    assert_error_on_save band2, :screen_name
+  end
+  
   # Private methods
   private
     def create_band(options = {})
       band_hash = {
-        :name => "Kreator", 
+        :name => "Kreator",
+        :screen_name => 'kreator',
         :genre => genres(:thrash),
         :year => 1983,
         :city => "Essen",

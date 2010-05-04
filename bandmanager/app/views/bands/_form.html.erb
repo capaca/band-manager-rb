@@ -8,6 +8,12 @@
         <%= f.text_field :name %>
       </td>
       <td>
+        <%= field_label "band.screen_name", 
+          :title => 'Nome a ser utilizado como identificador único da banda' %>
+        <br />
+        <%= f.text_field :screen_name %>
+      </td>
+      <td>
         <%= field_label "band.genre" %><br />
         <%= f.select :genre_id, @genres.map{|genre| [genre.title, genre.id] }, 
 				             :include_blank => '-- escolha o estilo --' %>
@@ -26,21 +32,19 @@
 			                 :escape => :false %>
         <% end %>
       </td>
-    </tr>
-    <tr>
       <td>
         <%= field_label "band.year" %><br />
         <%= f.text_field :year, :size => 10, :maxlength => 4, :class => "mask-num" %>
       </td>
     </tr>
     <tr>
-      <td colspan="2">
+      <td colspan="3">
         <%= field_label "band.about" %><br />
         <%= f.text_area :about, :class => 'ckeditor' %>
       </td>
     </tr>
     <tr>
-      <td colspan="2">
+      <td colspan="3">
         <%= field_label "band.logo" %><br />
         <%= f.file_field :logo %>
          | 
@@ -52,7 +56,7 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2">
+      <td colspan="3">
         <%= field_label "band.photo" %><br />
         <%= f.file_field :photo %>
          | 
