@@ -1,0 +1,13 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#main {
+  width: 780px;
+  margin: auto;
+}
+
+#main #header #logo{
+  text-align: center;
+}

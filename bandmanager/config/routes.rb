@@ -2,6 +2,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
 
+  map.site '/site/:screen_name', :controller => :site
+
   # Bands
   map.resources :bands do |bands|
     bands.resources :posts
