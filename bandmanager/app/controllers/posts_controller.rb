@@ -75,11 +75,9 @@ class PostsController < ApplicationController
   # DELETE /posts/1.xml
   def destroy
     @post = Post.find(params[:id])
+    band = @post.band
     @post.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(posts_url) }
-      format.xml  { head :ok }
-    end
+    
+    redirect_to(band_path(band, :anchor => 'posts'))
   end
 end

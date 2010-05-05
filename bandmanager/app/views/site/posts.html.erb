@@ -1,0 +1,12 @@
+<h1>Novidades</h1>
+
+<%= render :partial => 'posts/list', :locals => {
+    :posts => @posts, 
+    :text_length => 500
+  } 
+%>
+
+<div class="voltar" >
+  <%= link_to 'Voltar', :controller => :site, :action => :index %>
+</div>
+

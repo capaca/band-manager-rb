@@ -2,8 +2,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
 
-  map.site '/site/:screen_name', :controller => :site
-
   # Bands
   map.resources :bands do |bands|
     bands.resources :posts
@@ -26,7 +24,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :genres
 
-  map.root :controller => "bands", :action => "index" 
+  map.root :controller => "site", :action => "index" 
 
   # The priority is based upon order of creation: first created -> highest priority.
 

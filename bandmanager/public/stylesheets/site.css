@@ -10,7 +10,6 @@ body {
 body a:link, a:visited, a:active {
   color: #FFC600;
   font-weight: bold;
-  text-decoration: none;
 }
 
 body a:hover {
@@ -31,6 +30,10 @@ body a:hover {
   height: 400px;
 }
 
+h1 {
+  border-bottom: 2px solid #FABE3D;
+}
+
 object {
   margin-bottom: 20px;
 }
@@ -49,7 +52,32 @@ object {
   margin-top: 0px;
 }
 
+
+.all {
+  padding-left: 20px;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.voltar {
+  text-align: right;
+  font-size: 13px;
+  margin: 20px;
+  margin-right: 5px;
+  margin-bottom: 50px;
+}
+
+.more a {
+  text-decoration: none;
+}
+
 /* POST */
+
+.posts_icon {
+  background: url('images/news_16.png') no-repeat;
+}
 
 .post {
   padding: 5px;
@@ -95,6 +123,10 @@ object {
 }
 
 /* CONCERT */
+
+.concerts_icon {
+  background: url('images/calendar_16.png') no-repeat;
+}
 
 .concert_list {
   padding: 5px;

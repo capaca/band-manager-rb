@@ -73,6 +73,11 @@ class Band < ActiveRecord::Base
     false
   end
   
+  def last_posts(num)
+    Post.find(:all, :conditions => ['band_id = ?', self.id], 
+    :limit => num, :order => 'created_at desc')
+  end
+  
   private 
   
   def downcase_screen_name

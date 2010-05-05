@@ -90,6 +90,28 @@ class BandTest < ActiveSupport::TestCase
     assert_error_on_save band2, :screen_name
   end
   
+  test "Should get the last wanted number of posts from the band" do
+    band1 = create_band(:screen_name => 'screen_name')
+    assert band1.save
+    
+    create_posts_for_band = lambda { |band|
+      post = Post.new
+      post.band = band
+      post.title = "title"
+      post.content = "content"
+      assert post.save
+    }
+    
+    (1..10).each do 
+      create_posts_for_band.call(band1)
+    end
+    
+    assert band1.posts.size == 10
+    
+    num = 5
+    assert band1.last_posts(num).size == num
+  end
+  
   # Private methods
   private
     def create_band(options = {})

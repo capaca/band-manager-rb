@@ -1,0 +1,14 @@
+<div>
+    <h1>
+      <%=h @post.title %> -
+      <span class="date">
+        <%=h @post.created_at.strftime("%d/%m/%Y") %>
+      </span>
+    </h1>
+  <div><%= @post.content %></div>
+</div>
+
+<div class="voltar" >
+  <%= link_to 'Ver mais notícias', :controller => :site, :action => :posts %> | 
+  <%= link_to 'Voltar', :controller => :site, :action => :index %>
+</div>

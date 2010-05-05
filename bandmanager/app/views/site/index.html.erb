@@ -1,15 +1,14 @@
-<div id="header">
-  <div id="logo">
+<div id="posts" class="session">
+  <h1>Novidades</h1>
+  <%= render :partial => 'posts/list', :locals => {:posts => @band.last_posts(5), :text_length => 200}%>
+  
+  <div class="all posts_icon">
+    <%= link_to 'Ler todas as notícias', :controller => :site, :action => :posts %>
   </div>
 </div>
 
-<div id="posts" class="session">
-  <h1>Novidades</h1>
-  <%= render :partial => 'posts/list', :locals => {:posts => @band.posts}%>
-</div>
-
 <div id="player" class="session">
-  <div id="flash_content"></div>
+  <div id="flash_content" ></div>
 </div>
 
 <div id="about" class="session" style="float: left;">
@@ -22,6 +21,10 @@
 <div id="concerts" class="session">
   <h1>Próximos Shows</h1>
   <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
+  
+  <div class="all concerts_icon">
+    <%= link_to 'Ver todos os shows', :controller => :site, :action => :concerts %>
+  </div>
 </div>
 
 <div id="releases" class="session">
@@ -29,16 +32,13 @@
   <%= render :partial => 'releases/list', :locals => {:releases => @band.releases}%>
 </div>
 
-<!--
--->
-
 <div style="clear: both;"/>
 
 <!-- PLAYER -->
 <%= 
   if @band.has_attached_songs?
     play_audio(
-      load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 405, 153
+      load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 400, 153
     )
   end
 %>
