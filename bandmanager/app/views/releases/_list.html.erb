@@ -15,12 +15,14 @@
               <em>(<%=h release.year %>)</em>
             </strong>
             
-            <%= link_to 'Editar', edit_band_release_path(@band, release) %> |
-            
-            <%= link_to 'Excluir', band_release_path(@band, release), 
-                        :confirm => 'Você tem certeza?', 
-                        :method => :delete 
-            %>
+            <% if user_signed_in? %>
+              <%= link_to 'Editar', edit_band_release_path(@band, release) %> |
+              
+              <%= link_to 'Excluir', band_release_path(@band, release), 
+                          :confirm => 'Você tem certeza?', 
+                          :method => :delete 
+              %>
+            <% end %>
             
             <br />
             <div style="text-align: justify;">
@@ -30,10 +32,12 @@
             
             <h3>Músicas</h3>
             
-            <div class="direita">
-              <%= link_to 'Cadastrar uma nova música', new_band_release_song_path(@band, release) %>
-            </div>
-            
+            <% if user_signed_in? %>
+              <div class="direita">
+                <%= link_to 'Cadastrar uma nova música', new_band_release_song_path(@band, release) %>
+              </div>
+            <% end %>
+                        
             <div class="musicas">
               <%= render :partial => "songs/list", :locals => {:songs => release.songs} %>
             </div>

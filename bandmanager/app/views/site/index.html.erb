@@ -1,7 +1,45 @@
 <div id="header">
   <div id="logo">
-    <%= image_tag @band.logo.url(:normal), :class => 'logo' %>
   </div>
-<div>
+</div>
 
-<p><%= simple_format @band.about %></p>
+<div id="posts" class="session">
+  <h1>Novidades</h1>
+  <%= render :partial => 'posts/list', :locals => {:posts => @band.posts}%>
+</div>
+
+<div id="player" class="session">
+  <div id="flash_content"></div>
+</div>
+
+<div id="about" class="session" style="float: left;">
+  <h1>Sobre o Violator</h1>
+  <div class="content">
+    <%= @band.about %>
+  </div>
+</div>
+
+<div id="concerts" class="session">
+  <h1>Próximos Shows</h1>
+  <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
+</div>
+
+<div id="releases" class="session">
+  <h1>Lançamentos</h1>
+  <%= render :partial => 'releases/list', :locals => {:releases => @band.releases}%>
+</div>
+
+<!--
+-->
+
+<div style="clear: both;"/>
+
+<!-- PLAYER -->
+<%= 
+  if @band.has_attached_songs?
+    play_audio(
+      load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 405, 153
+    )
+  end
+%>
+

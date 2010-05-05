@@ -9,9 +9,12 @@
       
     <div class="content"><%= truncate(strip_html(post.content), :length => 200) %></div>
     <div class="more">
-      | <%= link_to 'Editar', edit_band_post_path(@band, post) %> 
-      | <%= link_to 'Excluir', band_post_path(@band, post), :confirm => 'Você tem certeza?', :method => :delete %> 
-      | <%= link_to 'Ler mais', band_post_path(@band, post) %>
+      <% if user_signed_in? %>
+        | <%= link_to 'Editar', edit_band_post_path(@band, post) %> 
+        | <%= link_to 'Excluir', band_post_path(@band, post), :confirm => 'Você tem certeza?', :method => :delete %> 
+        | 
+      <% end %>
+      <%= link_to 'Ler mais', band_post_path(@band, post) %>
     </div> 
   </div>
 <% end %>

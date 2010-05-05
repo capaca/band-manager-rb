@@ -1,13 +1,173 @@
 body {
   margin: 0px;
   padding: 0px;
+  background: url('images/background_site.jpg') center top fixed;
+  font-size: 12px;
+  font-family: arial, helvetica, verdana, sans-serif;
+  color: #FABE3D;
+}
+
+body a:link, a:visited, a:active {
+  color: #FFC600;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+body a:hover {
+  color: #8C7ECA;
 }
 
 #main {
-  width: 780px;
+  width: 830px;
   margin: auto;
+  /*border: 1px solid black;*/
 }
 
 #main #header #logo{
+  margin: auto;
+  background: url('images/logo.png') center top no-repeat;
   text-align: center;
+  width: 650px;
+  height: 400px;
 }
+
+object {
+  margin-bottom: 20px;
+}
+
+.session {
+  float: right;
+  width: 49%;
+  margin: 3px;
+}
+
+.session h1 {
+  background: #FABE3D;
+  color: #211939;
+  font-size: 16px;
+  padding: 2px;
+  margin-top: 0px;
+}
+
+/* POST */
+
+.post {
+  padding: 5px;
+  height: 125px;
+  border-bottom: 1px solid #FABE3D;
+  margin: 5px;
+  margin-top: 0px;
+}
+
+
+.post .title {
+  font-weight: bold;
+  font-size: 14px;
+  height: 50px;
+}
+
+.post .date {
+  font-style: italic;
+  font-weight: normal;
+}
+
+.post .content {
+  background:transparent;
+  font-size: 11px;
+  height: 65px;
+  padding: 0px;
+  text-align: justify;
+}
+
+.post .more {
+  font-size: 11px;
+  text-align: right;
+}
+
+/* ABOUT */
+
+#about {
+  text-align: justify;
+}
+
+#about .content {
+  padding: 4px;
+}
+
+/* CONCERT */
+
+.concert_list {
+  padding: 5px;
+}
+
+.concert {
+  border-bottom: 1px solid #FABE3D;
+}
+
+.concert .header {
+  height: 60px;
+}
+
+.concert .title{
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+.concert_list .concert .title{
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+.calendar {
+  background-color: white;
+  border: 1px solid #333333;
+  width: 30px;
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  margin-right: 5px;
+}
+
+.calendar div.top {
+  padding: 2px;
+  background-color: red;
+  border-bottom: inherit;
+  color: white;
+  font-size: 8px;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.concert .details{
+  text-align: justify;
+}
+
+.concert_list .concert .details{
+  font-size: 11px;
+  text-align: justify;
+  height: 54px;
+}
+
+.concert .more {
+  font-size: 11px;
+  text-align: right;
+}
+
+/* RELEASE */
+
+.lancamento {
+  border-bottom: 1px solid #FABE3D;
+  padding-top: 10px;
+}
+
+/* SONGS */
+
+.musicas ul {
+  margin-left: 0px;
+  padding: 0px;
+}
+

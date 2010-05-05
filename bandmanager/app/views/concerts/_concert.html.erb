@@ -24,9 +24,12 @@
 
   <% if truncate %>
     <div class="more">
-      | <%= link_to 'Editar', edit_band_concert_path(band, concert) %> 
-      | <%= link_to 'Excluir', band_concert_path(band, concert), :confirm => 'Você tem certeza?', :method => :delete %> 
-      | <%= link_to 'Ler mais', band_concert_path(band, concert) %>
+      <% if user_signed_in? %>  
+        | <%= link_to 'Editar', edit_band_concert_path(band, concert) %> 
+        | <%= link_to 'Excluir', band_concert_path(band, concert), :confirm => 'Você tem certeza?', :method => :delete %> 
+        | 
+      <% end %>
+      <%= link_to 'Ler mais', band_concert_path(band, concert) %>
     </div>  
   <% end %>
 </div>

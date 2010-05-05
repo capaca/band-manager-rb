@@ -17,13 +17,14 @@
         <% if song.audio.exists? %>
           | <%= link_to 'Download', song.audio.url %>
         <% end %>
-        
-        | <%=link_to "Editar", edit_band_release_song_path(@band, song.release, song)%>
-        
-        | <%= link_to 'Remover', band_release_song_path(song.release.band, song.release, song), 
-                        :confirm => 'Você tem certeza?', 
-                        :method => :delete 
+        <% if user_signed_in? %> 
+          | <%=link_to "Editar", edit_band_release_song_path(@band, song.release, song)%>
+          
+          | <%= link_to 'Remover', band_release_song_path(song.release.band, song.release, song), 
+                          :confirm => 'Você tem certeza?', 
+                          :method => :delete 
             %>
+        <% end %>
       </li>
   <% end %>
   </ul>
