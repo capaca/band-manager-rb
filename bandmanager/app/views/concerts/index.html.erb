@@ -4,6 +4,8 @@
 
 <div class="content" id="content">
   <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @concerts} %>
+  <br/>
+  <%= will_paginate @concerts %>
 </div>
 
 <br/>

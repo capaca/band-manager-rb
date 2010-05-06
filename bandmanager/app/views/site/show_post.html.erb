@@ -1,4 +1,4 @@
-<div>
+<div class="single_post">
     <h1>
       <%=h @post.title %> -
       <span class="date">
@@ -9,6 +9,6 @@
 </div>
 
 <div class="voltar" >
-  <%= link_to 'Ver mais notícias', :controller => :site, :action => :posts %> | 
-  <%= link_to 'Voltar', :controller => :site, :action => :index %>
+  <%= link_to 'Voltar', { :controller => :site, :action => :index }, :class => 'all back_icon' %> | 
+  <%= link_to 'Ver todas as notícias', { :controller => :site, :action => :posts }, :class => 'all posts_icon' %>
 </div>

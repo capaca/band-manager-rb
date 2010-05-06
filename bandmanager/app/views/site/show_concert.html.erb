@@ -1,0 +1,14 @@
+<div>
+  <%= render :partial => 'concerts/concert', 
+      :locals => {
+        :band => @band, 
+        :concert => @concert, 
+        :truncate => false
+      } 
+  %>
+</div>
+
+<div class="voltar" >
+  <%= link_to 'Voltar', { :controller => :site, :action => :index }, :class => 'all back_icon' %> | 
+  <%= link_to 'Ver todos os shows', { :controller => :site, :action => :concerts }, :class => 'all concerts_icon' %>
+</div>

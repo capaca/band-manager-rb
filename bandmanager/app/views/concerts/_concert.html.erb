@@ -29,7 +29,7 @@
         | <%= link_to 'Excluir', band_concert_path(band, concert), :confirm => 'Você tem certeza?', :method => :delete %> 
         | 
       <% end %>
-      <%= link_to 'Ler mais', band_concert_path(band, concert) %>
+      <%= link_to 'Ler mais', :controller => :site, :action => :show_concert, :concert_id => concert.id %>
     </div>  
   <% end %>
 </div>

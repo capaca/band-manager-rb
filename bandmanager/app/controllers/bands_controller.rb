@@ -12,6 +12,7 @@ class BandsController < ApplicationController
   # GET /bands/1.xml
   def show
     @band = Band.find(params[:id])
+    @posts = @band.paginate_posts(params[:page])
   end
 
   # GET /bands/new

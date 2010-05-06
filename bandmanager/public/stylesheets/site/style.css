@@ -1,0 +1,117 @@
+@import url("../pagination.css");
+@import url("post.css");
+@import url("concert.css");
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: url('images/background_site.jpg') center top fixed;
+  font-size: 12px;
+  font-family: arial, helvetica, verdana, sans-serif;
+  color: #FABE3D;
+}
+
+body a:link, a:visited, a:active {
+  color: #FFC600;
+  font-weight: bold;
+}
+
+body a:hover {
+  color: #8C7ECA;
+}
+
+#main {
+  width: 830px;
+  margin: auto;
+}
+
+#main #header #logo{
+  margin: auto;
+  background: url('images/logo.png') center top no-repeat;
+  text-align: center;
+  width: 650px;
+  height: 400px;
+}
+
+h1 {
+  border-bottom: 2px solid #FABE3D;
+}
+
+object {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.session {
+  float: right;
+  width: 49%;
+  margin: 3px;
+}
+
+.session h1 {
+  background: #FABE3D;
+  color: #211939;
+  font-size: 16px;
+  padding: 2px;
+  margin-top: 0px;
+}
+
+
+.all {
+  padding-right: 20px;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.right {
+  text-align: right;
+}
+
+.voltar {
+  text-align: center;
+  font-size: 12px;
+  margin: 60px;
+  clear: both;
+}
+
+.back_icon {
+  text-align: left;
+  background: url('images/back_16.png') no-repeat;
+  padding: 0px;
+  padding-left: 20px;
+}
+
+.more a {
+  text-decoration: none;
+}
+
+/* ABOUT */
+
+#about {
+  text-align: justify;
+}
+
+#about .content {
+  padding: 4px;
+}
+
+
+/* RELEASE */
+
+.lancamento {
+  border-bottom: 1px solid #FABE3D;
+  padding-top: 10px;
+}
+
+/* SONGS */
+
+.musicas ul {
+  margin-left: 0px;
+  padding: 0px;
+}
+

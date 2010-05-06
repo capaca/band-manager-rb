@@ -73,6 +73,20 @@ class Band < ActiveRecord::Base
     false
   end
   
+  def paginate_posts(page)
+    Post.paginate_by_band_id self.id, 
+      :page => page, :order => 'created_at desc'
+  end
+  
+  def paginate_concerts(page)
+    Concert.paginate(
+      :joins => 'inner join bands_concerts on id = concert_id',
+      :conditions => ['band_id = ?', self.id],
+      :page => page,
+      :order => 'date desc'
+    )
+  end
+  
   def last_posts(num)
     Post.find(:all, :conditions => ['band_id = ?', self.id], 
     :limit => num, :order => 'created_at desc')

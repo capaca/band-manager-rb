@@ -1,24 +1,25 @@
 class SiteController < ApplicationController
-  before_filter :find_band
   
   def index
+    @band = Band.find_by_screen_name(params[:screen_name])
   end
   
   def posts
-    @posts = @band.posts
+    @band = Band.find_by_screen_name(params[:screen_name])
+    @posts = @band.paginate_posts(params[:page])
   end
   
   def show_post
     @post = Post.find(params[:post_id])
   end
   
-  private 
-  
-  def find_band
-    if params[:screen_name]
-      @band = Band.find_by_screen_name(params[:screen_name])
-    end
-    
-    @band = Band.find_by_name('Violator')
+  def concerts
+    @band = Band.find_by_screen_name(params[:screen_name])
+    @concerts = @band.paginate_concerts(params[:page])
   end
+  
+  def show_concert
+    @concert = Concert.find(params[:concert_id])
+  end
+
 end

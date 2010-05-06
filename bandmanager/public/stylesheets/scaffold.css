@@ -100,7 +100,7 @@ input, textarea {
 }
 
 .concert {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .concert .header {
@@ -173,6 +173,7 @@ input, textarea {
   height: 125px;
   float: left;
   margin-right: 10px;
+  margin-top: 10px;
 }
 
 
@@ -610,5 +611,9 @@ hr { display: none; }
 
 .flash_style {
   background-color: #000000;
+}
+
+.pagination {
+  text-align: right;
 }
 

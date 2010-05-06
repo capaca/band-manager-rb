@@ -1,10 +1,10 @@
 <div id="posts" class="session">
   <h1>Novidades</h1>
-  <%= render :partial => 'posts/list', :locals => {:posts => @band.last_posts(5), :text_length => 200}%>
-  
-  <div class="all posts_icon">
+  <div class="all posts_icon right">
     <%= link_to 'Ler todas as notícias', :controller => :site, :action => :posts %>
   </div>
+
+  <%= render :partial => 'posts_list', :locals => {:posts => @band.last_posts(5), :text_length => 200}%>
 </div>
 
 <div id="player" class="session">
@@ -20,11 +20,11 @@
 
 <div id="concerts" class="session">
   <h1>Próximos Shows</h1>
-  <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
-  
-  <div class="all concerts_icon">
+  <div class="all concerts_icon right">
     <%= link_to 'Ver todos os shows', :controller => :site, :action => :concerts %>
   </div>
+
+  <%= render :partial => 'concerts_list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
 </div>
 
 <div id="releases" class="session">

@@ -1,0 +1,44 @@
+.pagination {
+	margin:0.3em;
+	padding:0.3em;
+	float: right;
+	margin-top: 10px;
+}
+
+.pagination a{
+	text-decoration: none;
+	border: 1px solid #FABE3D;
+	color: #336699;
+	margin: 0 0 0 1px;
+	padding: 0.05em 0.25em;
+}
+
+.pagination a:hover{
+	border: 1px solid #8C7ECA;
+}
+
+.pagination .current{
+	border: 1px solid #336699;
+	background: #231847;
+	color: #FFFFFF;
+	margin: 0 0 0 1px;
+	padding: 0.05em 0.25em;
+}
+
+.pagination .next_page{
+	text-decoration: none;
+	border: none !important;
+}
+
+.pagination .next_page:hover{
+	text-decoration: underline;
+}
+
+.pagination .prev_page{
+	text-decoration: none;
+	border: none !important;
+}
+
+.pagination .prev_page:hover{
+	text-decoration: underline;
+}

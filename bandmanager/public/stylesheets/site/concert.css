@@ -1,0 +1,56 @@
+/* CONCERT */
+
+.concerts_icon {
+  background: url('images/calendar_16.png') no-repeat right;
+}
+
+.concert {
+  margin-top: 10px;
+  border-bottom: 1px solid #FABE3D;
+}
+
+.concert .title{
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+.concert_list .concert .title{
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+.calendar {
+  background-color: white;
+  border: 1px solid #333333;
+  width: 30px;
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  margin-right: 5px;
+}
+
+.calendar div.top {
+  padding: 2px;
+  background-color: red;
+  border-bottom: inherit;
+  color: white;
+  font-size: 8px;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.concert .details{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 11px;
+}
+
+.concert .more {
+  font-size: 11px;
+  text-align: right;
+}

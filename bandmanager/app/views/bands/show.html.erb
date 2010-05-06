@@ -68,7 +68,7 @@
     <%= link_to 'Fazer um novo post', new_band_post_path(@band) %>
   </div>
   
-  <%= render :partial => 'posts/list', :locals => {:posts => @band.posts, :text_length => 200}%>
+  <%= render :partial => 'posts/list', :locals => {:posts => @posts, :text_length => 200}%>
 
   <a name="concerts">
     <h2>Próximos shows</h2>
@@ -79,6 +79,7 @@
   </div>
   
   <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
+  
   
   <% if @band.has_past_concerts? %>
     <br/>

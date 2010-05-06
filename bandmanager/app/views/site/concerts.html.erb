@@ -1,0 +1,14 @@
+<h1>Shows</h1>
+
+<%= 
+  render :partial => 'concerts_list', :locals => {
+    :band => @band, :concerts => @concerts
+  }
+%>
+
+<%= will_paginate @concerts %>
+
+<div class="voltar" >
+  <%= link_to 'Voltar', { :controller => :site, :action => :index }, :class => 'all back_icon' %>
+</div>
+

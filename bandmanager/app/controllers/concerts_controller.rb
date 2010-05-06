@@ -4,7 +4,7 @@ class ConcertsController < ApplicationController
   
   def index
     @band = Band.find(params[:band_id])
-    @concerts = @band.concerts
+    @concerts = @band.paginate_concerts(params[:page])
   end
   
   # GET /concerts/1

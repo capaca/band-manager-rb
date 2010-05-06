@@ -1,12 +1,14 @@
 <h1>Novidades</h1>
 
-<%= render :partial => 'posts/list', :locals => {
+<%= render :partial => 'posts_list', :locals => {
     :posts => @posts, 
     :text_length => 500
   } 
 %>
 
+<%= will_paginate @posts %>
+
 <div class="voltar" >
-  <%= link_to 'Voltar', :controller => :site, :action => :index %>
+  <%= link_to 'Voltar', { :controller => :site, :action => :index }, :class => 'all back_icon' %>
 </div>
 
