@@ -1,0 +1,37 @@
+<% if songs and songs.size > 0 %>
+  <table>
+  <% songs.each do |song| %>
+    <tr>
+      <td>
+        <%= song.track_number %> - 
+      </td>
+      
+      <td>    
+        <% if song.lyrics and song.lyrics.length > 0 %>
+          <%= link_to song.title, band_release_song_path(song.release.band, song.release, song) %>
+        <% else %>
+          <%= song.title %>
+        <% end %>
+      </td>
+      
+      <td>
+        <% if song.time and not song.time.empty? %>
+         &nbsp;(<%= song.time %>)
+        <% end %>
+      </td>
+      
+      <td>
+        <% if song.audio.exists? %>
+          | <%= link_to 'Download', song.audio.url %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <center>
+    <em>
+      Nenhuma música encontrada.
+    </em>
+  </center>
+<% end %>

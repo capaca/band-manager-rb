@@ -5,13 +5,14 @@
         <%=h post.title %> -
       </span>
       <span class="date">
-        <%=h post.created_at.strftime("%d/%m/%Y") %>
+        <%=h  I18n.localize(post.created_at.to_date) %>
       </span>
     </div>
     
     <div class="content"><%= truncate(strip_html(post.content), :length => text_length) %></div>
     <div class="more">
-      <%= link_to 'Ler mais', :controller => :site, :action => :show_post, :post_id => post.id %>
+      <%= link_to t('band_manager.site.session.news.more'), 
+          :controller => :site, :action => :show_post, :post_id => post.id %>
     </div> 
   </div>
 <% end %>

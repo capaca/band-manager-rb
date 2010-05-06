@@ -90,6 +90,16 @@ ul {
   text-decoration: none;
 }
 
+.subtitle {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.linkable {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* ABOUT */
 
 #about {
@@ -108,7 +118,24 @@ ul {
   padding-top: 10px;
 }
 
+.lancamento img {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.lancamento .title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+
 /* SONGS */
+
+.musicas {
+  margin-top: 20px;
+  display: none;
+}
 
 .musicas ul {
   margin-left: 0px;

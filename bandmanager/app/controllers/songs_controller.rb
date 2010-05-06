@@ -29,6 +29,8 @@ class SongsController < ApplicationController
     @release = Release.find(params[:release_id])
     @band = @release.band
     @song = Song.new(params[:song])
+    
+    puts "\n\n\n\n\n*****ContentType: "+@song.audio.content_type.inspect+"\n\n\n\n\n"
 
     @song.release = @release
 

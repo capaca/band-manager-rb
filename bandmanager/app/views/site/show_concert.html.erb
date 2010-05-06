@@ -9,6 +9,6 @@
 </div>
 
 <div class="voltar" >
-  <%= link_to 'Voltar', { :controller => :site, :action => :index }, :class => 'all back_icon' %> | 
-  <%= link_to 'Ver todos os shows', { :controller => :site, :action => :concerts }, :class => 'all concerts_icon' %>
+  <%= link_to t('band_manager.site.back'), { :controller => :site, :action => :index }, :class => 'all back_icon' %> | 
+  <%= link_to t('band_manager.site.session.concerts.all'), { :controller => :site, :action => :concerts }, :class => 'all concerts_icon' %>
 </div>

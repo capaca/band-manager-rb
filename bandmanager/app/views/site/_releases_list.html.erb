@@ -1,0 +1,36 @@
+<% if releases and releases.size > 0 %>
+  <% releases.each do |release| %>
+    <div class="lancamento">
+      <% if release.cover.exists? %>
+        <%= image_tag release.cover.url(:normal), :align => :left %>
+      <% end %>
+
+      <span class="title">
+        <%=h release.title %>
+        <em>(<%=h release.year %>)</em>
+      </span>
+      
+      <br />
+      <div style="text-align: justify;">
+        <%=simple_format h release.details %><br />
+      </div>
+      
+      <% songs_id = "songs_#{release.id}" %>
+      
+      <div style="clear: both;">
+        <span onclick="$('#<%= songs_id %>').toggle();" class="linkable subtitle"><%= t('band_manager.site.session.songs.title')%></span> 
+        &nbsp; (<%= t('band_manager.site.session.songs.click')%>)
+        <br/>
+        <div class="musicas" id=<%= "songs_#{release.id}" %>>
+          <%= render :partial => "songs_list", :locals => {:songs => release.songs} %>
+        </div>
+      </div>
+      <br />
+    </div>
+  <% end %>
+<% else %>
+  <center>
+    <em>Nenhum lançamento encontrado.</em>
+  </center>
+<% end %>
+

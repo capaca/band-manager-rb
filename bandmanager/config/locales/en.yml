@@ -1,5 +1,55 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
+"en":
+
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%B %dth"
+      long: "%B %dth of %Y"
+      really_short: "%b"
+
+    delimiter: "/"
+    day_names: [Sunday, Monday, Thursday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Thur, Wedn, Thur, Fri, Sat]
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, Dezember]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dez]
+    order: [ :month, :day, :year ]
+  
+  time:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%d/%m, %H:%M hs"
+      long: "%A, %d de %B de %Y, %H:%M hs" 
+      really_short: "%b"
+      
+    am: ''
+    pm: ''
+
+  band_manager:
+    pagination:
+      next: Next
+      prev: Previous
+
+    site:
+      back: Back
+      session:
+        news: 
+          title: News
+          all: See all news
+          more: Read more
+        about: About
+        concerts:
+          title: Concerts
+          upcoming: Upcoming Concerts
+          all: See all concerts
+          more: Detail concert
+        releases: 
+          title: Releases
+        songs: 
+          title: Songs
+          click: Click to expand
+        
+        
+        

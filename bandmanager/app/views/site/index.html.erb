@@ -1,7 +1,7 @@
 <div id="posts" class="session">
-  <h1>Novidades</h1>
+  <h1><%= t('band_manager.site.session.news.title') %></h1>
   <div class="all posts_icon right">
-    <%= link_to 'Ler todas as notícias', :controller => :site, :action => :posts %>
+    <%= link_to t('band_manager.site.session.news.all'), :controller => :site, :action => :posts %>
   </div>
 
   <%= render :partial => 'posts_list', :locals => {:posts => @band.last_posts(5), :text_length => 200}%>
@@ -12,24 +12,24 @@
 </div>
 
 <div id="about" class="session" style="float: left;">
-  <h1>Sobre o Violator</h1>
+  <h1><%= t('band_manager.site.session.about') %> <%= @band.name %></h1>
   <div class="content">
     <%= @band.about %>
   </div>
 </div>
 
 <div id="concerts" class="session">
-  <h1>Próximos Shows</h1>
+  <h1><%= t('band_manager.site.session.concerts.upcoming') %></h1>
   <div class="all concerts_icon right">
-    <%= link_to 'Ver todos os shows', :controller => :site, :action => :concerts %>
+    <%= link_to t('band_manager.site.session.concerts.all'), :controller => :site, :action => :concerts %>
   </div>
 
   <%= render :partial => 'concerts_list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
 </div>
 
 <div id="releases" class="session">
-  <h1>Lançamentos</h1>
-  <%= render :partial => 'releases/list', :locals => {:releases => @band.releases}%>
+  <h1><%= t('band_manager.site.session.releases.title') %></h1>
+  <%= render :partial => 'releases_list', :locals => {:releases => @band.releases}%>
 </div>
 
 <div style="clear: both;"/>

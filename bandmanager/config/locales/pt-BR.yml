@@ -209,6 +209,41 @@
         odd: "deve ser ímpar"
         even: "deve ser par"
         
+  band_manager:
+    site:
+      session:
+        news: Novidades
+        about: Sobre
+        concerts: Próximos Shows
+        releases: Lançamentos
+        songs: Músicas
+        
+        news:
+          read: Ler todas as notícias
+          
+  band_manager:
+    pagination:
+      next: Próximo
+      prev: Anterior
+      
+    site:
+      back: Voltar
+      session:
+        news: 
+          title: Novidades
+          all: Ver todas as notícias
+          more: Ler mais
+        about: Sobre
+        concerts: 
+          title: Próximos Shows
+          all: Ver todos os shows
+          more: Detalhar show
+        releases: 
+          title: Lançamentos
+        songs: 
+          title: Músicas
+          click: Clique aqui para expandir
+  
   messages:
     success:
       band:
