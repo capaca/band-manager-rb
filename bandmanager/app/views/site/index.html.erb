@@ -1,15 +1,25 @@
 <div id="posts" class="session">
   <h1><%= t('band_manager.site.session.news.title') %></h1>
   <div class="all posts_icon right">
-    <%= link_to t('band_manager.site.session.news.all'), :controller => :site, :action => :posts %>
+    <%= link_to t('band_manager.site.session.news.all'), 
+          :controller => :site, 
+          :action => :posts,
+          :locale => params[:locale]
+    %>
   </div>
 
   <%= render :partial => 'posts_list', :locals => {:posts => @band.last_posts(5), :text_length => 200}%>
 </div>
 
-<div id="player" class="session">
-  <div id="flash_content" ></div>
-</div>
+<!-- PLAYER -->
+<% if @band.has_attached_songs? %>
+    <%= play_audio(load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 400, 153) %>
+
+    <div id="player" class="session">
+      <div id="flash_content" ></div>
+    </div>
+<% end %>
+
 
 <div id="about" class="session" style="float: left;">
   <h1><%= t('band_manager.site.session.about') %> <%= @band.name %></h1>
@@ -21,7 +31,11 @@
 <div id="concerts" class="session">
   <h1><%= t('band_manager.site.session.concerts.upcoming') %></h1>
   <div class="all concerts_icon right">
-    <%= link_to t('band_manager.site.session.concerts.all'), :controller => :site, :action => :concerts %>
+    <%= link_to t('band_manager.site.session.concerts.all'), 
+          :controller => :site, 
+          :action => :concerts,
+          :locale => params[:locale]
+    %>
   </div>
 
   <%= render :partial => 'concerts_list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
@@ -33,13 +47,4 @@
 </div>
 
 <div style="clear: both;"/>
-
-<!-- PLAYER -->
-<%= 
-  if @band.has_attached_songs?
-    play_audio(
-      load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 400, 153
-    )
-  end
-%>
 

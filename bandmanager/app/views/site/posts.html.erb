@@ -9,6 +9,8 @@
 <%= will_paginate @posts %>
 
 <div class="voltar" >
-  <%= link_to t('band_manager.site.back'), { :controller => :site, :action => :index }, :class => 'all back_icon' %>
+  <%= link_to t('band_manager.site.back'), 
+      { :controller => :site, :action => :index, :locale => params[:locale] }, 
+      :class => 'all back_icon' %>
 </div>
 

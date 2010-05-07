@@ -23,9 +23,11 @@ class CreateBands < ActiveRecord::Migration
       t.integer     :photo_file_size
       t.datetime    :photo_updated_at
     end
+    Band.create_translation_table! :about => :text
   end
 
   def self.down
     drop_table :bands
+    Band.drop_translation_table!
   end
 end

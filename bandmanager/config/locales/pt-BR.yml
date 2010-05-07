@@ -233,13 +233,17 @@
           title: Novidades
           all: Ver todas as notícias
           more: Ler mais
+          none: Nenhuma notícia publicada
         about: Sobre
         concerts: 
-          title: Próximos Shows
+          upcoming: Próximos Shows
+          title: Shows
           all: Ver todos os shows
           more: Detalhar show
+          none: Nenhum show cadastrado 
         releases: 
           title: Lançamentos
+          none: Nenhum lançamento cadastrado
         songs: 
           title: Músicas
           click: Clique aqui para expandir

@@ -13,6 +13,7 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
     @posts = @band.paginate_posts(params[:page])
+    puts available_locales.inspect
   end
 
   # GET /bands/new

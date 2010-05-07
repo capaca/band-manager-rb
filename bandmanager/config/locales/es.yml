@@ -1,0 +1,55 @@
+"es":
+
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%B %dth"
+      long: "%B %dth of %Y"
+      really_short: "%b"
+
+    delimiter: "/"
+    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+    abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vier, Sab]
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosyo, Septiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    order: [ :day, :month, :year ]
+  
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d/%m, %H:%M hs"
+      long: "%A, %d de %B de %Y, %H:%M hs" 
+      really_short: "%b"
+      
+    am: ''
+    pm: ''
+
+  band_manager:
+    pagination:
+      next: Próximo
+      prev: Delante
+
+    site:
+      back: Volver
+      session:
+        news: 
+          title: Noticias
+          all: Ver todas las noticias
+          more: Leer más
+          none: No hay noticias publicadas
+        about: Acerca de
+        concerts:
+          title: Conciertos
+          upcoming: Próximos conciertos
+          all: Ver todos los conciertos
+          more: Detalle concierto
+          none: No hay conciertos registrados
+        releases: 
+          title: Lanzamientos
+          none: No hay lanzamientos registrados
+        songs: 
+          title: Temas
+          click: Clique para expandir
+        
+        
+        

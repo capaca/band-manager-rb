@@ -17,13 +17,18 @@
       </div>
 
       <div class="more">
-        <%= link_to t('band_manager.site.session.concerts.more'), :controller => :site, :action => :show_concert, :concert_id => concert.id %>
+        <%= link_to t('band_manager.site.session.concerts.more'), 
+              :controller => :site, 
+              :action => :show_concert, 
+              :concert_id => concert.id, 
+              :locale => params[:locale]
+        %>
       </div>  
     </div>
   <% end %>
   <div style="clear: both;"></div>
 <% else %>
   <center>
-    <em>Nenhum show previsto</em>
+    <em><%= t('band_manager.site.session.concerts.none')%></em>
   </center>
 <% end %>

@@ -1,19 +1,29 @@
-<% posts.each do |post| %>
-  <div class="post">
-    <div>
-      <span class="title">
-        <%=h post.title %> -
-      </span>
-      <span class="date">
-        <%=h  I18n.localize(post.created_at.to_date) %>
-      </span>
+<% if posts and posts.size > 0 %>
+  <% posts.each do |post| %>
+    <div class="post">
+      <div>
+        <span class="title">
+          <%=h post.title %> -
+        </span>
+        <span class="date">
+          <%=h  I18n.localize(post.created_at.to_date) %>
+        </span>
+      </div>
+      
+      <div class="content"><%= truncate(strip_html(post.content), :length => text_length) %></div>
+      <div class="more">
+        <%= link_to t('band_manager.site.session.news.more'), 
+              :controller => :site, 
+              :action => :show_post, 
+              :post_id => post.id,
+              :locale => params[:locale]
+        %>
+      </div> 
     </div>
-    
-    <div class="content"><%= truncate(strip_html(post.content), :length => text_length) %></div>
-    <div class="more">
-      <%= link_to t('band_manager.site.session.news.more'), 
-          :controller => :site, :action => :show_post, :post_id => post.id %>
-    </div> 
-  </div>
+  <% end %>
+  <div style="clear: both"></div>
+<% else %>
+    <center>
+      <em><%= t('band_manager.site.session.news.none')%></em>
+  </center>
 <% end %>
-<div style="clear: both"></div>

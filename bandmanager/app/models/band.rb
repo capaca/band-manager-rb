@@ -46,6 +46,8 @@ class Band < ActiveRecord::Base
                             
   before_validation :downcase_screen_name
   
+  translates :about
+  
   def upcoming_concerts
     Concert.find(
       :all,

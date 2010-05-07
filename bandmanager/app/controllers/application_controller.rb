@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   #
   before_filter :set_locale 
   
+  def available_locales; AVAILABLE_LOCALES; end 
+  
   protected
 
   def set_locale 
