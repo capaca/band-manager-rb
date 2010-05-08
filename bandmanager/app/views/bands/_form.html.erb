@@ -39,8 +39,14 @@
     </tr>
     <tr>
       <td colspan="3">
-        <%= field_label "band.about" %><br />
-        <%= text_area :about, :class => 'ckeditor' %>
+        <%= f.label "Sobre English" %><br />
+        <%= text_area :band, :about_en, :class => 'ckeditor' %>
+        
+        <%= f.label "Sobre Portugues" %><br />
+        <%= text_area :band, :about_pt_BR, :class => 'ckeditor' %>
+        
+        <%= f.label "Sobre Espanol" %><br />
+        <%= text_area :band, :about_es, :class => 'ckeditor' %>
       </td>
     </tr>
     <tr>
