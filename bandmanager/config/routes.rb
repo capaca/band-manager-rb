@@ -4,8 +4,16 @@ ActionController::Routing::Routes.draw do |map|
 
   # Site
   map.site(
-    'site/:screen_name/:action/:id',
+    ':screen_name/site/:locale/:action/:id',
+    :locale => 'pt-BR',
     :controller => :site,
+    :action => :index
+  )
+
+  # Admin
+  map.admin(
+    ':screen_name/admin/:controller/:action/:id',
+    :controller => :bands,
     :action => :index
   )
 
@@ -15,8 +23,7 @@ ActionController::Routing::Routes.draw do |map|
     bands.resources :concerts
     
     bands.resources :releases do |releases|
-      releases.resources :songs do |songs|
-      end  
+      releases.resources :songs
     end
   end
 

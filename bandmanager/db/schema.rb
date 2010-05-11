@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(:version => 20100424203409) do
   add_index "band_translations", ["band_id"], :name => "index_band_translations_on_band_id"
 
   create_table "bands", :force => true do |t|
-    t.string   "name",               :null => false
-    t.string   "screen_name",        :null => false
-    t.integer  "genre_id",           :null => false
-    t.integer  "year",               :null => false
-    t.string   "city",               :null => false
-    t.integer  "country_id",         :null => false
-    t.text     "about",              :null => false
+    t.string   "name"
+    t.string   "screen_name"
+    t.integer  "genre_id"
+    t.integer  "year"
+    t.string   "city"
+    t.integer  "country_id"
+    t.text     "about"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "logo_file_name"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(:version => 20100424203409) do
     t.integer "band_id"
     t.integer "concert_id"
   end
+
+  create_table "concert_translations", :force => true do |t|
+    t.integer  "concert_id"
+    t.string   "locale"
+    t.text     "details"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "concert_translations", ["concert_id"], :name => "index_concert_translations_on_concert_id"
 
   create_table "concerts", :force => true do |t|
     t.string   "name"
@@ -84,6 +94,17 @@ ActiveRecord::Schema.define(:version => 20100424203409) do
     t.string "title"
   end
 
+  create_table "post_translations", :force => true do |t|
+    t.integer  "post_id"
+    t.string   "locale"
+    t.text     "content"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "post_translations", ["post_id"], :name => "index_post_translations_on_post_id"
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -92,6 +113,16 @@ ActiveRecord::Schema.define(:version => 20100424203409) do
     t.datetime "updated_at"
   end
 
+  create_table "release_translations", :force => true do |t|
+    t.integer  "release_id"
+    t.string   "locale"
+    t.text     "details"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "release_translations", ["release_id"], :name => "index_release_translations_on_release_id"
+
   create_table "release_types", :force => true do |t|
     t.string "title"
   end
@@ -99,9 +130,9 @@ ActiveRecord::Schema.define(:version => 20100424203409) do
   create_table "releases", :force => true do |t|
     t.integer  "band_id"
     t.integer  "type_id"
-    t.string   "title",              :null => false
-    t.integer  "year",               :null => false
-    t.text     "details",            :null => false
+    t.string   "title"
+    t.integer  "year"
+    t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cover_file_name"

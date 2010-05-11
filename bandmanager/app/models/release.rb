@@ -33,6 +33,10 @@ class Release < ActiveRecord::Base
   validates_numericality_of :year, :only_integer => true
   validate :validate_year  
   
+  translates :details
+  globalize_accessors :available_locales
+
+  
   # Validations
   # 
   def validate_year

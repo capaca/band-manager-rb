@@ -17,9 +17,11 @@ class CreateConcerts < ActiveRecord::Migration
       t.datetime    :flyer_updated_at
 
     end
+    Concert.create_translation_table! :details => :text
   end
 
   def self.down
     drop_table :concerts
+    Concert.drop_translation_table!
   end
 end

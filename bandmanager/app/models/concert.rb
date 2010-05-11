@@ -27,6 +27,9 @@ class Concert < ActiveRecord::Base
 
   act_as_virtual_date :date
   
+  translates :details
+  globalize_accessors :available_locales
+  
   def self.per_page
     6
   end

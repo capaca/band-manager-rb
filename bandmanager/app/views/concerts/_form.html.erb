@@ -38,8 +38,14 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= field_label 'concert.details' %><br />
-        <%= f.text_area :details, :cols => 60, :rows => 12 %>
+        <%= f.label "Detalhes (Português)" %><br />
+        <%= f.text_area :details_pt_BR, :cols => 60, :rows => 12 %><br/><br/>
+        
+        <%= f.label "Detalhes (English)" %><br />
+        <%= f.text_area :details_en, :cols => 60, :rows => 12 %><br/><br/>
+        
+        <%= f.label "Detalhes (Español)" %><br />
+        <%= f.text_area :details_es, :cols => 60, :rows => 12 %><br/><br/>
       </td>
     </tr>
     <tr>

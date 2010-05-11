@@ -33,6 +33,32 @@ body a:hover {
   height: 400px;
 }
 
+#languages {
+  text-align: right;
+}
+
+.portuguese {
+  padding-left: 20px;
+  background: url('images/brazil_16.png') left no-repeat;
+}
+
+.spannish {
+  padding-left: 20px;
+  background: url('images/spain_16.png') left no-repeat;
+}
+
+.english {
+  padding-left: 20px;
+  background: url('images/uk_16.png') left no-repeat;
+}
+
+#footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px;
+  border-top: 1px solid #FABE3D;
+}
+
 h1 {
   border-bottom: 2px solid #FABE3D;
 }

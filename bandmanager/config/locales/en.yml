@@ -46,7 +46,7 @@
           none: No concerts found
         releases: 
           title: Releases
-          title: No releases found
+          none: No releases registered
         songs: 
           title: Songs
           click: Click to expand
