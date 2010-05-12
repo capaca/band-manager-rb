@@ -1,0 +1,56 @@
+<% if releases and releases.size > 0 %>
+  <% releases.each do |release| %>
+    <div class="lancamento">
+      
+      <table width="100%">
+        <tr>
+          <% if release.cover.exists? %>
+          <td valign="top" rowspan="2" width="120px">
+            <%= image_tag release.cover.url(:normal) %>
+          </td>
+          <% end %>
+          <td valign="top">
+            <strong>
+              <%=h release.title %>
+              <em>(<%=h release.year %>)</em>
+            </strong>
+            
+            <% if user_signed_in? %>
+              <%= link_to 'Editar', edit_admin_band_release_path(@band, release) %> |
+              
+              <%= link_to 'Excluir', admin_band_release_path(@band, release), 
+                          :confirm => 'Você tem certeza?', 
+                          :method => :delete 
+              %>
+            <% end %>
+            
+            <br />
+            <div style="text-align: justify;">
+              <%= field_label "release.details" %><br />
+              <%=simple_format h release.details %><br />
+            </div>
+            
+            <h3>Músicas</h3>
+            
+            <% if user_signed_in? %>
+              <div class="direita">
+                <%= link_to 'Cadastrar uma nova música', new_admin_band_release_song_path(@band, release) %>
+              </div>
+            <% end %>
+                        
+            <div class="musicas">
+              <%= render :partial => "admin/songs/list", :locals => {:songs => release.songs} %>
+            </div>
+            
+          </td>
+        </tr>
+      </table>
+      <br />
+    </div>
+  <% end %>
+<% else %>
+  <center>
+    <em>Nenhum lançamento encontrado.</em>
+  </center>
+<% end %>
+

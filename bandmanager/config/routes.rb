@@ -1,32 +1,25 @@
 
 ActionController::Routing::Routes.draw do |map|
-  map.devise_for :users
-
-  # Site
-  map.site(
-    ':screen_name/site/:locale/:action/:id',
-    :locale => 'pt-BR',
-    :controller => :site,
-    :action => :index
-  )
-
   # Admin
-  map.admin(
-    ':screen_name/admin/:controller/:action/:id',
-    :controller => :bands,
-    :action => :index
-  )
-
-  # Bands
-  map.resources :bands do |bands|
-    bands.resources :posts
-    bands.resources :concerts
+  map.namespace :admin do |admin|
+    admin.root :controller => "bands", :action => "index"
     
-    bands.resources :releases do |releases|
-      releases.resources :songs
+    admin.devise_for :users
+    
+    admin.resources :genres
+    admin.resources :countries
+    
+    # Bands
+    admin.resources :bands do |bands|
+      bands.resources :posts
+      bands.resources :concerts
+    
+      bands.resources :releases do |releases|
+        releases.resources :songs
+      end
     end
   end
-
+  
   # Load Playlists
   map.load_playlists(
     '/playlists/load/:id', 
@@ -34,10 +27,15 @@ ActionController::Routing::Routes.draw do |map|
     :action => :load
   )
   
-  map.resources :countries
-
-  map.resources :genres
-
+  # Site
+  map.site(
+    "/:locale/:action/:id",
+    :screen_name => SCREEN_NAME,
+    :locale => 'pt-BR',
+    :controller => :site,
+    :action => :index
+  )
+  
   map.root :controller => "site", :action => "index" 
 
   # The priority is based upon order of creation: first created -> highest priority.

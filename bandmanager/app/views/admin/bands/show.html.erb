@@ -1,0 +1,115 @@
+<%= corner "content", "sub_menu"%>
+
+<h1><%= @band.name %></h1>
+
+<%= 
+  if @band.has_attached_songs?
+    play_audio(
+      load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 435, 153
+    )
+  end
+%>
+
+<div class="content detalhes" id="content">
+  
+  <a name="band_info"></a>
+  <% if @band.logo.exists? %>
+    <div class="logo center">
+      <%= image_tag @band.logo.url(:normal) %>
+    </div>
+  <% end %>
+
+  <br/>
+
+  <% if @band.photo.exists? %>
+    <%= image_tag @band.photo.url(:normal), :align => 'left', :class => 'photo' %>
+  <% end %>
+
+  <div class="sobre">
+    <table>
+      <tr>
+        <td width="50%" valign="top">
+          <div>
+            <%= field_label "band.genre" %>
+            <%=h @band.genre.title %><br/>
+          
+            <%= field_label "band.origin" %>
+            <%=h @band.city %>/<%=h @band.country.name %><br/>
+
+            <%= field_label "band.year" %>
+            <%=h @band.year %><br/>
+          </div>
+        </td>
+        <td>
+          <div id="flash_content" style="float: right;"></div>
+        </td>
+      </tr>
+    </table>
+    
+    
+    <div style="text-align: justify;"><%= @band.about %></div>
+  </div>
+  <div style="clear: both"></div>
+  
+  <br />
+  
+  <div class="opcoes">
+    <%= link_to 'Editar', edit_admin_band_path(@band) %> |
+    <%= link_to 'Excluir', admin_band_path(@band), 
+          :confirm => 'Você tem certeza que quer excluir a banda e todas as suas informações?', 
+          :method => :delete 
+    %>
+  </div>
+  
+  <br />
+
+  <a name="posts">
+    <h2>Blog</h2>
+  </a>  
+  
+  <div class="direita">
+    <%= link_to 'Fazer um novo post', new_admin_band_post_path(@band) %>
+  </div>
+  
+  <%= render :partial => 'admin/posts/list', :locals => {:posts => @posts, :text_length => 200}%>
+
+  <a name="concerts">
+    <h2>Próximos shows</h2>
+  </a>  
+  
+  <div class="direita">
+    <%= link_to 'Cadastrar um novo show', new_admin_band_concert_path(@band) %>
+  </div>
+  
+  <%= render :partial => 'admin/concerts/list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
+  
+  
+  <% if @band.has_past_concerts? %>
+    <br/>
+    <div class="direita">
+      <%= link_to 'Ver todos os shows', band_concerts_path(@band) %>
+    </div>
+  <% end %>
+  
+  <br />
+  
+  <a name="releases">
+    <h2>Lançamentos</h2>
+  </a>
+  
+  <div class="direita">
+    <%= link_to 'Cadastrar um novo lançamento', new_admin_band_release_path(@band) %>
+  </div>
+  
+  <%= render :partial => 'admin/releases/list', :locals => {:releases => @band.releases}%>
+
+  <br />
+  
+    
+</div>
+
+<br/>
+<div class="opcoes centro">
+  <%= link_to 'Voltar', admin_bands_path %>
+</div>
+

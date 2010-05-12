@@ -1,0 +1,13 @@
+<%= corner "content" %>
+
+<h1>Editar post</h1>
+
+<div id="content" class="content">
+  <%= render :partial => 'form' %>
+</div>
+
+<br/>
+
+<div class="opcoes centro">
+  <%= link_to 'Voltar', admin_band_path(@band, :anchor => 'posts') %>
+</div>

@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
   
   def index
+    puts params[:screen_name].inspect
     @band = Band.find_by_screen_name(params[:screen_name])
   end
   

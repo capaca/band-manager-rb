@@ -1,0 +1,24 @@
+<%= corner "content" %>
+
+<h1>Países</h1>
+
+<div class="direita">
+  <%= link_to 'Cadastrar um novo país', new_admin_country_path %>
+</div>
+
+<br/>
+
+<div id="content" class="content">
+<% if @countries.size > 0 %>
+  <% @countries.each do |country| %>
+    <%= country.name %> | 
+    <%= link_to 'Remover', admin_country_path(country), :confirm => 'Você tem certeza?', :method => :delete %><br />
+  <% end %>
+<% else %>
+  <center>
+    <em>
+      Nenhum país encontrado.
+    </em>
+  </center>
+<% end %>
+</div>

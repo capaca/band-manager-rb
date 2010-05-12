@@ -1,4 +1,7 @@
 # Require and initialise any monkey-patches used by the application (patch code lives in lib/patches)
+
+SCREEN_NAME = 'violator'
+
 Dir[File.join(Rails.root, 'lib', 'patches', '**', '*.rb')].sort.each { |patch| require(patch) }
 
 module ActiveRecord

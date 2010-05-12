@@ -1,0 +1,36 @@
+<div class="concert">
+  <div class="header">
+    <div class="calendar" title="<%= concert.date.strftime('%d/%m/%Y') %>">
+      <div class="top"><%= I18n.localize(concert.date, :format => :really_short) %></div>
+      <%= concert.date.day %>
+    </div>
+    <span class="title"><%= concert.name %></span>
+    <div>
+      <%= "#{concert.city}/#{concert.region} - #{concert.country.name}"%>
+    </div>
+  </div>
+
+  <div class="details">
+    <% if truncate %>
+      <%=h truncate(concert.details, :length => 170) %>
+    <% else %>
+      <% if concert.flyer.exists? %>
+        <%= link_to(image_tag(concert.flyer.url(:small), :align => 'left', :class => 'photo'), concert.flyer.url(:normal))
+        %>
+      <% end %>
+      <%= simple_format h concert.details %>
+    <% end %>
+  </div>
+
+  <% if truncate %>
+    <div class="more">
+      <% if user_signed_in? %>  
+        | <%= link_to 'Editar', edit_admin_band_concert_path(band, concert) %> 
+        | <%= link_to 'Excluir', admin_band_concert_path(band, concert), :confirm => 'Você tem certeza?', :method => :delete %> 
+        | 
+      <% end %>
+      <%= link_to 'Ler mais', :controller => '/site', :action => :show_concert, :concert_id => concert.id %>
+    </div>  
+  <% end %>
+</div>
+

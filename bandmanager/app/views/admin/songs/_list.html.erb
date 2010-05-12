@@ -1,0 +1,37 @@
+<% if songs and songs.size > 0 %>
+  <ul>
+  <% songs.each do |song| %>
+      <li>
+        <%= song.track_number %> - 
+        
+        <% if song.lyrics and song.lyrics.length > 0 %>
+          <%= link_to song.title, admin_band_release_song_path(song.release.band, song.release, song) %>
+        <% else %>
+          <%= song.title %>
+        <% end %>
+        
+        <% if song.time and not song.time.empty? %>
+         &nbsp;(<%= song.time %>)
+        <% end %>
+        
+        <% if song.audio.exists? %>
+          | <%= link_to 'Download', song.audio.url %>
+        <% end %>
+        <% if user_signed_in? %> 
+          | <%=link_to "Editar", edit_admin_band_release_song_path(@band, song.release, song)%>
+          
+          | <%= link_to 'Remover', admin_band_release_song_path(song.release.band, song.release, song), 
+                          :confirm => 'Você tem certeza?', 
+                          :method => :delete 
+            %>
+        <% end %>
+      </li>
+  <% end %>
+  </ul>
+<% else %>
+  <center>
+    <em>
+      Nenhuma música encontrada.
+    </em>
+  </center>
+<% end %>

@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   #
   before_filter :set_locale 
   
-  def available_locales; AVAILABLE_LOCALES; end 
+  def available_locales; AVAILABLE_LOCALES; end
   
   protected
 
@@ -24,6 +24,16 @@ class ApplicationController < ActionController::Base
 
   def get_message(key, type = :success)
     t "messages.#{type.to_s}.#{key}"
+  end
+  
+  # Overwritten methods from devise (login/logout urls)
+  #
+  def after_sign_in_path_for(resource)
+    admin_bands_url
+  end
+  
+  def after_sign_out_path_for(resource)
+    new_user_session_url
   end
   
   private 

@@ -1,0 +1,48 @@
+<%= corner "content" %>
+<h1>Bandas</h1>
+
+<div class="direita">
+  <%= link_to 'Cadastrar uma nova banda', new_admin_band_path %>
+</div>
+
+<br/>
+
+<div class="content" id="content">
+  <% if @bands.size > 0 %>
+    <% @bands.each_with_index do |band, index| %>
+      <div class="banda">
+        <h2>
+          <%= link_to band.name, admin_band_path(band) %>
+        </h2>
+      
+        <% if band.photo.exists? %>
+          <%= link_to image_tag(band.photo.url(:mini), :align => 'left', :class => 'photo'), admin_band_path(band) %>
+        <% end %>
+      
+        <div class="sobre">
+          <%= field_label "band.genre" %>
+          <%=h band.genre.title %><br />
+          
+          <%= field_label "band.origin" %>
+          <%=h band.city %>/<%=h band.country.name %><br />
+
+          <%= field_label "band.year" %>
+          <%=h band.year %><br />
+          
+          <span style="text-align: justify;">
+            <%= truncate(band.about, :length => 500) %> 
+            <%= link_to "(ler mais)", admin_band_path(band)%>
+          </span>
+        </div>
+        <div style="clear: both"></div>
+        
+        <br />
+      </div>
+    <% end %>
+  <% else %>
+    <center>
+      <em>Nenhuma banda encontrada.</em>
+    </center>
+  <% end %>
+</div>
+

@@ -1,0 +1,27 @@
+<%= corner "content" %>
+
+<h1>Gêneros</h1>
+
+<div class="direita">
+  <%= link_to 'Cadastrar um novo gênero', new_admin_genre_path %>
+</div>
+
+<br/>
+
+<div id="content" class="content">
+  <% if @genres.size > 0 %>
+    <% @genres.each do |genre| %>
+      <p>
+        <%=h genre.title %> | 
+        <%= link_to 'Remover', admin_genre_path(genre), :confirm => 'Você tem certeza?', :method => :delete %>
+      </p>
+    <% end %>
+  <% else %>
+    <center>
+      <em>
+        Nenhum gênero encontrado.
+      </em>
+    </center>
+  <% end %>
+</div>
+

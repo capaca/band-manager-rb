@@ -1,0 +1,13 @@
+<%= corner "content" %>
+
+<h1>Editar <%= @song.title %></h1>
+
+<div id="content" class="content">
+  <%= render :partial => 'form' %>
+</div>
+
+<br/>
+
+<div class="opcoes centro">
+  <%= link_to 'Voltar', admin_band_path(@band, :anchor => 'releases') %>
+</div>

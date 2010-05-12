@@ -8,7 +8,7 @@
       
       <td>    
         <% if song.lyrics and song.lyrics.length > 0 %>
-          <%= link_to song.title, band_release_song_path(song.release.band, song.release, song) %>
+          <%= link_to song.title, :controller => :site, :action => :show_song, :song_id => song.id %>
         <% else %>
           <%= song.title %>
         <% end %>
