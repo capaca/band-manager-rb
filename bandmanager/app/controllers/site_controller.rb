@@ -22,5 +22,9 @@ class SiteController < ApplicationController
   def show_concert
     @concert = Concert.find(params[:concert_id])
   end
+  
+  def show_song
+    @song = Song.find(params[:song_id])
+  end
 
 end

@@ -8,6 +8,9 @@ class CreateBands < ActiveRecord::Migration
       t.string      :city
       t.belongs_to  :country
       t.text        :about
+      t.string      :email
+      t.string      :telephone
+      t.string      :address
 
       t.timestamps
 

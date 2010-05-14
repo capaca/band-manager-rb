@@ -50,6 +50,11 @@
         songs: 
           title: Temas
           click: Clique para expandir
-        
+        contacts:
+          title: Contactos
+          origin: Origen
+          email: E-mail
+          address: Dirección
+          telephone: Teléfono
         
         

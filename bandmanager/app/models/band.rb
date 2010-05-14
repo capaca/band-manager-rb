@@ -39,6 +39,7 @@ class Band < ActiveRecord::Base
   validates_associated :genre, :country
   validates_length_of :about, :minimum => 10;
   validates_uniqueness_of :screen_name
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,}\Z)/
   
   validates_numericality_of :year, :only_integer => true , 
                             :greater_than => 1900, 

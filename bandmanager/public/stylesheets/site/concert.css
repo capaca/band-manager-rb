@@ -54,3 +54,7 @@
   font-size: 11px;
   text-align: right;
 }
+
+.concert .details img {
+  margin-right: 10px;
+}

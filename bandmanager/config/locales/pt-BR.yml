@@ -141,6 +141,9 @@
         country: "País"
         origin: "Origem"                        
         about: "Sobre"
+        email: "E-mail"
+        telephone: "Telefone"
+        address: "Endereço"
         logo: "Logo"
         photo: "Foto"
         
@@ -247,6 +250,12 @@
         songs: 
           title: Músicas
           click: Clique aqui para expandir
+        contacts:
+          title: Contatos
+          origin: Origem
+          email: E-mail
+          address: Endereço
+          telephone: Telefone
   
   messages:
     success:

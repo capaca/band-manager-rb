@@ -38,6 +38,22 @@
       </td>
     </tr>
     <tr>
+      <td>
+        <%= field_label "band.email" %><br />
+        <%= f.text_field :email %>
+      </td>
+      <td>
+        <%= field_label "band.telephone" %><br />
+        <%= f.text_field :telephone, :maxlength => 15 %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <%= field_label "band.address" %><br />
+        <%= f.text_field :address, :style => "width: 95%;" %>
+      </td>
+    <tr>
+    <tr>
       <td colspan="3">
         <%= f.label "Sobre (Português)" %><br />
         <%= text_area :band, :about_pt_BR, :class => 'ckeditor' %><br/>

@@ -6,7 +6,7 @@ body {
   margin: 0px;
   margin-top: 5px;
   padding: 0px;
-  background: url('images/background_site.jpg') center top fixed;
+  background: url('images/background.jpg') center top fixed;
   font-size: 12px;
   font-family: arial, helvetica, verdana, sans-serif;
   color: #FABE3D;
@@ -22,7 +22,7 @@ body a:hover {
 }
 
 #main {
-  width: 830px;
+  width: 876px;
   margin: auto;
 }
 
@@ -73,9 +73,11 @@ ul {
 }
 
 .session {
-  float: right;
+  /*
+  float: left;
   width: 49%;
   margin: 3px;
+  */
 }
 
 .session h1 {
@@ -97,6 +99,10 @@ ul {
 
 .right {
   text-align: right;
+}
+
+.center {
+  text-align: center;
 }
 
 .voltar {
@@ -125,6 +131,16 @@ ul {
 .linkable {
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* CONTACTS */
+
+.contacts table {
+  width: 100%;
+}
+
+.contacts b {
+  color: white;
 }
 
 /* ABOUT */

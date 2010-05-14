@@ -50,6 +50,12 @@
         songs: 
           title: Songs
           click: Click to expand
+        contacts:
+          title: Contacts
+          origin: Origin
+          email: E-mail
+          address: Address
+          telephone: Telephone
         
         
         

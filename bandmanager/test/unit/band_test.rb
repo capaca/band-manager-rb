@@ -112,6 +112,13 @@ class BandTest < ActiveSupport::TestCase
     assert band1.last_posts(num).size == num
   end
   
+  test "Should validate format of email" do
+    band1 = create_band(:email => "email")
+    assert band1.save == false
+    
+    assert_error_on_save band1, :email  
+  end
+  
   # Private methods
   private
     def create_band(options = {})
@@ -122,7 +129,10 @@ class BandTest < ActiveSupport::TestCase
         :year => 1983,
         :city => "Essen",
         :country => countries(:germany),
-        :about => "About Kreator..."
+        :about => "About Kreator...",
+        :email => "contact@kreator.de",
+        :telephone => "(55) 61 34567656",
+        :address => "SHIN QI 04 conjunto 08 casa 05 - Brasília/DF - Brazil"
       }
       
       band = Band.new(band_hash.merge options)

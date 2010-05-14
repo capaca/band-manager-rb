@@ -1,0 +1,17 @@
+ <h2 class="center">
+  <% if @song.track_number %>
+    <%= @song.track_number %> - 
+  <% end %>
+  <%= @song.title %>
+  <% if @song.time %>
+    (<%= @song.time %>) 
+  <% end %>
+</h2>
+
+<div class="center">
+  <%= simple_format(h @song.lyrics) %>
+</div>
+
+<div class="voltar" >
+  <%= link_to t('band_manager.site.back'), { :controller => :site, :action => :index }, :class => 'all back_icon' %>
+</div>

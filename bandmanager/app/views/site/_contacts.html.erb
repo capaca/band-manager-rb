@@ -1,0 +1,32 @@
+<div class="contacts">
+  <table>
+    <tr>
+      <td colspan="2">
+        <b><%= t('band_manager.site.session.contacts.origin') %>:</b> <br/>
+        <%= @band.city %> - <%= @band.country.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @band.email %>
+          <b><%= t('band_manager.site.session.contacts.email') %>:</b> <br/>
+          <%= @band.email %>
+        <% end %>
+      </td>
+      <td>
+        <% if @band.telephone %>
+          <b><%= t('band_manager.site.session.contacts.telephone') %>:</b> <br/>
+          <%= @band.telephone %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <% if @band.address %>
+          <b><%= t('band_manager.site.session.contacts.address') %>:</b> <br/>
+          <%= @band.address %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>
