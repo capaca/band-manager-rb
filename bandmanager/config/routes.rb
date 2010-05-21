@@ -1,10 +1,10 @@
 
 ActionController::Routing::Routes.draw do |map|
-  # Admin
+  
+  map.devise_for :users
+  
   map.namespace :admin do |admin|
     admin.root :controller => "bands", :action => "index"
-    
-    admin.devise_for :users
     
     admin.resources :genres
     admin.resources :countries
@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
   
+
   # Load Playlists
   map.load_playlists(
     '/playlists/load/:id', 
@@ -46,6 +47,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
+  # Admin
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):

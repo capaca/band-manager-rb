@@ -1,0 +1,23 @@
+= README: XSPF for Ruby
+This library parses and generates XSPF playlist documents. This is release 0.4.
+
+Current limitations:
+    - For 'link', 'meta' and 'extension' elements, only the first one is parsed and only
+one can be generated
+    - The content of the 'attribution' element is not parsed (the XML content is returned)
+    - The content of the 'extension' element is not parsed (the XML content is returned)
+
+Homepage::  http://xspf.rubyforge.org
+
+== Licensing
+XSPF for Ruby is available under the Ruby license and the GPLv2 license
+
+== Requirements
+XSPF for Ruby requires Ruby 1.8.2 or better. It should work with Ruby 1.6 if
+REXML is installed, but this has not been tested.
+
+#--
+# XSPF for Ruby
+#   http://rubyforge.org/projects/xspf/
+#   Copyright 2006 Pau Garcia i Quiles
+#   Licensed under the Ruby license and the GPLv2 license

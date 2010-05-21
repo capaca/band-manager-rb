@@ -1,0 +1,44 @@
+0.4.1a
+
+ * Bugfix release: ruby-xslt 0.9.3 changes the way to load the gem
+
+0.4.1
+
+ * Added the to_rdf method to export XSPF to RDF
+ 
+ * Added an example showing how to transform m3u playlists to XSPF
+
+0.4
+
+ * XSPF document generator (see examples of use)
+
+ * Renamed the methods which show the XML code for XSPF and XSPF::Playlist to XSPF#playlist_xml, XSPF::Playlist#tracklist_xml. These methods are now protected and should never be used. If you need to see the XML code, use to_xml
+
+ * Removed the 'xspf' parameter in to_m3u, to_smil, to_soundblox and to_html
+
+ * XSPF#playlist always returns a valid XSPF::Playlist object (both in parse and generation modes)
+ 
+ * XSPF::Playlist#tracklist always returns a valid XSPF::Tracklist object (both in parse and generation modes)
+
+ * It is able to eat its own dogfood (but keep in mind the limitations about <attribution>, <extension>, <link> and <meta>)
+
+
+0.3
+
+ * Add methods to export the XSPF document to M3U, HTML, SMIL and SoundBlox
+   (using the XSLT templates by Lucas Gonze)
+
+ * Moved the project to RubyForge (thanks to Derek Sivers)
+
+
+0.2
+
+ * First public release
+
+ * Code refactoring: improved metaprogramming, moved from define_method to
+instance_eval (thanks to Ara T. Howard). No API changes.
+
+
+0.1
+
+ * First release

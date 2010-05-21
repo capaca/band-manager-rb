@@ -19,11 +19,17 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "paperclip"
-  config.gem "xspf"
-  config.gem "devise"
-  config.gem "will_paginate"  
-    
+  config.gem "pg", :version => '0.9.0'
+  config.gem "builder", :version => '2.1.2'
+  config.gem "rake", :version => '0.8.7'
+  config.gem "rack", :version => '1.0.1'
+  config.gem "paperclip", :version => '2.3.1.1' 
+  #config.gem "ruby-xslt",:version => "0.9.6"
+  config.gem "xspf", :version => "0.4.1.1"
+  config.gem "warden", :version => '0.10.4'
+  config.gem "devise", :version => '1.0.7'
+  config.gem "will_paginate", :version => '2.3.12'
+  
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

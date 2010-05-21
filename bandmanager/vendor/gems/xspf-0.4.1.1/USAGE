@@ -1,0 +1,350 @@
+:title: USAGE
+
+XSPF for Ruby implements a XML Shareable Playlist Format (XSPF[http://www.xspf.org]) v1 parser and generator in pure Ruby. It makes use of REXML to parse and generate the XML code, and Ruby-XSLT to export XSPF to different formats by means of XSLT transformations (XSPF for Ruby includes the XSLT templates by Lucas Gonze in its distribution).
+
+The API is quite straightforward if you know the XSPF specification. It is possible to combine parse and generation modes: you may load (parse) a file, then modify some of its attributes or contents and save it to XSPF again.
+
+The important thing to remember while using XSPF for Ruby is in generation mode you create objects by passing a hash or nil, and in parse mode you create objects by passing its 'parent' in the XSPF hierarchy.
+
+If a XSPF attribute or element is not set, the corresponding method will return _nil_.
+
+=== Examples
+==== Parse from file
+    
+    require 'xspf'
+
+    f = File.new("playlist.xspf")
+    x = XSPF.new(f)
+    f.close
+    pl = XSPF::Playlist.new(x)
+    tl = XSPF::Tracklist.new(pl)
+    
+    puts "XML version: #{x.version}"
+    puts "XML encoding: #{ x.encoding}"
+    puts "XSPF version: #{pl.version}"
+    puts "Namespace: #{pl.xmlns}"
+    puts "Playlist title: #{pl.title}"
+    puts "Playlist creator: #{pl.creator}"
+    puts "Playlist annotation: #{pl.annotation}"
+    puts "Playlist info: #{pl.info}"
+    puts "Playlist identifier: #{pl.identifier}"
+    puts "Playlist attribution: #{pl.attribution}"
+    puts "Tracklist: #{pl.tracklist}"
+    tl.tracks.each do |t|
+        puts "Track identifier: #{t.identifier}"
+        puts "Track title: #{t.title}"
+        puts "Track creator: #{t.creator}"
+        puts "Track duration: #{t.duration}"
+        puts "Track metainformation: link=#{t.meta_rel} content=#{t.meta_content}"
+    end
+
+    # Convert the XSPF document to SMIL
+    x.to_smil
+
+    # Convert the XSPF document to HTML
+    x.to_html
+
+    # Convert the XSPF document in a M3U playlist
+    x.to_m3u
+
+==== Parse from string
+
+    require 'xspf'
+
+    playlist_document = <<-END_OF_PLAYLIST
+    <?xml version="1.0" encoding="UTF-8"?>
+    <playlist version="0" xmlns="http://xspf.org/ns/0/">
+        <title>XSPlF it up!</title>
+        <creator>Mayhem &amp; Chaos Coordinator</creator>
+        <annotation>Just a few songs to enjoy while you XSPlF it up!</annotation>
+        <info>http://mayhem-chaos.net/xspf/xspf_it_up.html</info>
+        <identifier>http://mayhem-chaos.net/xspf/xspf_it_up/1.0</identifier>
+        <attribution>
+            <location>ihttp://mayhem-chaos.net/xspf/xspf_it_up.html</location>
+        </attribution>
+        <trackList>
+            <track>
+            <identifier>http://musicbrainz.org/track/bdab6db0-2fd6-4166-a5fa-fbf2ff213793</identifier>
+            <title>I Wanna Get High</title>
+            <creator>Cypress Hill</creator>
+            <duration>174613</duration>
+            <meta rel="http://musicbrainz.org/track">http://musicbrainz.org/mm-2.1/track/bdab6db0-2fd6-4166-a5fa-fbf2ff213793</meta>
+            </track>
+            <track>
+            <identifier>bdc846e7-6c26-4193-82a6-8d1b5a4d3429</identifier>
+            <title>Smoke Two Joints</title>
+            <creator>Sublime</creator>
+            <duration>175466</duration>
+            <meta rel="http://musicbrainz.org/track">http://musicbrainz.org/mm-2.1/track/bdc846e7-6c26-4193-82a6-8d1b5a4d3429</meta>
+            </track>
+            <track>
+            <identifier>http://musicbrainz.org/track/7d9776f7-d428-40dc-a425-3c6e3dce4d58</identifier>
+            <title>Hash Pipe</title>
+            <creator>Weezer</creator>
+            <duration>186533</duration>
+            <meta rel="http://musicbrainz.org/track">http://musicbrainz.org/mm-2.1/track/7d9776f7-d428-40dc-a425-3c6e3dce4d58</meta>
+            </track>
+        </trackList>
+    </playlist>
+    END_OF_PLAYLIST
+
+    x = XSPF.new(playlist_document)
+    pl = XSPF::Playlist.new(x)
+    tl = XSPF::Tracklist.new(pl)
+
+    puts "XML version: #{x.version}"
+    puts "XML encoding: #{ x.encoding}"
+    puts "XSPF version: #{pl.version}"
+    puts "Namespace: #{pl.xmlns}"
+    puts "Playlist title: #{pl.title}"
+    puts "Playlist creator: #{pl.creator}"
+    puts "Playlist annotation: #{pl.annotation}"
+    puts "Playlist info: #{pl.info}"
+    puts "Playlist identifier: #{pl.identifier}"
+    puts "Playlist attribution: #{pl.attribution}"
+    puts "Tracklist: #{pl.tracklist}"
+    tl.tracks.each do |t|
+        puts "Track identifier: #{t.identifier}"
+        puts "Track title: #{t.title}"
+        puts "Track creator: #{t.creator}"
+        puts "Track duration: #{t.duration}"
+        puts "Track metainformation: link=#{t.meta_rel} content=#{t.meta_content}"
+    end
+
+    # Convert the XSPF document to SMIL
+    x.to_smil
+
+    # Convert the XSPF document to HTML
+    x.to_html
+
+    # Convert the XSPF document in a M3U playlist
+    x.to_m3u
+
+==== Generate
+
+    require 'xspf'
+
+    track1 = XSPF::Track.new( {
+            :location => 'http://some.nifty.locati.on/file1.ogg', 
+            :identifier => 'http://musicbrainz.org/track/9f342af1-982d-4c26-9f61-3ac258957a83',  :title => 'Plus au sud',
+            :creator => 'Yann Tiersen',
+            :tracknum => '1',
+            :album => 'Tout est calme',
+            :meta_rel => 'http://www.example.org/key',
+            :meta_content => 'value'
+          } )
+
+    track2 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file2.ogg',
+             :identifier => 'http://musicbrainz.org/track/eba1a9a9-1810-41f1-8cc9-2a00dda0a68c',
+             :title => 'Les Grandes Marées',
+             :creator => 'Yann Tiersen',
+             :tracknum => '2',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track3 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file3.ogg',
+             :identifier => 'http://musicbrainz.org/track/0c18ef8c-04fa-47d5-b078-66ab6a819a83',
+             :title => 'La Crise',
+             :creator => 'Yann Tiersen',
+             :tracknum => '3',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track4 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file4.ogg',
+             :identifier => 'http://musicbrainz.org/track/0f66dd52-bda0-4526-979d-af95ac637cc4',
+             :title => 'Tout est calme',
+             :creator => 'Yann Tiersen',
+             :tracknum => '4',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track5 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file5.ogg',
+             :identifier => 'http://musicbrainz.org/track/a06ef58e-019e-409a-bf72-9bd080012ac3',
+             :title => 'La Rupture',
+             :creator => 'Yann Tiersen',
+             :tracknum => '5',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track6 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file6.ogg',
+             :identifier => 'http://musicbrainz.org/track/f82c0a06-d4a8-41a5-9238-029e38fa9d7c',
+             :title => 'La Relève',
+             :creator => 'Yann Tiersen',
+             :tracknum => '6',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track7 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file7.ogg',
+             :identifier => 'http://musicbrainz.org/track/97591e2b-967e-47eb-b2b3-9a450cd33352',
+             :title => 'La Pharmacie',
+             :creator => 'Yann Tiersen',
+             :tracknum => '7',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track8 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file8.ogg',
+             :identifier => 'http://musicbrainz.org/track/ae7f8502-778d-4f5e-9dba-6fc5d553ad0e',
+             :title => 'La Terrasse',
+             :creator => 'Yann Tiersen',
+             :tracknum => '8',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track9 = XSPF::Track.new( {
+             :location => 'http://some.nifty.locati.on/file9.ogg',
+             :identifier => 'http://musicbrainz.org/track/6e937503-9d01-428c-84b5-1200bab9d1c6',
+             :title => "L''Étal",
+             :creator => 'Yann Tiersen',
+             :tracknum => '9',
+             :album => 'Tout est calme',
+             :meta_rel => 'http://www.example.org/key',
+             :meta_content => 'value'
+           } )
+
+    track10 = XSPF::Track.new( {
+              :location => 'http://some.nifty.locati.on/file10.ogg',
+              :identifier => 'http://musicbrainz.org/track/2c4c845c-907a-4d96-940a-bbe8b2d0f126',
+              :title => 'La Découverte',
+              :creator => 'Yann Tiersen',
+              :tracknum => '10',
+              :album => 'Tout est calme',
+              :meta_rel => 'http://www.example.org/key',
+              :meta_content => 'value'
+            } )
+
+    tracklist = XSPF::Tracklist.new
+
+    tracklist << track1
+    tracklist << track2
+    tracklist << track3
+    tracklist << track4
+    tracklist << track5
+    tracklist << track6
+    tracklist << track7
+    tracklist << track8
+    tracklist << track9
+    tracklist << track10
+
+    playlist = XSPF::Playlist.new( {
+               :xmlns => 'http://xspf.org/ns/0/',
+               :title => 'Tout est calme',
+               :creator => 'Yann Tiersen',
+               :license => 'Redistribution or sharing not allowed',
+               :info => 'http://www.yanntiersen.com/',
+               :tracklist => tracklist,
+               :meta_rel => 'http://www.example.org/key',
+               :meta_content => 'value'
+             } )
+
+    xspf = XSPF.new( { :playlist => playlist } )
+
+    f = File.open('playlist.xspf', 'w')
+    f.write(xspf.to_xml)
+    f.close
+
+==== Parse and generate 
+
+Say you want to modify an existing XSPF document. What would you do?
+
+There are two ways to do it: the right way and the wrong way. The best way to do it is:
+
+    require 'xspf'
+
+    f = File.new("playlist.xspf")
+    x = XSPF.new(f)
+    pl = x.playlist
+    tl = pl.tracklist
+
+    some_other_track = XSPF::Track.new( {
+            :location => 'http://some.nifty.locati.on/file1.ogg',
+            :identifier => 'http://musicbrainz.org/track/9f342af1-982d-4c26-9f61-3ac258957a83',
+            :title => 'Plus au sud',
+            :creator => 'Yann Tiersen',
+            :tracknum => '1',
+            :album => 'Tout est calme',
+            :meta_rel => 'http://www.example.org/key',
+            :meta_content => 'value'
+          } )
+
+    tl << some_other_track
+    pl.title = 'My modified playlist'
+    f = File.open('playlist.xspf', 'w')
+    f.write(x.to_xml)
+    f.close
+
+Of course this would also work, but it means more work:
+
+    require 'xspf'
+
+    f = File.new("playlist.xspf")
+    x = XSPF.new(f)
+    pl = XSPF::Playlist.new(x)
+    tl = XSPF::Tracklist.new(pl)
+
+    some_other_track = XSPF::Track.new( {
+            :location => 'http://some.nifty.locati.on/file1.ogg',
+            :identifier => 'http://musicbrainz.org/track/9f342af1-982d-4c26-9f61-3ac258957a83',
+            :title => 'Plus au sud',
+            :creator => 'Yann Tiersen',
+            :tracknum => '1',
+            :album => 'Tout est calme',
+            :meta_rel => 'http://www.example.org/key',
+            :meta_content => 'value'
+          } )
+
+    tl << some_other_track
+    pl.title = 'My modified playlist'
+    pl.tracklist = tl
+    x.playlist = pl
+    f = File.open('playlist.xspf', 'w')
+    f.write(x.to_xml)
+    f.close
+
+This way, which may seem intuitive, is wrong:
+
+    require 'xspf'
+
+    f = File.new("playlist.xspf")
+    x = XSPF.new(f)
+    pl = XSPF::Playlist.new(x)
+    tl = XSPF::Tracklist.new(pl)
+
+    some_other_track = XSPF::Track.new( {
+            :location => 'http://some.nifty.locati.on/file1.ogg',
+            :identifier => 'http://musicbrainz.org/track/9f342af1-982d-4c26-9f61-3ac258957a83',
+            :title => 'Plus au sud',
+            :creator => 'Yann Tiersen',
+            :tracknum => '1',
+            :album => 'Tout est calme',
+            :meta_rel => 'http://www.example.org/key',
+            :meta_content => 'value'
+          } )
+
+    tl << some_other_track
+    pl.title = 'My modified playlist'
+    f = File.open('playlist.xspf', 'w')
+    f.write(x.to_xml)
+    f.close
+
+That will not work because 'pl' is a new object, unrelated to 'x'; and 'tl' is a new object, unrelated to 'pl'.

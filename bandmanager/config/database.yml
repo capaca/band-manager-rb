@@ -27,26 +27,26 @@
 ############  
 development:
   adapter: postgresql
-  database: bandmanager
-  username: postgres
-  password: postgres
-  host: 127.0.0.1
+  database: violatorthrash
+  username: violatorthrash
+  password: ba159ga
+  host: 187.45.196.142
   encoding: unicode
 
 test:
   adapter: postgresql
-  database: bandmanager
-  username: postgres
-  password: postgres
-  host: 127.0.0.1
+  database: violatorthrash
+  username: violatorthrash
+  password: ba159ga
+  host: 187.45.196.142
   encoding: unicode
   
 production:
   adapter: postgresql
-  database: bandmanager
-  username: postgres
-  password: postgres
-  host: 127.0.0.1
+  database: violatorthrash
+  username: violatorthrash
+  password: ba159ga
+  host: 187.45.196.142
   encoding: unicode
 
 
