@@ -1,7 +1,8 @@
 <div id="header-wrapper">
 	<div id="header">
 		<div id="menu">
-
+    
+		<% if user_signed_in? %>
 			<ul>
 				<li class="<%= check_tab "bands" %>">
 				  <%= link_to "Bandas", admin_bands_path %>
@@ -14,22 +15,16 @@
 				<li class="<%= check_tab "countries" %>">
 				  <%= link_to "Países", admin_countries_path %>
 				</li>
-				
-				<!-- 
-				  <li><a href="#">Blog</a></li>
-				  <li><a href="#">Photos</a></li>
-				  <li><a href="#">About</a></li>
-				  <li><a href="#">Links</a></li>
-				  <li><a href="#">Contact</a></li>
-				-->
 			</ul>
+		<% end %>
 		</div>
-		<!-- end #menu -->
 		
-		<div id="user">
-			<%= link_to 'Editar Perfil', :controller => :users, :action => :edit %> | 
-			<%= link_to 'Sair', :controller => :users, :action => :sign_out %>
-		</div>
+		<% if user_signed_in? %>
+		  <div id="user">
+			  <%= link_to 'Editar Perfil', :controller => "/users", :action => :edit %> | 
+			  <%= link_to 'Sair', :controller => "/users", :action => :sign_out %>
+		  </div>
+	  <% end %>
 	</div>
 	<!-- end #header -->
 </div>

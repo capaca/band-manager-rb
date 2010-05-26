@@ -9,4 +9,7 @@
 #
 #-- /auto documented by documentor ++
 class ReleaseType < ActiveRecord::Base
+  def to_s
+    self.title
+  end
 end

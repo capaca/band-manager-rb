@@ -36,8 +36,10 @@ ActionController::Routing::Routes.draw do |map|
     :controller => :site,
     :action => :index
   )
+
   
   map.root :controller => "site", :action => "index" 
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

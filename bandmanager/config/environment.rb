@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -22,13 +22,14 @@ Rails::Initializer.run do |config|
   config.gem "pg", :version => '0.9.0'
   config.gem "builder", :version => '2.1.2'
   config.gem "rake", :version => '0.8.7'
-  config.gem "rack", :version => '1.0.1'
+  config.gem "rack", :version => '1.1.0'
   config.gem "paperclip", :version => '2.3.1.1' 
   #config.gem "ruby-xslt",:version => "0.9.6"
   config.gem "xspf", :version => "0.4.1.1"
-  config.gem "warden", :version => '0.10.4'
+  config.gem "warden", :version => '0.10.5'
   config.gem "devise", :version => '1.0.7'
   config.gem "will_paginate", :version => '2.3.12'
+  config.gem "aegis", :version => '2.0.3'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

@@ -1,6 +1,7 @@
 class Admin::BandsController < ApplicationController
   
   before_filter :authenticate_user!
+  permissions :bands
   
   # GET /bands
   # GET /bands.xml

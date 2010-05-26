@@ -4,29 +4,38 @@ SHELL = /bin/sh
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /usr/lib64/ruby/1.8/x86_64-linux
+topdir = /usr/lib/ruby/1.8/x86_64-linux
 hdrdir = $(topdir)
 VPATH = $(srcdir):$(topdir):$(hdrdir)
+exec_prefix = $(prefix)
 prefix = $(DESTDIR)/usr
-exec_prefix = $(DESTDIR)/usr
-sitedir = $(DESTDIR)/usr/lib/ruby/site_ruby
-rubylibdir = $(prefix)/lib/ruby/$(ruby_version)
-archdir = $(libdir)/ruby/$(ruby_version)/$(arch)
-sbindir = $(DESTDIR)/usr/sbin
-datadir = $(DESTDIR)/usr/share
-includedir = $(DESTDIR)/usr/include
-infodir = $(DESTDIR)/usr/share/info
-sysconfdir = $(DESTDIR)/etc
-mandir = $(DESTDIR)/usr/share/man
-libdir = $(DESTDIR)/usr/lib64
-sharedstatedir = $(DESTDIR)/usr/com
+sharedstatedir = $(prefix)/com
+mandir = $(prefix)/share/man
+psdir = $(docdir)
 oldincludedir = $(DESTDIR)/usr/include
-sitearchdir = $(_fc_sitedir)/$(ruby_version)/$(sitearch)
-bindir = $(DESTDIR)/usr/bin
+localedir = $(datarootdir)/locale
+bindir = $(exec_prefix)/bin
+libexecdir = $(prefix)/lib/ruby1.8
+sitedir = $(DESTDIR)/usr/local/lib/site_ruby
+htmldir = $(docdir)
+vendorarchdir = $(vendorlibdir)/$(sitearch)
+includedir = $(prefix)/include
+infodir = $(prefix)/share/info
+vendorlibdir = $(vendordir)/$(ruby_version)
+sysconfdir = $(DESTDIR)/etc
+libdir = $(exec_prefix)/lib
+sbindir = $(exec_prefix)/sbin
+rubylibdir = $(libdir)/ruby/$(ruby_version)
+docdir = $(datarootdir)/doc/$(PACKAGE)
+dvidir = $(docdir)
+vendordir = $(libdir)/ruby/vendor_ruby
+datarootdir = $(prefix)/share
+pdfdir = $(docdir)
+archdir = $(rubylibdir)/$(arch)
+sitearchdir = $(sitelibdir)/$(sitearch)
+datadir = $(datarootdir)
 localstatedir = $(DESTDIR)/var
 sitelibdir = $(sitedir)/$(ruby_version)
-libexecdir = $(DESTDIR)/usr/libexec
-_fc_sitedir = $(DESTDIR)/usr/lib64/ruby/site_ruby
 
 CC = gcc
 LIBRUBY = $(LIBRUBY_SO)
@@ -35,21 +44,25 @@ LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
 LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static
 
 RUBY_EXTCONF_H = extconf.h
-CFLAGS   =  -fPIC -O2 -g -m64 -mtune=generic -Wall  -fPIC -Wall 
-INCFLAGS = -I. -I. -I/usr/lib64/ruby/1.8/x86_64-linux -I.
-CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\"   -I/usr/include
+CFLAGS   =  -fPIC -fno-strict-aliasing -g -g -O2  -fPIC $(cflags) -Wall 
+INCFLAGS = -I. -I. -I/usr/lib/ruby/1.8/x86_64-linux -I.
+DEFS     = 
+CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\"    -I/usr/include/postgresql
 CXXFLAGS = $(CFLAGS) 
-DLDFLAGS =  -L/usr/lib64  
+ldflags  = -L. -Wl,-Bsymbolic-functions -rdynamic -Wl,-export-dynamic -L/usr/lib
+dldflags = 
+archflag = 
+DLDFLAGS = $(ldflags) $(dldflags) $(archflag)
 LDSHARED = $(CC) -shared
 AR = ar
 EXEEXT = 
 
-RUBY_INSTALL_NAME = ruby
-RUBY_SO_NAME = ruby
+RUBY_INSTALL_NAME = ruby1.8
+RUBY_SO_NAME = ruby1.8
 arch = x86_64-linux
 sitearch = x86_64-linux
 ruby_version = 1.8
-ruby = /usr/bin/ruby
+ruby = /usr/bin/ruby1.8
 RUBY = $(ruby)
 RM = rm -f
 MAKEDIRS = mkdir -p
@@ -62,18 +75,18 @@ COPY = cp
 
 preload = 
 
-libpath = $(libdir)
-LIBPATH =  -L$(libdir)
+libpath = . $(libdir)
+LIBPATH =  -L. -L$(libdir)
 DEFFILE = 
 
-CLEANFILES = 
+CLEANFILES = mkmf.log
 DISTCLEANFILES = 
 
 extout = 
 extout_prefix = 
 target_prefix = 
 LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED) -lpq  -lpthread -ldl -lcrypt -lm   -lc
+LIBS = $(LIBRUBYARG_SHARED) -lpq  -lpthread -lrt -ldl -lcrypt -lm   -lc
 SRCS = pg.c compat.c
 OBJS = pg.o compat.o
 TARGET = pg_ext
@@ -81,9 +94,10 @@ DLLIB = $(TARGET).so
 EXTSTATIC = 
 STATIC_LIB = 
 
+BINDIR        = $(bindir)
 RUBYCOMMONDIR = $(sitedir)$(target_prefix)
-RUBYLIBDIR = /home/storage/e/d7/a4/violatorthrash/rails_apps/bandmanager/vendor/gems/pg-0.9.0/lib$(target_prefix)
-RUBYARCHDIR = /home/storage/e/d7/a4/violatorthrash/rails_apps/bandmanager/vendor/gems/pg-0.9.0/lib$(target_prefix)
+RUBYLIBDIR = /home/pedro/workspace/band-manager-rb/bandmanager/vendor/gems/pg-0.9.0/lib$(target_prefix)
+RUBYARCHDIR = /home/pedro/workspace/band-manager-rb/bandmanager/vendor/gems/pg-0.9.0/lib$(target_prefix)
 
 TARGET_SO     = $(DLLIB)
 CLEANLIBS     = $(TARGET).so $(TARGET).il? $(TARGET).tds $(TARGET).map
@@ -134,9 +148,9 @@ site-install-rb: install-rb
 .c.o:
 	$(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) -c $<
 
-$(DLLIB): $(OBJS)
+$(DLLIB): $(OBJS) Makefile
 	@-$(RM) $@
-	$(LDSHARED) $(DLDFLAGS) $(LIBPATH) -o $@ $(OBJS) $(LOCAL_LIBS) $(LIBS)
+	$(LDSHARED) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)
 
 
 
