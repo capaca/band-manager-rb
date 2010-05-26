@@ -105,4 +105,10 @@ class Admin::BandsController < ApplicationController
     end
   end
   
+  private 
+  
+  def object
+    @band ||= Band.find(params[:id])
+  end
+  
 end

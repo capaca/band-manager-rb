@@ -1,0 +1,26 @@
+<h1>Usuários</h1>
+
+<div class="direita">
+  <%= link_to 'Cadastrar novo usuário', new_admin_user_path %>
+</div>
+  
+<% if @users and @users.size > 0 %>
+  <table>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.email%>
+        </td>
+        <td>
+          <%= link_to 'Editar', edit_admin_user_path(user)%>
+        </td>
+        <td>
+          <%= link_to 'Remover', admin_user_path(user), 
+                          :confirm => 'Você tem certeza?', 
+                          :method => :delete 
+          %>
+        </td>
+      </tr>
+    <% end %>
+  <table>
+<% end %>

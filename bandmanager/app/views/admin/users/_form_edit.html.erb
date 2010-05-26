@@ -1,6 +1,3 @@
-<h1>Editar a sua conta</h1>
-
-<% form_for resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put } do |f| -%>
   <%= f.error_messages %>
   <table class="form">
     <tr>
@@ -31,9 +28,3 @@
   
   <br/>
   <%= f.submit "Editar" %>
-<% end -%>
-
-<p>Insatisfeito? <%= link_to "Cancelar a conta", registration_path(resource_name), :confirm => "Você tem certeza?", :method => :delete %>.</p>
-
-<br/>
-<%= render :partial => "shared/devise_links" %>

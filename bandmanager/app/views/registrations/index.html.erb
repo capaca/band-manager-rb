@@ -1,0 +1,29 @@
+<h1>Usuários</h1>
+
+<% if @users and @users.size > 0 %>
+  <table>
+    <tr>
+      <th>
+        E-mail
+      </th>
+      <th>
+        Editar
+      </th>
+      <th>
+        Excluir
+      </th>   
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= link_to 'Editar', :controller => :registrations, :action => :edit, :id => user.id %>
+      </td>
+      <td>
+      </td>   
+    </tr>
+  <% end %>
+  <table>
+<% end %>

@@ -3,7 +3,13 @@
 		<div id="menu">
     
 		<% if user_signed_in? %>
-			<ul>
+			<ul> 
+			  <% if current_user.may_manage_users? %>
+			    <li class="<%= check_tab "users" %>">
+				    <%= link_to "Usuários", admin_users_path %>
+				  </li>
+				<% end %>
+				
 				<li class="<%= check_tab "bands" %>">
 				  <%= link_to "Bandas", admin_bands_path %>
 				</li>

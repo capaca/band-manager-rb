@@ -34,8 +34,18 @@ body a:hover {
   height: 400px;
 }
 
+#main #header #topo{
+  margin: auto;
+  background: url('images/topo.jpg') center top no-repeat;
+  text-align: center;
+  width: 864px;
+  height: 451px;
+}
+
+
 #languages {
   text-align: right;
+  padding: 5px;
 }
 
 .portuguese {

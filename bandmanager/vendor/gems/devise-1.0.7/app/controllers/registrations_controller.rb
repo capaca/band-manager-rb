@@ -4,7 +4,7 @@ class RegistrationsController < ApplicationController
   include Devise::Controllers::InternalHelpers
   
   before_filter :only => [:create, :new, :index] do |controller|
-    controller.current_user.may_create_users!
+    controller.current_user.may_manage_users!
   end
   
   # GET /resource/sign_in
