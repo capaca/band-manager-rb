@@ -1,0 +1,17 @@
+body {
+  margin-top: 50px;
+  background: #35295B;
+  font-size: 12px;
+  font-family: arial, helvetica, verdana, sans-serif;
+  color: #FABE3D;
+  text-align: center;
+}
+
+body a:link, a:visited, a:active {
+  color: #FFC600;
+  font-weight: bold;
+}
+
+body a:hover {
+  color: #8C7ECA;
+}
