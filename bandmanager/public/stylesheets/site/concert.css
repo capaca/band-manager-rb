@@ -7,6 +7,7 @@
 .concert {
   margin-top: 10px;
   border-bottom: 1px solid #FABE3D;
+  padding: 5px;
 }
 
 .concert .title{

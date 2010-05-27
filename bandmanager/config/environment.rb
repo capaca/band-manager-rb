@@ -24,7 +24,6 @@ Rails::Initializer.run do |config|
   config.gem "rake", :version => '0.8.7'
   config.gem "rack", :version => '1.1.0'
   config.gem "paperclip", :version => '2.3.1.1' 
-  #config.gem "ruby-xslt",:version => "0.9.6"
   config.gem "xspf", :version => "0.4.1.1"
   config.gem "warden", :version => '0.10.5'
   config.gem "devise", :version => '1.0.7'

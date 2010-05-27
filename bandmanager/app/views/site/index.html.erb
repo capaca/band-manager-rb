@@ -1,6 +1,6 @@
 <div style="width: 49%; float: right; margin: 3px;">
   <!-- POSTS -->
-  <div id="posts" class="session">
+  <div id="posts" class="session" name="posts" >
     <h1><%= t('band_manager.site.session.news.title') %></h1>
     <div class="all posts_icon right">
       <%= link_to t('band_manager.site.session.news.all'), 
@@ -11,7 +11,7 @@
   </div>
 
   <!-- CONCERTS -->
-  <div id="concerts" class="session" >
+  <div id="concerts" class="session" name="concerts">
     <h1><%= t('band_manager.site.session.concerts.upcoming') %></h1>
     <div class="all concerts_icon right">
       <%= link_to t('band_manager.site.session.concerts.all'), 
@@ -22,7 +22,7 @@
   </div>
 
   <!-- RELEASES -->
-  <div id="releases" class="session">
+  <div id="releases" class="session" name="releases">
     <h1><%= t('band_manager.site.session.releases.title') %></h1>
     <%= render :partial => 'releases_list', :locals => {:releases => @band.releases}%>
   </div>
@@ -39,13 +39,13 @@
   <% end %>
 
   <!-- CONTACTS -->
-  <div id="contacts" class="session" >
+  <div id="contacts" class="session" name="contacts" >
     <h1><%= t('band_manager.site.session.contacts.title') %></h1>
     <%= render :partial => "contacts" %>
   </div>
 
   <!-- ABOUT -->
-  <div id="about" class="session" >
+  <div id="about" class="session" name="about">
     <h1><%= t('band_manager.site.session.about') %> <%= @band.name %></h1>
     <div class="content">
       <%= @band.about %>
