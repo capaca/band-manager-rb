@@ -250,6 +250,8 @@
           all: Ver todos os shows
           more: Detalhar show
           none: Nenhum show cadastrado 
+          read_more: ler mais
+          hide: esconder
         releases: 
           title: Lançamentos
           none: Nenhum lançamento cadastrado

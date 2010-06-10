@@ -44,6 +44,8 @@
           all: See all concerts
           more: Detail concert
           none: No concerts found
+          read_more: read more
+          hide: hide
         releases: 
           title: Releases
           none: No releases registered

@@ -12,20 +12,42 @@
       
       <br />
       <div style="text-align: justify;">
-        <%=simple_format h release.details %><br />
+        <% if release.details and release.details.size > 200 %>
+          <div id="release_details_truncated<%= release.id %>">
+            <%=truncate((simple_format h release.details), :length => 200 ) %>&nbsp;|&nbsp;
+            <span class="linkable" 
+              onclick="$('#release_details_truncated<%= release.id %>').toggle(); $('#release_details_total<%= release.id %>').toggle();">
+              <%= t('band_manager.site.session.concerts.read_more')%>
+            <span>
+          </div>
+          <div id="release_details_total<%= release.id %>" style="display: none;">
+            <%=simple_format h release.details %>&nbsp;|&nbsp;
+            <span class="linkable" 
+              onclick="$('#release_details_truncated<%= release.id %>').toggle(); $('#release_details_total<%= release.id %>').toggle();">
+              <%= t('band_manager.site.session.concerts.hide') %>  
+            <span>
+          </div>
+        <% else %>
+          <%=simple_format h release.details %>
+        <% end %>
+        <br />
       </div>
       
       <% songs_id = "songs_#{release.id}" %>
       
-      <div style="clear: both;">
-        <span onclick="$('#<%= songs_id %>').toggle();" class="linkable subtitle"><%= t('band_manager.site.session.songs.title')%></span> 
-        &nbsp; (<%= t('band_manager.site.session.songs.click')%>)
-        <br/>
-        <div class="musicas" id=<%= "songs_#{release.id}" %>>
-          <%= render :partial => "songs_list", :locals => {:songs => release.songs} %>
+      <% if release.songs and release.songs.size > 0 %>
+        <div style="clear: both;">
+          <span onclick="$('#<%= songs_id %>').toggle();" class="linkable subtitle"><%= t('band_manager.site.session.songs.title') %></span> 
+          &nbsp; (<%= t('band_manager.site.session.songs.click')%>)
+          <br/>
+          <div class="musicas" id=<%= "songs_#{release.id}" %>>
+            <%= render :partial => "songs_list", :locals => {:songs => release.songs} %>
+          </div>
         </div>
-      </div>
-      <br />
+        <br />
+      <% else %>
+        <div style="clear: both;"></div>
+      <% end %>
     </div>
   <% end %>
 <% else %>

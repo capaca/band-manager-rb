@@ -13,8 +13,9 @@
 </div>
 
 <div class="voltar" >
-  <%= link_to t('band_manager.site.back'), 
-      { :controller => :site, :action => :index }, 
-      :anchor => 'releases'
-      :class => 'all back_icon' %>
+  <%= link_to t('band_manager.site.back'), { 
+        :controller => :site, 
+        :action => :index, 
+        :anchor => "releases",
+      }, :class => 'all back_icon' %>
 </div>

@@ -44,6 +44,8 @@
           all: Ver todos los conciertos
           more: Detalle concierto
           none: No hay conciertos registrados
+          read_more: leer mas
+          hide: ocultar
         releases: 
           title: Lanzamientos
           none: No hay lanzamientos registrados
