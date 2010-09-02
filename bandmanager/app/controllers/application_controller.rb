@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
   
   def available_locales; AVAILABLE_LOCALES; end
   
-#  rescue_from StandardError do |exception|
-#    render  :template => 'errors/error', 
-#            :layout => 'error'
-#    return 
-#  end
+  rescue_from StandardError do |exception|
+    render  :template => 'errors/error', 
+            :layout => 'error'
+    return 
+  end
 
   rescue_from Aegis::AccessDenied do |exception|
     render  :template => 'errors/forbidden', 

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :teste_models
+
   
   map.devise_for :users
   

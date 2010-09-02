@@ -46,4 +46,21 @@ class ActiveSupport::TestCase
 	    assert object.errors[attr]
 	  end
   end
+  
+  def create_admin
+    admin = User.new
+    admin.email = 'admin@bandmanager.com'
+    admin.password = 'passwd'
+    admin.role_name = :admin
+    assert admin.save == true
+    admin
+  end
 end
+
+
+
+
+
+
+
+

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100901231444) do
+ActiveRecord::Schema.define(:version => 20100902003348) do
 
   create_table "attachments", :force => true do |t|
     t.string   "type"
@@ -117,6 +117,12 @@ ActiveRecord::Schema.define(:version => 20100901231444) do
     t.datetime "updated_at"
   end
 
+  create_table "profiles", :force => true do |t|
+    t.integer  "band_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "release_translations", :force => true do |t|
     t.integer  "release_id"
     t.string   "locale"
@@ -177,6 +183,7 @@ ActiveRecord::Schema.define(:version => 20100901231444) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role_name"
+    t.integer  "profile"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

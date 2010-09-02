@@ -1,8 +1,7 @@
 class CreateProfiles < ActiveRecord::Migration
   def self.up
     create_table :profiles do |t|
-      t.band :belongs_to
-
+      t.belongs_to :band
       t.timestamps
     end
   end
