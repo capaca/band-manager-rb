@@ -1,8 +1,17 @@
 class SiteController < ApplicationController
   
+  before_filter :setar_screen_name
+  
   def index
-    puts params[:screen_name].inspect
     @band = Band.find_by_screen_name(params[:screen_name])
+    unless @band
+      flash[:error] = "band_manager.errors.band.screen_name"
+      render  :template => 'errors/error', 
+              :layout => 'error', 
+              :status => :error
+              
+      return
+    end
   end
   
   def posts
@@ -25,6 +34,15 @@ class SiteController < ApplicationController
   
   def show_song
     @song = Song.find(params[:song_id])
+  end
+  
+  private
+  
+  def setar_screen_name
+    unless params[:screen_name]
+      band = Band.first
+      params[:screen_name] = band.screen_name if band
+    end
   end
 
 end

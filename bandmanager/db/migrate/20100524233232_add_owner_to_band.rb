@@ -1,6 +1,6 @@
 class AddOwnerToBand < ActiveRecord::Migration
   def self.up
-    add_column :bands, :user, :belongs_to
+    add_column :bands, :user, :integer
   end
 
   def self.down

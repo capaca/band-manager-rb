@@ -58,5 +58,9 @@
           email: E-mail
           address: Dirección
           telephone: Teléfono
-        
+
+    errors:
+      band:
+        screen_name: Ninguna banda encontrada con el nombre de tela informado.
+           
         

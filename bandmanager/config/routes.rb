@@ -1,4 +1,3 @@
-
 ActionController::Routing::Routes.draw do |map|
   
   map.devise_for :users
@@ -31,13 +30,11 @@ ActionController::Routing::Routes.draw do |map|
   
   # Site
   map.site(
-    "/:locale/:action/:id",
-    :screen_name => SCREEN_NAME,
+    "/:screen_name/:locale",
     :locale => 'pt-BR',
     :controller => :site,
     :action => :index
   )
-
   
   map.root :controller => "site", :action => "index" 
 

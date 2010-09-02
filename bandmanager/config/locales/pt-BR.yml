@@ -264,7 +264,11 @@
           email: E-mail
           address: Endereço
           telephone: Telefone
-  
+      
+    errors:
+      band: 
+        screen_name: Nenhuma banda encontrada com o nome de tela informado.
+
   messages:
     success:
       band:

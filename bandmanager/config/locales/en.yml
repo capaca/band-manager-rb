@@ -58,6 +58,8 @@
           email: E-mail
           address: Address
           telephone: Telephone
-        
-        
-        
+      
+    errors:
+      band: 
+        screen_name: No band found with the informed screen name.
+

@@ -3,7 +3,7 @@
 <h1>Shows de <%= @band.name %></h1>
 
 <div class="content" id="content">
-  <%= render :partial => 'concerts/list', :locals => {:band => @band, :concerts => @concerts} %>
+  <%= render :partial => 'admin/concerts/list', :locals => {:band => @band, :concerts => @concerts} %>
   <br/>
   <%= will_paginate @concerts %>
 </div>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100524235446) do
+ActiveRecord::Schema.define(:version => 20100901231444) do
 
   create_table "attachments", :force => true do |t|
     t.string   "type"
@@ -36,8 +36,29 @@ ActiveRecord::Schema.define(:version => 20100524235446) do
 
   add_index "band_translations", ["band_id"], :name => "index_band_translations_on_band_id"
 
-# Could not dump table "bands" because of following StandardError
-#   Unknown type 'belongs_to' for column 'user'
+  create_table "bands", :force => true do |t|
+    t.string   "name"
+    t.string   "screen_name"
+    t.integer  "genre_id"
+    t.integer  "year"
+    t.string   "city"
+    t.integer  "country_id"
+    t.text     "about"
+    t.string   "email"
+    t.string   "telephone"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "user"
+  end
 
   create_table "bands_concerts", :id => false, :force => true do |t|
     t.integer "band_id"
@@ -80,8 +101,8 @@ ActiveRecord::Schema.define(:version => 20100524235446) do
   create_table "post_translations", :force => true do |t|
     t.integer  "post_id"
     t.string   "locale"
-    t.text     "content"
     t.string   "title"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
