@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902003348) do
+ActiveRecord::Schema.define(:version => 20100903013608) do
 
   create_table "attachments", :force => true do |t|
     t.string   "type"
@@ -88,6 +88,12 @@ ActiveRecord::Schema.define(:version => 20100902003348) do
     t.string   "flyer_content_type"
     t.integer  "flyer_file_size"
     t.datetime "flyer_updated_at"
+  end
+
+  create_table "configurations", :force => true do |t|
+    t.integer  "band_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "countries", :force => true do |t|

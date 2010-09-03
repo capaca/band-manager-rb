@@ -1,0 +1,23 @@
+<%= javascript_include_tag "views/admin/configuration/index" %>
+
+<div class="configuration">
+  <% form_tag 'configuration/update' do %>
+    <%= radio_button_tag 'mode', 'one', false, :id => 'radio_one' %> 
+    
+    <%= label_tag t('band_manager.admin.configuration.one_band.label'), nil, 
+                  :title => t('band_manager.admin.configuration.one_band.description') 
+    %> 
+    
+    <%= radio_button_tag 'mode', 'multi', true, :id => 'radio_multi' %> 
+    
+    <%= label_tag t('band_manager.admin.configuration.multi_band.label'), nil, 
+                  :title => t('band_manager.admin.configuration.multi_band.description') 
+    %>
+    
+    <div>
+      <%= label_tag "Banda gerenciada:", nil %>
+      <%= select_tag('band', options_from_collection_for_select(@bands, "id", "name"), :id => 'bandas') %>
+    <div>
+  <% end %>
+  <%= submit_tag 'Salvar' %>
+</div>

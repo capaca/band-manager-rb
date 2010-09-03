@@ -47,13 +47,13 @@ class ActiveSupport::TestCase
 	  end
   end
   
-  def create_admin
-    admin = User.new
-    admin.email = 'admin@bandmanager.com'
-    admin.password = 'passwd'
-    admin.role_name = :admin
-    assert admin.save == true
-    admin
+  def create_user(role_name = 'user')
+    user = User.new
+    user.email = 'admin@bandmanager.com'
+    user.password = 'passwd'
+    user.role_name = role_name
+    assert user.save == true
+    user
   end
 end
 

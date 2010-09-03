@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.root :controller => "bands", :action => "index"
     
+    admin.resources :configuration
     admin.resources :users
     admin.resources :genres
     admin.resources :countries

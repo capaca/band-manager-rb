@@ -264,7 +264,18 @@
           email: E-mail
           address: Endereço
           telephone: Telefone
-      
+    admin:
+      configuration:
+        multi_band: 
+          label: Multiplas bandas  
+          description: Com esse modo você pode gerênciar várias bandas 
+                       simultaneamente e nenhuma banda em específico 
+                       é exibida na tela inicial.
+        one_band: 
+          label: Uma banda  
+          description: Com esse modo você gerencia apenas uma banda e esta é a
+                       banda que será exibida na tela inicial.
+    
     errors:
       band: 
         screen_name: Nenhuma banda encontrada com o nome de tela informado.
