@@ -32,6 +32,8 @@ class Admin::SongsController < ApplicationController
     
     @song.release = @release
 
+    puts "\n\n\n***#{@song.audio_content_type}\n\n\n"
+
     if @song.save
       flash[:notice] = 'Song was successfully created.'
       redirect_to admin_band_path(@band, :anchor => 'releases')

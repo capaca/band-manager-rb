@@ -94,7 +94,6 @@ module ApplicationHelper
       <script type='text/javascript'>
         var flashvars = {
           playlist_url: \"#{playlist_url}\",
-          autoplay: \"#{autoplay}\"
         };
     
         var attributes = {};
