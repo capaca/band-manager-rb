@@ -7,7 +7,6 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.root :controller => "bands", :action => "index"
     
-    admin.resources :configuration
     admin.resources :users
     admin.resources :genres
     admin.resources :countries
@@ -23,6 +22,12 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
   
+  # Configuration
+  map.load_playlists(
+    '/configuration/:action', 
+    :controller => :configuration,
+    :action => :action
+  )
 
   # Load Playlists
   map.load_playlists(

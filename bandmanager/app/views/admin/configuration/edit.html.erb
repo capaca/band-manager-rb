@@ -1,7 +1,9 @@
-<%= javascript_include_tag "views/admin/configuration/index" %>
+<%= javascript_include_tag "views/admin/configuration/edit" %>
+
+<%= hidden_field_tag 'mode_value', @configuration.band_id ? 'one' : 'multi' %>
 
 <div class="configuration">
-  <% form_tag 'configuration/update' do %>
+  <% form_tag 'update' do %>
     <%= radio_button_tag 'mode', 'one', false, :id => 'radio_one' %> 
     
     <%= label_tag t('band_manager.admin.configuration.one_band.label'), nil, 
@@ -16,7 +18,7 @@
     
     <div>
       <%= label_tag "Banda gerenciada:", nil %>
-      <%= select_tag('band', options_from_collection_for_select(@bands, "id", "name"), :id => 'bandas') %>
+      <%= select_tag('band_id', options_from_collection_for_select(@bands, "id", "name",{:selected => @configuration.band_id}), :id => 'bandas') %>
     <div>
   <% end %>
   <%= submit_tag 'Salvar' %>

@@ -35,6 +35,14 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  
+  def setup
+    user = User.new
+    user.email = 'pedro.capaca@gmail.com'
+    user.password = '123456'
+    assert user.save == true
+  end
+  
   protected
   
   def assert_error_on_save(object, *attrs)

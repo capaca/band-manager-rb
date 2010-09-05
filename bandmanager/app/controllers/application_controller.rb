@@ -12,8 +12,6 @@ class ApplicationController < ActionController::Base
   #
   before_filter :set_locale 
   
-  def available_locales; AVAILABLE_LOCALES; end
-  
   if RAILS_ENV == 'production'
     rescue_from StandardError do |exception|
       render  :template => 'errors/error', 
@@ -40,6 +38,8 @@ class ApplicationController < ActionController::Base
   def get_message(key, type = :success)
     t "messages.#{type.to_s}.#{key}"
   end
+  
+  def available_locales; AVAILABLE_LOCALES; end
   
   # Overwritten methods from devise (login/logout urls)
   #

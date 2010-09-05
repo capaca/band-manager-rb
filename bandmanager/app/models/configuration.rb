@@ -1,11 +1,22 @@
 class Configuration < ActiveRecord::Base
-  include Singleton
-  
+  acts_as_singleton  
   belongs_to :band
   
-  def self.setup params
-    instance = new params
-    instance.save!
-    instance
+  def self.setup(band = nil)
+    conf = instance 
+    if band
+      conf.band = band
+    else
+      conf.band = nil
+    end
+    
+    conf.save!
+    conf
+  end
+  
+  private
+  
+  def destroy
+    super
   end
 end
