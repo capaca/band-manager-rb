@@ -1,5 +1,7 @@
 class Admin::ConfigurationController < Admin::BaseController
 
+  permissions :configuration
+
   def edit
     @bands = Band.all
     @configuration = Configuration.instance
@@ -14,6 +16,12 @@ class Admin::ConfigurationController < Admin::BaseController
     end
     
     redirect_to :action => :edit
+  end
+  
+  private
+  
+  def object
+    @configuration ||= Configuration.instance
   end
   
 end

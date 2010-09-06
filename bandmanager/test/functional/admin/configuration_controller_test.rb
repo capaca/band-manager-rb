@@ -28,6 +28,12 @@ class Admin::ConfigurationControllerTest < ActionController::TestCase
     assert_redirected_to "http://test.host/users/sign_in?unauthenticated=true"
   end 
   
+  test "should not get edit in case of signed in without the admin role" do
+    sign_in_with 'user'
+    get :edit
+    assert_response :forbidden
+  end 
+  
   test "should update the configuration setting a band" do
     sign_in_with 'admin'
     
@@ -55,6 +61,13 @@ class Admin::ConfigurationControllerTest < ActionController::TestCase
     get :update
     assert_redirected_to "http://test.host/users/sign_in?unauthenticated=true"
   end
+  
+  test "should not uptade the configuration in case of signed in without the admin role" do
+    sign_in_with 'user'
+    get :update
+    assert_response :forbidden
+  end 
+
 end
 
 
