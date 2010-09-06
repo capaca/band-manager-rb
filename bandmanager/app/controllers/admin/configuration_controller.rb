@@ -1,7 +1,5 @@
-class Admin::ConfigurationController < ApplicationController
+class Admin::ConfigurationController < Admin::BaseController
 
-  #before_filter :authenticate_user!
-  
   def edit
     @bands = Band.all
     @configuration = Configuration.instance

@@ -36,13 +36,6 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   
-  def setup
-    user = User.new
-    user.email = 'pedro.capaca@gmail.com'
-    user.password = '123456'
-    assert user.save == true
-  end
-  
   protected
   
   def assert_error_on_save(object, *attrs)
@@ -63,6 +56,12 @@ class ActiveSupport::TestCase
     assert user.save == true
     user
   end
+  
+  def sign_in_with role
+    user = create_user role
+    sign_in user
+  end
+  
 end
 
 

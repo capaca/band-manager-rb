@@ -9,9 +9,8 @@ class Admin::ConfigurationControllerTest < ActionController::TestCase
   end
   
   test "should get edit" do
-    user = create_user 'admin'
-    sign_in :user, user
-    
+    sign_in_with 'admin'
+        
     get :edit
     assert_response :success
     assert_template :edit
@@ -24,9 +23,13 @@ class Admin::ConfigurationControllerTest < ActionController::TestCase
     bands.size == Band.count
   end
   
+  test "should not get edit in case of no user signed in" do
+    get :edit
+    assert_redirected_to "http://test.host/users/sign_in?unauthenticated=true"
+  end 
+  
   test "should update the configuration setting a band" do
-    user = create_user 'admin'
-    sign_in :user, user
+    sign_in_with 'admin'
     
     post :update, :band_id => bands(:violator).id
     assert_redirected_to :action => :edit
@@ -46,6 +49,11 @@ class Admin::ConfigurationControllerTest < ActionController::TestCase
     conf = Configuration.instance
     assert_not_nil conf
     assert_nil conf.band    
+  end
+  
+  test "should not update configuration in case of no user signed in" do
+    get :update
+    assert_redirected_to "http://test.host/users/sign_in?unauthenticated=true"
   end
 end
 
