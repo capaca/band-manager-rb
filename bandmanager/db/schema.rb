@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100903013608) do
+ActiveRecord::Schema.define(:version => 20100906150611) do
 
   create_table "attachments", :force => true do |t|
     t.string   "type"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20100903013608) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "user"
+    t.text     "custom_style"
   end
 
   create_table "bands_concerts", :id => false, :force => true do |t|

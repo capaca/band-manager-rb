@@ -1,7 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :teste_models
-
-  
   map.devise_for :users
   
   map.namespace :admin do |admin|
@@ -28,6 +25,14 @@ ActionController::Routing::Routes.draw do |map|
     :controller => :configuration,
     :action => :action
   )
+  
+  # Configuration
+#  map.custom_style(
+#    '/custom_style/edit/:band_id', 
+#    :controller => :custom_style,
+#    :action => :edit,
+#    :band_id => :band_id
+#  )
 
   # Load Playlists
   map.load_playlists(

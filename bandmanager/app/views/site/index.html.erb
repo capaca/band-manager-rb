@@ -7,7 +7,7 @@
             :controller => :site, :action => :posts %>
     </div>
 
-    <%= render :partial => 'posts_list', :locals => {:posts => @band.last_posts(5), :text_length => 200}%>
+    <%= render :partial => '/site/posts_list', :locals => {:posts => @band.last_posts(5), :text_length => 200}%>
   </div>
 
   <!-- CONCERTS -->
@@ -18,13 +18,13 @@
             :controller => :site, :action => :concerts %>
     </div>
 
-    <%= render :partial => 'concerts_list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
+    <%= render :partial => '/site/concerts_list', :locals => {:band => @band, :concerts => @band.upcoming_concerts}%>
   </div>
 
   <!-- RELEASES -->
   <div id="releases" class="session" name="releases">
     <h1><%= t('band_manager.site.session.releases.title') %></h1>
-    <%= render :partial => 'releases_list', :locals => {:releases => @band.releases}%>
+    <%= render :partial => '/site/releases_list', :locals => {:releases => @band.releases}%>
   </div>
 </div>
 
@@ -41,7 +41,7 @@
   <!-- CONTACTS -->
   <div id="contacts" class="session" name="contacts" >
     <h1><%= t('band_manager.site.session.contacts.title') %></h1>
-    <%= render :partial => "contacts" %>
+    <%= render :partial => "/site/contacts" %>
   </div>
 
   <!-- ABOUT -->

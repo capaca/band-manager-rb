@@ -58,7 +58,8 @@
     <%= link_to 'Excluir', admin_band_path(@band), 
           :confirm => 'Você tem certeza que quer excluir a banda e todas as suas informações?', 
           :method => :delete 
-    %>
+    %> |
+    <%= link_to 'Editar estilo da página principal', edit_custom_style_path(@band) %>
   </div>
   
   <br />
