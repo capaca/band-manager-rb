@@ -266,6 +266,8 @@
           telephone: Telefone
     admin:
       configuration:
+        not_configured: Por favor, configure o modo de operação do Bandmanager.
+        
         multi_band: 
           label: Multiplas bandas  
           description: Com esse modo você pode gerênciar várias bandas 

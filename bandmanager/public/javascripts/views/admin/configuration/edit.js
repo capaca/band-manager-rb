@@ -1,8 +1,8 @@
 $(document).ready(function(){
-  desabilitar_select();
   $("input[name='mode']").change(desabilitar_select);
   mode_value = $('input[name="mode_value"]')
   $("#radio_"+mode_value.val()).attr("checked", true);
+  desabilitar_select();
 });
 
 function desabilitar_select() {

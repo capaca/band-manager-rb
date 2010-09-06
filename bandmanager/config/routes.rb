@@ -23,7 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   # Configuration
-  map.load_playlists(
+  map.configuration(
     '/configuration/:action', 
     :controller => :configuration,
     :action => :action

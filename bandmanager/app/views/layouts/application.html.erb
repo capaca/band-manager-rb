@@ -8,7 +8,7 @@
   
   <%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'jquery.corner',
       'jquery.maskedinput-1.2.2', 'jquery.keyfilter-1.7', 'ckeditor/ckeditor',
-      'swfobject.js' 
+      'swfobject.js', 'geral.js' 
   %>
   
   <%= stylesheet_link_tag 'scaffold' %>
@@ -26,7 +26,7 @@
 		  <% if flash[:notice] %>
 		    <div id="success">
 		      <span class="success">
-            <%= flash[:notice] %>
+            <%= t flash[:notice] %>
 		      </span>
 		    </div>
 		  <% end %>
@@ -34,7 +34,7 @@
 		  <% if flash[:error] %>
 		    <div id="error">
 		      <span class="error">
-            <%= flash[:error] %>
+            <%= t flash[:error] %>
 		      </span>
 		    </div>
 		  <% end %>
@@ -42,7 +42,7 @@
 		  <% if flash[:alert] %>
 		    <div id="alert">
 		      <span class="alert">
-            <%= flash[:alert] %>
+            <%= t flash[:alert] %>
 		      </span>
 		    </div>
 		  <% end %>

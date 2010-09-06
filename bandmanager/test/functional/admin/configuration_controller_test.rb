@@ -1,13 +1,7 @@
 require 'test_helper'
 
 class Admin::ConfigurationControllerTest < ActionController::TestCase
-  
-  include Devise::TestHelpers
-  
-  def setup
-    Configuration.delete_all
-  end
-  
+
   test "should get edit" do
     sign_in_with 'admin'
         

@@ -1,14 +1,27 @@
 require 'test_helper'
 
-class BandsControllerTest < ActionController::TestCase
+class Admin::BandsControllerTest < ActionController::TestCase
+  
+  def setup
+    super
+    sign_in_with 'user'
+  end
+  
   test "should get index" do
     get :index
     assert_response :success
     assert_template :index
     
     assert_not_nil assigns(:bands)
-    assert_equal assigns(:bands).size, Band.count
+    assert_equal assigns(:bands).size, Band.paginate(:page => 1).size
   end
+
+  test "should redirect to the configured band when get index" do
+    Configuration.setup(bands(:violator))
+    
+    get :index
+    assert_redirected_to "http://test.host/admin/bands/#{Configuration.instance.band.id}"
+  end 
 
   test "should get new" do
     get :new
@@ -29,7 +42,7 @@ class BandsControllerTest < ActionController::TestCase
       create_band
     end
 
-    assert_redirected_to bands_path
+    assert_redirected_to admin_bands_path
   end
   
   test "should not create invalid band" do
@@ -57,10 +70,10 @@ class BandsControllerTest < ActionController::TestCase
 
   test "should update band" do
     post :update, :id => bands(:violator).to_param, 
-        :band => {:name => "Outro"}
+        :band => create_band_hash
         
     assert_not_nil assigns(:band)
-    assert_redirected_to edit_band_path(assigns(:band))
+    assert_redirected_to edit_admin_band_path(assigns(:band))
   end
   
   test "should not update invalid band" do
@@ -76,22 +89,40 @@ class BandsControllerTest < ActionController::TestCase
       delete :destroy, :id => bands(:violator).to_param
     end
 
-    assert_redirected_to bands_path
+    assert_redirected_to admin_bands_path
   end
   
   private 
-    def create_band(options = {})
-      band_hash = {
-        :name => "Kreator", 
-        :genre => genres(:thrash),
-        :year => 1983,
-        :city => "Essen",
-        :country => countries(:germany),
-        :about => "About Kreator..."
-      }
-      
-      post :create, :band => band_hash.merge(options)
-    end
+  
+  def create_band(options = {})
+    band_hash = {
+      :name => "Kreator",
+      :screen_name => 'kreator',
+      :email => 'kreator@server.com',
+      :genre => genres(:thrash),
+      :year => 1983,
+      :city => "Essen",
+      :country => countries(:germany),
+      :about => "About Kreator..."
+    }
+    
+    post :create, :band => band_hash.merge(options)
+  end
+  
+  def create_band_hash(options = {})
+    band_hash = {
+      :name => "Kreator",
+      :screen_name => 'kreator',
+      :email => 'kreator@server.com',
+      :genre => genres(:thrash),
+      :year => 1983,
+      :city => "Essen",
+      :country => countries(:germany),
+      :about => "About Kreator..."
+    }
+    
+    band_hash.merge options
+  end
   
 end
 

@@ -82,7 +82,6 @@ module ApplicationHelper
 
   def field_label(model_attribute, options = {})
     label_tag '', "#{t_attr model_attribute}:", options
-
   end
   
   def strip_html(str)

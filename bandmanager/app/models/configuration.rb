@@ -14,6 +14,10 @@ class Configuration < ActiveRecord::Base
     conf
   end
   
+  def self.band
+    Configuration.instance.band
+  end
+  
   private
   
   def destroy

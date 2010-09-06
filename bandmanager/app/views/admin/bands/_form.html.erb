@@ -1,6 +1,6 @@
-<% form_for([:admin,@band], :html => {:multipart => true}) do |f| %>
-  <%= f.error_messages %>
+<%= error_messages_for :band %>
 
+<% form_for([:admin,@band], :html => {:multipart => true}) do |f| %>
   <table class="form">
     <tr>
       <td>

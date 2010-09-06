@@ -61,7 +61,14 @@ class ActiveSupport::TestCase
     user = create_user role
     sign_in user
   end
+end
+
+class ActionController::TestCase 
+  include Devise::TestHelpers
   
+  def setup
+    Configuration.delete_all
+  end
 end
 
 

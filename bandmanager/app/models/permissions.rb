@@ -13,6 +13,11 @@ class Permissions < Aegis::Permissions
     deny :user
   end
   
+  action :configurate do
+    allow :admin
+    deny :user
+  end
+  
   resources :configuration do
     allow :admin
     deny :user

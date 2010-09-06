@@ -1,12 +1,16 @@
-class Admin::BandsController < ApplicationController
-  
-  before_filter :authenticate_user!
+class Admin::BandsController < Admin::BaseController
+
   permissions :bands
   
   # GET /bands
   # GET /bands.xml
   def index
-    @bands = Band.all
+    configured_band = Configuration.instance.band
+    if configured_band
+      redirect_to admin_band_path(configured_band)
+      return
+    end
+    @bands = Band.paginate :page => params[:page]
   end
 
   # GET /bands/1
