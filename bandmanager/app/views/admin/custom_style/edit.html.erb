@@ -1,12 +1,12 @@
 <%= error_messages_for :band %>
 
-<% form_tag({ :controller => :custom_style, :action => :preview }) do %>
+<% form_tag("/admin/custom_style/preview") do %>
   <%= hidden_field_tag :id, @band.id %>
   <table class="form" width ="90%">
     <tr>
       <td>
         <%= label_tag "Estilo da página principal:" %><br />
-        <%= text_area :band, :custom_style %><br/>
+        <%= text_area_tag :custom_style, @band.custom_style, {:rows => 20} %><br/>
       </td>
     </tr>
   </table>

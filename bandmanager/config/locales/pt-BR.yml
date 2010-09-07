@@ -231,6 +231,8 @@
           read: Ler todas as notícias
           
   band_manager:
+    save: Salvar
+    cancel: Cancelar 
     pagination:
       next: Próximo
       prev: Anterior
@@ -265,6 +267,9 @@
           address: Endereço
           telephone: Telefone
     admin:
+      custom_style:
+        preview_text: "Pre-vizualização de estilo:"
+              
       configuration:
         not_configured: Por favor, configure o modo de operação do Bandmanager.
         

@@ -48,6 +48,18 @@ body a:hover {
   padding: 5px;
 }
 
+#preview {
+  margin-top: -5px;
+  padding: 15px;
+  background-color: #E8DB51;
+  color: black;
+  font-size: 13px;
+  border-bottom: 2px solid #A48710;
+  position: fixed;
+  width: 100%;
+  display: none;
+}
+
 .portuguese {
   padding-left: 20px;
   background: url('images/brazil_16.png') left no-repeat;

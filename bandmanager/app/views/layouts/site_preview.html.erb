@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>ViolatorThrash.com - It's time to Annihilate!</title>
+  
+    <%= javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'swfobject.js' %>
+    <%= javascript_include_tag 'preview' %>    
+    
+    <%= stylesheet_link_tag 'site/style' %>
+    
+    <style>
+      <%= @band.custom_style %>
+    </style>
+
+    <link rel="shortcut icon" href="/favicon.png" />
+</head>
+
+<body>
+	<div id="preview">
+    <% form_tag '/admin/custom_style/update' do %>
+      <%= hidden_field_tag 'custom_style', @band.custom_style %>
+      <%= hidden_field_tag 'id', @band.id %>
+      <%= t "band_manager.admin.custom_style.preview_text" %>
+      <%= submit_tag t "band_manager.save" %>
+      <%= link_to "<input type='button' value=#{t 'band_manager.cancel'}></input>", 
+          :action => "edit", :id => @band.id 
+            %>
+    <% end %>
+  </div>
+	<div id="main">
+	  <div id="header">
+      <div id="languages" name="languages">
+        <span class="portuguese">
+          <%= link_to 'Português', :controller => :site, :locale => 'pt-BR' %> | 
+        </span>
+        <span class="english">
+          <%= link_to 'English', :controller => :site, :locale => 'en' %> | 
+        </span>
+        <span class="spannish">
+          <%= link_to 'Español', :controller => :site, :locale => 'es' %>
+        </span>
+      </div>
+      <div id="topo">
+      </div>
+    </div>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+    <div id="footer">Violator <%= Date.today.year %><div/>
+	</div>
+</body>
+
+</html>
