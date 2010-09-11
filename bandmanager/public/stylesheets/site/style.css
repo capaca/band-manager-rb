@@ -57,7 +57,28 @@ body a:hover {
   border-bottom: 2px solid #A48710;
   position: fixed;
   width: 100%;
+}
+
+#preview a {
+  color: black;
+}
+
+#preview textarea{
+  margin: 10px;
+  width: 50%;
+  height: 100px;
+}
+
+#preview_tab {
+  background-color: #E8DB51;
+  color: black;
+  margin-top: -5px;
+  position: fixed;
   display: none;
+  padding: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .portuguese {

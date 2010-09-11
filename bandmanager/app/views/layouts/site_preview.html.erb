@@ -14,20 +14,47 @@
     <style>
       <%= @band.custom_style %>
     </style>
+    
+    <script type="text/javascript">
+      function doPreview() {
+        $("#form_preview").attr("action", "/admin/custom_style/edit/#{@band.id}")
+        $("#form_preview").submit();
+      }
+      
+      function esconder(){
+        $("#preview").slideUp();
+        $("#preview_tab").show();
+        return false;
+      }
+      
+      function mostrar(){
+        $("#preview").slideDown();
+        $("#preview_tab").hide();
+        return false;
+      }
+    </script>
 
     <link rel="shortcut icon" href="/favicon.png" />
 </head>
 
 <body>
+  <div id="preview_tab" onclick="mostrar()">
+    Clique aqui para mostrar barra de preview
+  </div>
 	<div id="preview">
-    <% form_tag '/admin/custom_style/update' do %>
-      <%= hidden_field_tag 'custom_style', @band.custom_style %>
-      <%= hidden_field_tag 'id', @band.id %>
+    <%= error_messages_for :band %>
+    <% form_tag '/admin/custom_style/update', :id => "form_preview" do %>
       <%= t "band_manager.admin.custom_style.preview_text" %>
+      <br/>
+      <%= text_area_tag 'custom_style', @band.custom_style %>
+      <br/>
+      <%= hidden_field_tag 'id', @band.id %>
+      <input type='button' value="Preview" onclick="doPreview();" >
       <%= submit_tag t "band_manager.save" %>
       <%= link_to "<input type='button' value=#{t 'band_manager.cancel'}></input>", 
-          :action => "edit", :id => @band.id 
+          :controller => :bands, :action => "show", :id => @band.id 
             %>
+      <a href="#" onclick="esconder();">Esconder</a>
     <% end %>
   </div>
 	<div id="main">

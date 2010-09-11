@@ -1,23 +1,26 @@
 class Admin::CustomStyleController < Admin::BaseController
 
   def edit
-    @band = Band.find(params[:id])
-  end
-  
-  def preview
     @band = Band.find params[:id]
-    @band.custom_style = params[:custom_style]
+    
+    if params[:custom_style]
+      @band.custom_style = params[:custom_style]
+    end
+    
     render  :template => 'site/index', 
-            :layout => 'site_preview', 
-            :status => :error
+            :layout => 'site_preview'
   end
-  
+    
   def update
     @band = Band.find params[:id]
     @band.custom_style = params[:custom_style]
     
-    @band.save
-    redirect_to "/admin/custom_style/edit/#{@band.id}"
+    if @band.save
+      redirect_to "/admin/custom_style/edit/#{@band.id}"
+    else
+      render  :template => 'site/index', 
+              :layout => 'site_preview'
+    end
   end
   
   private

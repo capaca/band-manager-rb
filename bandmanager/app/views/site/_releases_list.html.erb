@@ -41,7 +41,7 @@
           &nbsp; (<%= t('band_manager.site.session.songs.click')%>)
           <br/>
           <div class="musicas" id=<%= "songs_#{release.id}" %>>
-            <%= render :partial => "songs_list", :locals => {:songs => release.songs} %>
+            <%= render :partial => "/site/songs_list", :locals => {:songs => release.songs} %>
           </div>
         </div>
         <br />

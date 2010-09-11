@@ -13,5 +13,25 @@
 
   <p>
     <%= submit_tag 'Pre-vizualizar' %>
+    <input type='button' value="Preview" onclick="doPreview();" >
   </p>
 <% end %>
+
+<script type="text/javascript">
+  function handle_response(data){
+    $("#preview").html(data)
+  }
+  
+  function doPreview() {
+    $.ajax({
+      type: "POST",
+      data: ({id:<%= @band.id %>}),
+      url: "/admin/custom_style/preview",
+      dataType: "html",
+      success: handle_response
+    });
+  }
+</script>
+
+<div id="preview">
+</div>
