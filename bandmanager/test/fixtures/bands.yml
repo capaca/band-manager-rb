@@ -6,9 +6,10 @@ violator:
   screen_name: violator
   genre_id: 1
   year: 2002
+  email: contact@violatorthrash.com
   city: Brasília
   country_id: 2
-  about: Sobre o Violator...
+  about: Alguma coisa sobre o Violator...
   
 pesticide:
   id: 2
@@ -16,7 +17,8 @@ pesticide:
   screen_name: pesticide
   genre_id: 2
   year: 2007
+  email: pesticide@gmail.com
   city: Brasília
   country_id: 2
-  about: Sobre o Pesticide...
+  about: Alguma coisa sobre o Pesticide...
   

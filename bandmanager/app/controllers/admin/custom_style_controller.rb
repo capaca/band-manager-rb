@@ -1,5 +1,7 @@
 class Admin::CustomStyleController < Admin::BaseController
 
+  permissions :custom_style
+  
   def edit
     @band = Band.find params[:id]
     
@@ -18,6 +20,7 @@ class Admin::CustomStyleController < Admin::BaseController
     if @band.save
       redirect_to "/admin/custom_style/edit/#{@band.id}"
     else
+      puts @band.errors.inspect
       render  :template => 'site/index', 
               :layout => 'site_preview'
     end
@@ -25,8 +28,8 @@ class Admin::CustomStyleController < Admin::BaseController
   
   private
   
-#  def object
-#    @configuration ||= Configuration.instance
-#  end
+  def object
+    @band ||= Band.find(params[:id])
+  end
   
 end

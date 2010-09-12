@@ -60,6 +60,7 @@ class ActiveSupport::TestCase
   def sign_in_with role
     user = create_user role
     sign_in user
+    user
   end
 end
 

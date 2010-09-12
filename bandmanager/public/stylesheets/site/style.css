@@ -6,24 +6,25 @@ body {
   margin: 0px;
   margin-top: 5px;
   padding: 0px;
-  background: url('images/background.jpg') center top fixed;
+  background: url('../images/img01.jpg') center top fixed;
   font-size: 12px;
   font-family: arial, helvetica, verdana, sans-serif;
-  color: #FABE3D;
+  color: #94877A;
 }
 
 body a:link, a:visited, a:active {
-  color: #FFC600;
+  color: #94877A;
   font-weight: bold;
 }
 
 body a:hover {
-  color: #8C7ECA;
+  color: #D53707;
 }
 
 #main {
   width: 876px;
   margin: auto;
+  padding: 0px;
 }
 
 #main #header #logo{
@@ -36,10 +37,9 @@ body a:hover {
 
 #main #header #topo{
   margin: auto;
-  background: url('images/topo.jpg') center top no-repeat;
+  background: url('../images/img02.jpg') center;
   text-align: center;
-  width: 864px;
-  height: 451px;
+  height: 159px;
 }
 
 
@@ -100,7 +100,7 @@ body a:hover {
   text-align: center;
   margin-top: 50px;
   padding: 10px;
-  border-top: 1px solid #FABE3D;
+  border-top: 1px solid #D53707;
 }
 
 h1 {
@@ -115,20 +115,27 @@ ul {
   list-style-type: none;
 }
 
-.session {
-  /*
-  float: left;
-  width: 49%;
-  margin: 3px;
-  */
+.column_right {
+  width: 49.7%; 
+  float: right; 
+  margin-top: 3px; 
+  padding-left:2px;
+}
+
+.column_left {
+  width: 49.7%; 
+  float: right; 
+  margin-top: 3px; 
+  padding-right:2px; 
 }
 
 .session h1 {
-  background: #FABE3D;
-  color: #211939;
+  background: #D63F11;
+  color: black;
   font-size: 16px;
   padding: 2px;
   margin-top: 0px;
+  border: #D53707;
 }
 
 
@@ -193,7 +200,7 @@ ul {
 }
 
 #about .content {
-  padding: 4px;
+  padding: 0px;
 }
 
 

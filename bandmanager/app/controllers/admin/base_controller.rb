@@ -14,8 +14,12 @@ class Admin::BaseController < ApplicationController
   end
   
   def should_redirect_to_configuration_page?
-    (self.class.name != Admin::ConfigurationController.name) and 
-    current_user.may_configurate? and
-    Configuration.count == 0
+    if RAILS_ENV != 'test' 
+      (self.class.name != Admin::ConfigurationController.name) and 
+      current_user.may_configurate? and
+      Configuration.count == 0
+    end
+    
+    false
   end
 end

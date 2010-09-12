@@ -23,6 +23,10 @@ class Permissions < Aegis::Permissions
     deny :user
   end
   
+  resources :custom_style do
+    allow :admin, :user
+  end
+  
   resources :bands do
     allow :user, :admin
   end

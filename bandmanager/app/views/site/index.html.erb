@@ -1,4 +1,4 @@
-<div style="width: 49%; float: right; margin: 3px;">
+<div class="column_right">
   <!-- POSTS -->
   <div id="posts" class="session" name="posts" >
     <h1><%= t('band_manager.site.session.news.title') %></h1>
@@ -28,7 +28,7 @@
   </div>
 </div>
 
-<div style="width: 49%; float: right; margin: 3px;">
+<div class="column_left">
   <!-- PLAYER -->
   <% if @band.has_attached_songs? %>
       <%= play_audio(load_playlists_path(:id => @band.id), true, "/swf/xspf_player.swf", 420, 153) %>
