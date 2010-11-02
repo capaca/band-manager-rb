@@ -29,7 +29,6 @@ class Release < ActiveRecord::Base
   
   validates_presence_of :title, :year, :band, :type_id
   validates_associated  :band
-  validates_length_of   :details, :minimum => 10
   validates_numericality_of :year, :only_integer => true
   validate :validate_year  
   

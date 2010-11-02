@@ -108,8 +108,8 @@ ActiveRecord::Schema.define(:version => 20100906150611) do
   create_table "post_translations", :force => true do |t|
     t.integer  "post_id"
     t.string   "locale"
-    t.text     "content"
     t.string   "title"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

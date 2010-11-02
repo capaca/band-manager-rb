@@ -35,9 +35,8 @@ class Band < ActiveRecord::Base
   has_attached_file :logo, :styles => { :normal => "600" }
   has_attached_file :photo, :styles => { :normal => "400", :mini => "150x150#" }
   
-  validates_presence_of :name, :screen_name, :genre, :year, :city, :country_id, :about
+  validates_presence_of :name, :screen_name, :genre, :year, :city, :country_id
   validates_associated :genre, :country
-  validates_length_of :about, :minimum => 10;
   validates_uniqueness_of :screen_name
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,}\Z)/
   

@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users
     admin.resources :genres
     admin.resources :countries
+    admin.resources :albums
     
     # Bands
     admin.resources :bands do |bands|

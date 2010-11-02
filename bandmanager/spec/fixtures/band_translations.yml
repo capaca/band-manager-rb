@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+violator_about1:
+  id: 1
+  band_id: 1
+  locale: pt_BR
+  about: Alguma coisa sobre o Violator...
